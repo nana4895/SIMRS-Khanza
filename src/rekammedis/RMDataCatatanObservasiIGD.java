@@ -239,9 +239,9 @@ public final class RMDataCatatanObservasiIGD extends javax.swing.JDialog {
         jLabel29 = new widget.Label();
         SPO = new widget.TextBox();
         jLabel35 = new widget.Label();
-        jLabel1 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         TindakanPerawat = new javax.swing.JTextArea();
+        jLabel30 = new widget.Label();
         ChkInput = new widget.CekBox();
 
         jPopupMenu1.setName("jPopupMenu1"); // NOI18N
@@ -436,7 +436,7 @@ public final class RMDataCatatanObservasiIGD extends javax.swing.JDialog {
         panelGlass9.add(jLabel19);
 
         DTPCari1.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "21-02-2024" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "22-02-2024" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -450,7 +450,7 @@ public final class RMDataCatatanObservasiIGD extends javax.swing.JDialog {
         panelGlass9.add(jLabel21);
 
         DTPCari2.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "21-02-2024" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "22-02-2024" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -546,7 +546,7 @@ public final class RMDataCatatanObservasiIGD extends javax.swing.JDialog {
         TPasien.setBounds(336, 10, 285, 23);
 
         Tanggal.setForeground(new java.awt.Color(50, 70, 50));
-        Tanggal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "21-02-2024" }));
+        Tanggal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "22-02-2024" }));
         Tanggal.setDisplayFormat("dd-MM-yyyy");
         Tanggal.setName("Tanggal"); // NOI18N
         Tanggal.setOpaque(false);
@@ -766,10 +766,10 @@ public final class RMDataCatatanObservasiIGD extends javax.swing.JDialog {
         FormInput.add(jLabel28);
         jLabel28.setBounds(170, 110, 40, 23);
 
-        jLabel29.setText("SpO2 :");
+        jLabel29.setText("Tindakan : ");
         jLabel29.setName("jLabel29"); // NOI18N
         FormInput.add(jLabel29);
-        jLabel29.setBounds(300, 70, 40, 23);
+        jLabel29.setBounds(440, 70, 60, 23);
 
         SPO.setFocusTraversalPolicyProvider(true);
         SPO.setName("SPO"); // NOI18N
@@ -787,21 +787,16 @@ public final class RMDataCatatanObservasiIGD extends javax.swing.JDialog {
         FormInput.add(jLabel35);
         jLabel35.setBounds(390, 70, 30, 23);
 
-        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setForeground(new java.awt.Color(50, 50, 50));
-        jLabel1.setText("Tindakan : ");
-        jLabel1.setName("jLabel1"); // NOI18N
-        FormInput.add(jLabel1);
-        jLabel1.setBounds(430, 70, 70, 16);
-
         jScrollPane2.setBackground(new java.awt.Color(255, 255, 255));
         jScrollPane2.setForeground(new java.awt.Color(50, 50, 50));
         jScrollPane2.setName("jScrollPane2"); // NOI18N
 
         TindakanPerawat.setBackground(new java.awt.Color(255, 255, 255));
         TindakanPerawat.setColumns(20);
+        TindakanPerawat.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         TindakanPerawat.setForeground(new java.awt.Color(50, 50, 50));
         TindakanPerawat.setRows(5);
+        TindakanPerawat.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         TindakanPerawat.setName("TindakanPerawat"); // NOI18N
         TindakanPerawat.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -811,7 +806,12 @@ public final class RMDataCatatanObservasiIGD extends javax.swing.JDialog {
         jScrollPane2.setViewportView(TindakanPerawat);
 
         FormInput.add(jScrollPane2);
-        jScrollPane2.setBounds(510, 70, 234, 86);
+        jScrollPane2.setBounds(510, 70, 250, 74);
+
+        jLabel30.setText("SpO2 :");
+        jLabel30.setName("jLabel30"); // NOI18N
+        FormInput.add(jLabel30);
+        jLabel30.setBounds(300, 70, 40, 23);
 
         PanelInput.add(FormInput, java.awt.BorderLayout.CENTER);
 
@@ -1242,7 +1242,6 @@ public final class RMDataCatatanObservasiIGD extends javax.swing.JDialog {
     private widget.TextBox Umur;
     private widget.Button btnPetugas;
     private widget.InternalFrame internalFrame1;
-    private javax.swing.JLabel jLabel1;
     private widget.Label jLabel12;
     private widget.Label jLabel16;
     private widget.Label jLabel17;
@@ -1257,6 +1256,7 @@ public final class RMDataCatatanObservasiIGD extends javax.swing.JDialog {
     private widget.Label jLabel27;
     private widget.Label jLabel28;
     private widget.Label jLabel29;
+    private widget.Label jLabel30;
     private widget.Label jLabel35;
     private widget.Label jLabel4;
     private widget.Label jLabel6;

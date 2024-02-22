@@ -16,8 +16,8 @@ import java.sql.ResultSet;
  */
 public final class akses {
     private static final Connection koneksi=koneksiDB.condb();
-    private static PreparedStatement ps,ps2;
-    private static ResultSet rs,rs2;
+    private static PreparedStatement ps,ps2,ps3;
+    private static ResultSet rs,rs2,rs3;
     
     private static String kode="",kdbangsal="",alamatip="",namars="",alamatrs="",kabupatenrs="",propinsirs="",kontakrs="",emailrs="",form="",namauser="",kode_ppk=""; 
     private static int jml1=0,jml2=0,lebar=0,tinggi=0;
@@ -227,6 +227,7 @@ public final class akses {
         try {        
                 ps=koneksi.prepareStatement("select * from admin where admin.usere=AES_ENCRYPT(?,'nur') and admin.passworde=AES_ENCRYPT(?,'windi')");               
                 ps2=koneksi.prepareStatement("select * from user where user.id_user=AES_ENCRYPT(?,'nur') and user.password=AES_ENCRYPT(?,'windi')");
+                ps3=koneksi.prepareStatement("select * from pegawai where nik=?");
                 try {
                     ps.setString(1,user);
                     ps.setString(2,pass);
@@ -237,7 +238,11 @@ public final class akses {
                     ps2.setString(2,pass);
                     rs2=ps2.executeQuery();
                     rs2.last();
-
+                    
+                    ps3.setString(1,user);
+                    rs3=ps3.executeQuery();
+                    rs3.last();
+                   
                     akses.jml1=rs.getRow();
                     akses.jml2=rs2.getRow();               
                     if(rs.getRow()>=1){
@@ -1261,6 +1266,7 @@ public final class akses {
                         rs2.beforeFirst();
                         rs2.next();
                         akses.kode=user;
+                        akses.namauser=rs3.getString("nama");
                         akses.penyakit=rs2.getBoolean("penyakit");
                         akses.obat_penyakit=rs2.getBoolean("obat_penyakit");
                         akses.dokter=rs2.getBoolean("dokter");

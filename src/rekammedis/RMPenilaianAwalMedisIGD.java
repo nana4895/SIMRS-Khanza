@@ -46,8 +46,8 @@ public final class RMPenilaianAwalMedisIGD extends javax.swing.JDialog {
     private Connection koneksi=koneksiDB.condb();
     private sekuel Sequel=new sekuel();
     private validasi Valid=new validasi();
-    private PreparedStatement ps;
-    private ResultSet rs;
+    private PreparedStatement ps,ps2;
+    private ResultSet rs,rs2;
     private int i=0;
     private DlgCariDokter dokter=new DlgCariDokter(null,false);
     private StringBuilder htmlContent;
@@ -2346,24 +2346,44 @@ public final class RMPenilaianAwalMedisIGD extends javax.swing.JDialog {
                     "select reg_periksa.no_rkm_medis,pasien.nm_pasien, if(pasien.jk='L','Laki-Laki','Perempuan') as jk,pasien.tgl_lahir,reg_periksa.tgl_registrasi "+
                     "from reg_periksa inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
                     "where reg_periksa.no_rawat=?");
+            ps2=koneksi.prepareStatement("select * from pemeriksaan_ralan where no_rawat=?");
+            
             try {
                 ps.setString(1,TNoRw.getText());
                 rs=ps.executeQuery();
+                ps2.setString(1,TNoRw.getText());
+                rs2=ps2.executeQuery();
+                rs2.next();
                 if(rs.next()){
                     TNoRM.setText(rs.getString("no_rkm_medis"));
                     DTPCari1.setDate(rs.getDate("tgl_registrasi"));
                     TPasien.setText(rs.getString("nm_pasien"));
                     Jk.setText(rs.getString("jk"));
                     TglLahir.setText(rs.getString("tgl_lahir"));
+                    
+                    KeluhanUtama.setText(rs2.getString("keluhan"));
+                    Alergi.setText(rs2.getString("alergi"));
+                    Kesadaran.setSelectedItem(rs2.getString("kesadaran").toString());
+                    Suhu.setText(rs2.getString("suhu_tubuh"));
+                    Nadi.setText(rs2.getString("nadi"));
+                    TD.setText(rs2.getString("tensi"));
+                    RR.setText(rs2.getString("respirasi"));
+                    SPO.setText(rs2.getString("spo2"));
+                    GCS.setText(rs2.getString("gcs"));
+                    TB.setText(rs2.getString("tinggi"));
+                    BB.setText(rs2.getString("berat"));
+                    Tatalaksana.setText("PLAN : \n"+rs2.getString("rtl")+"\n\n"+"INSTRUKSI : \n"+rs2.getString("instruksi"));
                 }
             } catch (Exception e) {
                 System.out.println("Notif : "+e);
             } finally{
                 if(rs!=null){
                     rs.close();
+                    rs2.close();
                 }
                 if(ps!=null){
                     ps.close();
+                    ps2.close();
                 }
             }
         } catch (Exception e) {
