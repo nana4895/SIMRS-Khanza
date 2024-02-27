@@ -1816,10 +1816,10 @@ public class frmUtama extends javax.swing.JFrame {
         internalFrame3.add(BtnCancel);
         BtnCancel.setBounds(177, 110, 105, 32);
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/LaST (Cobalt) Lock n Gear.png"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/guard.png"))); // NOI18N
         jLabel6.setName("jLabel6"); // NOI18N
         internalFrame3.add(jLabel6);
-        jLabel6.setBounds(105, 5, 135, 145);
+        jLabel6.setBounds(90, 10, 130, 130);
 
         internalFrame2.add(internalFrame3);
         internalFrame3.setBounds(2, 12, 295, 155);
@@ -1927,7 +1927,7 @@ public class frmUtama extends javax.swing.JFrame {
 
         tanggal.setEditable(false);
         tanggal.setForeground(new java.awt.Color(50, 70, 50));
-        tanggal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "22/02/2024" }));
+        tanggal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "23/02/2024" }));
         tanggal.setDisplayFormat("dd/MM/yyyy");
         tanggal.setName("tanggal"); // NOI18N
         tanggal.setOpaque(false);
