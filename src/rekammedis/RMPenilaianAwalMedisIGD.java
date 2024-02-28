@@ -2361,7 +2361,7 @@ public final class RMPenilaianAwalMedisIGD extends javax.swing.JDialog {
                     Jk.setText(rs.getString("jk"));
                     TglLahir.setText(rs.getString("tgl_lahir"));
                     
-                    KeluhanUtama.setText(rs2.getString("keluhan"));
+                    RPS.setText(rs2.getString("keluhan"));
                     Alergi.setText(rs2.getString("alergi"));
                     Kesadaran.setSelectedItem(rs2.getString("kesadaran").toString());
                     Suhu.setText(rs2.getString("suhu_tubuh"));
@@ -2372,6 +2372,8 @@ public final class RMPenilaianAwalMedisIGD extends javax.swing.JDialog {
                     GCS.setText(rs2.getString("gcs"));
                     TB.setText(rs2.getString("tinggi"));
                     BB.setText(rs2.getString("berat"));
+                    KetFisik.setText(rs2.getString("pemeriksaan"));
+                    Diagnosis.setText(rs2.getString("penilaian"));
                     Tatalaksana.setText("PLAN : \n"+rs2.getString("rtl")+"\n\n"+"INSTRUKSI : \n"+rs2.getString("instruksi"));
                 }
             } catch (Exception e) {
