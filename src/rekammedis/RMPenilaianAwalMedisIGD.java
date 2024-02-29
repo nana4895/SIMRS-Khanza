@@ -2342,11 +2342,13 @@ public final class RMPenilaianAwalMedisIGD extends javax.swing.JDialog {
 
     private void isRawat() {
         try {
-            ps=koneksi.prepareStatement(
-                    "select reg_periksa.no_rkm_medis,pasien.nm_pasien, if(pasien.jk='L','Laki-Laki','Perempuan') as jk,pasien.tgl_lahir,reg_periksa.tgl_registrasi "+
-                    "from reg_periksa inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
-                    "where reg_periksa.no_rawat=?");
-            ps2=koneksi.prepareStatement("select * from pemeriksaan_ralan where no_rawat=?");
+            ps=koneksi.prepareStatement("SELECT reg_periksa.no_rkm_medis,pasien.nm_pasien, "
+                            + "IF(pasien.jk='L','Laki-Laki','Perempuan') AS jk,"
+                            + "pasien.tgl_lahir,reg_periksa.tgl_registrasi "
+                            + "FROM reg_periksa "
+                            + "INNER JOIN pasien ON reg_periksa.no_rkm_medis = pasien.no_rkm_medis "
+                            + "WHERE reg_periksa.no_rawat = ?");
+            ps2=koneksi.prepareStatement("SELECT * FROM pemeriksaan_ralan WHERE no_rawat=?");
             
             try {
                 ps.setString(1,TNoRw.getText());
