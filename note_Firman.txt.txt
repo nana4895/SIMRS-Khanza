@@ -1,0 +1,4 @@
+- tabel 
+	- antrian poli
+	- Observasi IGD
+	- Awal Kebidanan
