@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.8.0.final using JasperReports Library version 6.8.0-2ed8dfabb690ff337a5797129f2cd92902b0c87b  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="557" leftMargin="19" rightMargin="19" topMargin="19" bottomMargin="19" uuid="34c13d5a-cd6b-451e-8001-9fd298d2274a">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="557" leftMargin="19" rightMargin="19" topMargin="19" bottomMargin="19" uuid="34c13d5a-cd6b-451e-8001-9fd298d2274a">
 	<property name="ireport.zoom" value="2.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
@@ -32,9 +32,9 @@
 		<![CDATA[select reg_periksa.no_rawat,pasien.no_rkm_medis,pasien.nm_pasien,if(pasien.jk='L','Laki-Laki','Perempuan') as jk,pasien.tgl_lahir,pasien.agama,bahasa_pasien.nama_bahasa,cacat_fisik.nama_cacat,penilaian_awal_keperawatan_kebidanan.tanggal,
                 penilaian_awal_keperawatan_kebidanan.informasi,penilaian_awal_keperawatan_kebidanan.td,penilaian_awal_keperawatan_kebidanan.nadi,penilaian_awal_keperawatan_kebidanan.rr,penilaian_awal_keperawatan_kebidanan.suhu,penilaian_awal_keperawatan_kebidanan.bb,
                 penilaian_awal_keperawatan_kebidanan.tb,penilaian_awal_keperawatan_kebidanan.nadi,penilaian_awal_keperawatan_kebidanan.rr,penilaian_awal_keperawatan_kebidanan.suhu,penilaian_awal_keperawatan_kebidanan.gcs,penilaian_awal_keperawatan_kebidanan.bb,
-                penilaian_awal_keperawatan_kebidanan.tb,penilaian_awal_keperawatan_kebidanan.bmi,penilaian_awal_keperawatan_kebidanan.lila,penilaian_awal_keperawatan_kebidanan.tfu,penilaian_awal_keperawatan_kebidanan.tbj,penilaian_awal_keperawatan_kebidanan.letak,
-                penilaian_awal_keperawatan_kebidanan.presentasi,penilaian_awal_keperawatan_kebidanan.penurunan,penilaian_awal_keperawatan_kebidanan.his,penilaian_awal_keperawatan_kebidanan.kekuatan,penilaian_awal_keperawatan_kebidanan.lamanya,penilaian_awal_keperawatan_kebidanan.bjj,
-                penilaian_awal_keperawatan_kebidanan.ket_bjj,penilaian_awal_keperawatan_kebidanan.portio,penilaian_awal_keperawatan_kebidanan.serviks,penilaian_awal_keperawatan_kebidanan.ketuban,penilaian_awal_keperawatan_kebidanan.hodge,penilaian_awal_keperawatan_kebidanan.inspekulo,
+                penilaian_awal_keperawatan_kebidanan.tb,penilaian_awal_keperawatan_kebidanan.bmi,penilaian_awal_keperawatan_kebidanan.lila,penilaian_awal_keperawatan_kebidanan.tfu,penilaian_awal_keperawatan_kebidanan.tbj,
+                penilaian_awal_keperawatan_kebidanan.presentasi,penilaian_awal_keperawatan_kebidanan.penurunan,penilaian_awal_keperawatan_kebidanan.his,penilaian_awal_keperawatan_kebidanan.lamanya,penilaian_awal_keperawatan_kebidanan.bjj,
+                penilaian_awal_keperawatan_kebidanan.portio,penilaian_awal_keperawatan_kebidanan.leopod1,penilaian_awal_keperawatan_kebidanan.leopod2,penilaian_awal_keperawatan_kebidanan.leopod3,penilaian_awal_keperawatan_kebidanan.leopod4,penilaian_awal_keperawatan_kebidanan.vt,penilaian_awal_keperawatan_kebidanan.inspekulo,
                 penilaian_awal_keperawatan_kebidanan.ket_inspekulo,penilaian_awal_keperawatan_kebidanan.ctg,penilaian_awal_keperawatan_kebidanan.ket_ctg,penilaian_awal_keperawatan_kebidanan.usg,penilaian_awal_keperawatan_kebidanan.ket_usg,penilaian_awal_keperawatan_kebidanan.lab,
                 penilaian_awal_keperawatan_kebidanan.ket_lab,penilaian_awal_keperawatan_kebidanan.lakmus,penilaian_awal_keperawatan_kebidanan.ket_lakmus,penilaian_awal_keperawatan_kebidanan.panggul,penilaian_awal_keperawatan_kebidanan.keluhan_utama,penilaian_awal_keperawatan_kebidanan.umur,
                 penilaian_awal_keperawatan_kebidanan.lama,penilaian_awal_keperawatan_kebidanan.banyaknya,penilaian_awal_keperawatan_kebidanan.haid,penilaian_awal_keperawatan_kebidanan.siklus,penilaian_awal_keperawatan_kebidanan.ket_siklus,penilaian_awal_keperawatan_kebidanan.ket_siklus1,
@@ -163,10 +163,6 @@
 		<property name="com.jaspersoft.studio.field.label" value="tbj"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="penilaian_awal_keperawatan_kebidanan"/>
 	</field>
-	<field name="letak" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="letak"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="penilaian_awal_keperawatan_kebidanan"/>
-	</field>
 	<field name="presentasi" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="presentasi"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="penilaian_awal_keperawatan_kebidanan"/>
@@ -179,10 +175,6 @@
 		<property name="com.jaspersoft.studio.field.label" value="his"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="penilaian_awal_keperawatan_kebidanan"/>
 	</field>
-	<field name="kekuatan" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="kekuatan"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="penilaian_awal_keperawatan_kebidanan"/>
-	</field>
 	<field name="lamanya" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="lamanya"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="penilaian_awal_keperawatan_kebidanan"/>
@@ -191,24 +183,28 @@
 		<property name="com.jaspersoft.studio.field.label" value="bjj"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="penilaian_awal_keperawatan_kebidanan"/>
 	</field>
-	<field name="ket_bjj" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="ket_bjj"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="penilaian_awal_keperawatan_kebidanan"/>
-	</field>
 	<field name="portio" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="portio"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="penilaian_awal_keperawatan_kebidanan"/>
 	</field>
-	<field name="serviks" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="serviks"/>
+	<field name="leopod1" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="leopod1"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="penilaian_awal_keperawatan_kebidanan"/>
 	</field>
-	<field name="ketuban" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="ketuban"/>
+	<field name="leopod2" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="leopod2"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="penilaian_awal_keperawatan_kebidanan"/>
 	</field>
-	<field name="hodge" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="hodge"/>
+	<field name="leopod3" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="leopod3"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="penilaian_awal_keperawatan_kebidanan"/>
+	</field>
+	<field name="leopod4" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="leopod4"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="penilaian_awal_keperawatan_kebidanan"/>
+	</field>
+	<field name="vt" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="vt"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="penilaian_awal_keperawatan_kebidanan"/>
 	</field>
 	<field name="inspekulo" class="java.lang.String">
@@ -586,7 +582,7 @@
 	<title>
 		<band height="804">
 			<rectangle>
-				<reportElement x="0" y="0" width="557" height="330" uuid="5efab5f7-d253-4f54-804a-1cdb91cce032"/>
+				<reportElement x="0" y="0" width="557" height="220" uuid="5efab5f7-d253-4f54-804a-1cdb91cce032"/>
 				<graphicElement>
 					<pen lineWidth="0.75"/>
 				</graphicElement>
@@ -715,7 +711,7 @@
 				<text><![CDATA[MASALAH KEBIDANAN]]></text>
 			</staticText>
 			<line>
-				<reportElement x="255" y="90" width="1" height="131" uuid="1736a50a-86b4-4ff6-887d-1959b931fd45"/>
+				<reportElement x="255" y="90" width="1" height="130" uuid="1736a50a-86b4-4ff6-887d-1959b931fd45"/>
 				<graphicElement>
 					<pen lineWidth="0.4"/>
 				</graphicElement>
@@ -738,38 +734,7 @@
 				<text><![CDATA[TINDAKAN]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="3" y="222" width="549" height="11" uuid="fd298c01-00b0-4303-bed1-17562dff1825">
-					<property name="com.jaspersoft.studio.unit.x" value="px"/>
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-				</reportElement>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Tahoma" size="8" isBold="true"/>
-					<paragraph lineSpacing="Single"/>
-				</textElement>
-				<text><![CDATA[YANG MELAKUKAN ANAMNESA]]></text>
-			</staticText>
-			<line>
-				<reportElement x="0" y="220" width="557" height="1" uuid="c70a9187-51a2-41d7-b607-43ae47f0123b"/>
-				<graphicElement>
-					<pen lineWidth="0.75"/>
-				</graphicElement>
-			</line>
-			<line>
-				<reportElement x="0" y="234" width="557" height="1" uuid="9229899b-e795-431e-91b1-418193fc64a7"/>
-				<graphicElement>
-					<pen lineWidth="0.4"/>
-				</graphicElement>
-			</line>
-			<line>
-				<reportElement x="255" y="235" width="1" height="95" uuid="9bb61456-7b20-4b6a-9a9b-d1dd2d2b11f4">
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-				</reportElement>
-				<graphicElement>
-					<pen lineWidth="0.4"/>
-				</graphicElement>
-			</line>
-			<staticText>
-				<reportElement x="3" y="236" width="250" height="11" uuid="5684ecda-853e-4858-b7df-814d0b06f245">
+				<reportElement x="259" y="224" width="295" height="11" uuid="c55fbc69-44fe-43b1-97a2-916708275de2">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
@@ -777,34 +742,17 @@
 					<font fontName="Tahoma" size="8" isBold="false"/>
 					<paragraph lineSpacing="Single"/>
 				</textElement>
-				<text><![CDATA[Tanggal dan Jam]]></text>
+				<text><![CDATA[Tanda Tangan Petugas]]></text>
 			</staticText>
-			<staticText>
-				<reportElement x="259" y="236" width="295" height="11" uuid="c55fbc69-44fe-43b1-97a2-916708275de2">
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-				</reportElement>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Tahoma" size="8" isBold="false"/>
-					<paragraph lineSpacing="Single"/>
-				</textElement>
-				<text><![CDATA[Tanda Tangan dan Nama Bidan]]></text>
-			</staticText>
-			<line>
-				<reportElement x="0" y="248" width="557" height="1" uuid="acb9ddf8-3380-4528-b0b4-dd55296f61d1"/>
-				<graphicElement>
-					<pen lineWidth="0.4"/>
-				</graphicElement>
-			</line>
 			<textField pattern="MMM, dd/MM/yyyy hh:mm:ss z">
-				<reportElement mode="Transparent" x="3" y="282" width="250" height="11" uuid="6478b16d-97d4-4fc7-8960-6da336e896dc">
+				<reportElement mode="Transparent" x="280" y="235" width="250" height="11" uuid="6478b16d-97d4-4fc7-8960-6da336e896dc">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
 					<font fontName="Tahoma" size="8" isBold="false"/>
 					<paragraph lineSpacing="Single"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{tanggal}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("dd-MMMM-yyyy HH:mm:ss z",(new Locale("id"))).format($F{tanggal})]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement mode="Transparent" x="259" y="106" width="296" height="113" uuid="23e56738-5e83-4918-b092-e7d652bb9e75">
@@ -827,7 +775,7 @@
 				<textFieldExpression><![CDATA[$F{masalah}]]></textFieldExpression>
 			</textField>
 			<componentElement>
-				<reportElement x="259" y="249" width="295" height="67" isRemoveLineWhenBlank="true" uuid="ccae1d7e-a50b-4275-802a-fbc40731168d">
+				<reportElement x="259" y="250" width="295" height="67" isRemoveLineWhenBlank="true" uuid="ccae1d7e-a50b-4275-802a-fbc40731168d">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<jr:QRCode xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" errorCorrectionLevel="H">
@@ -835,7 +783,7 @@
 				</jr:QRCode>
 			</componentElement>
 			<textField>
-				<reportElement mode="Transparent" x="259" y="316" width="295" height="11" uuid="02cce3fb-797f-4c90-a5ef-645f7c9803bb">
+				<reportElement mode="Transparent" x="259" y="319" width="295" height="11" uuid="02cce3fb-797f-4c90-a5ef-645f7c9803bb">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
