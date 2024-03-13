@@ -823,7 +823,7 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         jMenu7 = new javax.swing.JMenu();
         MnStatusBaru = new javax.swing.JMenuItem();
         MnStatusLama = new javax.swing.JMenuItem();
-//        MnUrut = new javax.swing.JMenu();
+        MnUrut = new javax.swing.JMenu();
 //        MnUrutNoRawatDesc = new javax.swing.JMenuItem();
 //        MnUrutNoRawatAsc = new javax.swing.JMenuItem();
 //        MnUrutTanggalDesc = new javax.swing.JMenuItem();
@@ -837,7 +837,7 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
 //        MnUrutStatusDesc = new javax.swing.JMenuItem();
 //        MnUrutStatusAsc = new javax.swing.JMenuItem();
 //        MnUrutRegDesc1 = new javax.swing.JMenuItem();
-//        MnUrutRegAsc1 = new javax.swing.JMenuItem();
+        MnUrutRegAsc1 = new javax.swing.JMenuItem();
 //        MnUrutRMDesc = new javax.swing.JMenuItem();
 //        MnUrutRMAsc = new javax.swing.JMenuItem();
         ppTampilkanSeleksi = new javax.swing.JMenuItem();
@@ -4237,15 +4237,15 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
 
         jPopupMenu1.add(MnStatus);
 
-//        MnUrut.setBackground(new java.awt.Color(255, 255, 254));
-//        MnUrut.setForeground(new java.awt.Color(50, 50, 50));
-//        MnUrut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
-//        MnUrut.setText("Urutkan Data Berdasar");
-//        MnUrut.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-//        MnUrut.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-//        MnUrut.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-//        MnUrut.setName("MnUrut"); // NOI18N
-//        MnUrut.setPreferredSize(new java.awt.Dimension(200, 26));
+        MnUrut.setBackground(new java.awt.Color(255, 255, 254));
+        MnUrut.setForeground(new java.awt.Color(50, 50, 50));
+        MnUrut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
+        MnUrut.setText("Urutkan Data Berdasar");
+        MnUrut.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        MnUrut.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        MnUrut.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        MnUrut.setName("MnUrut"); // NOI18N
+        MnUrut.setPreferredSize(new java.awt.Dimension(200, 26));
 
 //        MnUrutNoRawatDesc.setBackground(new java.awt.Color(255, 255, 254));
 //        MnUrutNoRawatDesc.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
@@ -4455,21 +4455,21 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
 //        });
 //        MnUrut.add(MnUrutRegDesc1);
 
-//        MnUrutRegAsc1.setBackground(new java.awt.Color(255, 255, 254));
-//        MnUrutRegAsc1.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-//        MnUrutRegAsc1.setForeground(new java.awt.Color(50, 50, 50));
-//        MnUrutRegAsc1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
-//        MnUrutRegAsc1.setText("No. Reg. Ascending");
-//        MnUrutRegAsc1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-//        MnUrutRegAsc1.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-//        MnUrutRegAsc1.setName("MnUrutRegAsc1"); // NOI18N
-//        MnUrutRegAsc1.setPreferredSize(new java.awt.Dimension(180, 26));
-//        MnUrutRegAsc1.addActionListener(new java.awt.event.ActionListener() {
-//            public void actionPerformed(java.awt.event.ActionEvent evt) {
-//                MnUrutRegAsc1ActionPerformed(evt);
-//            }
-//        });
-//        MnUrut.add(MnUrutRegAsc1);
+        MnUrutRegAsc1.setBackground(new java.awt.Color(255, 255, 254));
+        MnUrutRegAsc1.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        MnUrutRegAsc1.setForeground(new java.awt.Color(50, 50, 50));
+        MnUrutRegAsc1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
+        MnUrutRegAsc1.setText("No. Reg. Ascending");
+        MnUrutRegAsc1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        MnUrutRegAsc1.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        MnUrutRegAsc1.setName("MnUrutRegAsc1"); // NOI18N
+        MnUrutRegAsc1.setPreferredSize(new java.awt.Dimension(180, 26));
+        MnUrutRegAsc1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MnUrutRegAsc1ActionPerformed(evt);
+            }
+        });
+        MnUrut.add(MnUrutRegAsc1);
 
 //        MnUrutRMDesc.setBackground(new java.awt.Color(255, 255, 254));
 //        MnUrutRMDesc.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
@@ -4503,7 +4503,7 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
 //        });
 //        MnUrut.add(MnUrutRMAsc);
 
-//        jPopupMenu1.add(MnUrut);
+        jPopupMenu1.add(MnUrut);
 
         ppTampilkanSeleksi.setBackground(new java.awt.Color(255, 255, 254));
         ppTampilkanSeleksi.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
@@ -14380,7 +14380,7 @@ private void MnDataPemberianObatActionPerformed(java.awt.event.ActionEvent evt) 
     private javax.swing.JMenu MnTindakanRalan;
     private javax.swing.JMenuItem MnTransferAntarRuang;
     private javax.swing.JMenuItem MnUjiFungsiKFR;
-//    private javax.swing.JMenu MnUrut;
+    private javax.swing.JMenu MnUrut;
 //    private javax.swing.JMenu MnUrut1;
 //    private javax.swing.JMenuItem MnUrutDokterAsc;
 //    private javax.swing.JMenuItem MnUrutDokterAsc2;
@@ -14400,7 +14400,7 @@ private void MnDataPemberianObatActionPerformed(java.awt.event.ActionEvent evt) 
 //    private javax.swing.JMenuItem MnUrutPoliklinikDesc2;
 //    private javax.swing.JMenuItem MnUrutRMAsc;
 //    private javax.swing.JMenuItem MnUrutRMDesc;
-//    private javax.swing.JMenuItem MnUrutRegAsc1;
+    private javax.swing.JMenuItem MnUrutRegAsc1;
 //    private javax.swing.JMenuItem MnUrutRegDesc1;
 //    private javax.swing.JMenuItem MnUrutStatusAsc;
 //    private javax.swing.JMenuItem MnUrutStatusAsc2;
