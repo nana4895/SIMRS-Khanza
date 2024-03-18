@@ -1104,6 +1104,11 @@ public class frmUtama extends javax.swing.JFrame {
         }
         
         FlayMenu.setVisible(false);
+        DlgLogin.setVisible(true);
+        edAdmin.requestFocus();
+//        btnToolLab.setEnabled(false);
+//        btnToolRad.setEnabled(false);
+//        BtnToolJualObat.setEnabled(false);
         TCari.setVisible(false);
         if(koneksiDB.CARICEPAT().equals("aktif")){
             TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
@@ -1756,7 +1761,7 @@ public class frmUtama extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(50, 50, 50));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel4.setText("ID Admin :");
+        jLabel4.setText("ID User :");
         jLabel4.setName("jLabel4"); // NOI18N
         panelGlass1.add(jLabel4);
         jLabel4.setBounds(2, 12, 75, 23);
@@ -1933,7 +1938,7 @@ public class frmUtama extends javax.swing.JFrame {
 
         tanggal.setEditable(false);
         tanggal.setForeground(new java.awt.Color(50, 70, 50));
-        tanggal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "23/02/2024" }));
+        tanggal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "13/03/2024" }));
         tanggal.setDisplayFormat("dd/MM/yyyy");
         tanggal.setName("tanggal"); // NOI18N
         tanggal.setOpaque(false);
@@ -8212,6 +8217,9 @@ public class frmUtama extends javax.swing.JFrame {
                 BtnToolKamnap.setEnabled(false);
                 BtnToolKasir.setEnabled(false);
                 btnToolIGD.setEnabled(false);
+                btnToolLab.setEnabled(false);
+                btnToolRad.setEnabled(false);
+                BtnToolJualObat.setEnabled(false);
                 MnGantiPassword.setEnabled(false);
                 MnPengajuanCutiPegawai.setEnabled(false);        
                 akses.setpenjualan_obatfalse();
@@ -21169,6 +21177,7 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(() -> {
             new frmUtama().setVisible(true);
+            
         });
     }
 

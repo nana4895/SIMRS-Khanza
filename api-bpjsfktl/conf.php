@@ -60,6 +60,19 @@
         mysqli_query($konektor,$sql);
         mysqli_close($konektor);
     }
+    
+    function bukaquery4($sql) {
+        $konektor = bukakoneksi();
+        $result = mysqli_query($konektor, $sql) or die(json_encode(array(
+            'metadata' => array(
+                'message' => 'Kegagalan Query! '.mysqli_error($konektor),
+                'code' => 201
+            )
+        )));
+        http_response_code(201);
+        mysqli_close($konektor);
+        return $result;
+    }
 
     function getOne2($sql) {
         $hasil = bukaquery2($sql);
