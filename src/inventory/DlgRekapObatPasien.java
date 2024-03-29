@@ -53,7 +53,7 @@ public class DlgRekapObatPasien extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
 
-        tabMode = new DefaultTableModel(null, new Object[]{"No.", "Tanggal", "No.RM", "Nama Pasien", "Jml", "Nama Obat", "Biaya Obat", "Embalase", "Tuslah", "Total"}) {
+        tabMode = new DefaultTableModel(null, new Object[]{"No.", "Tanggal Pemberian", "No.RM", "Nama Pasien", "Jml", "Nama Obat", "Biaya Obat", "Embalase", "Tuslah", "Total"}) {
             @Override
             public boolean isCellEditable(int rowIndex, int colIndex) {
                 return false;
@@ -376,6 +376,7 @@ public class DlgRekapObatPasien extends javax.swing.JDialog {
         Tgl1 = new widget.Tanggal();
         label18 = new widget.Label();
         Tgl2 = new widget.Tanggal();
+        Jam_Shift = new widget.ComboBox();
         label9 = new widget.Label();
         TCari = new widget.TextBox();
         BtnCari = new widget.Button();
@@ -454,10 +455,10 @@ public class DlgRekapObatPasien extends javax.swing.JDialog {
         label11.setPreferredSize(new java.awt.Dimension(45, 23));
         panelisi1.add(label11);
 
-        Tgl1.setDisplayFormat("dd-MM-yyyy HH:mm:ss");
+        Tgl1.setDisplayFormat("dd-MM-yyyy");
         Tgl1.setDoubleBuffered(true);
         Tgl1.setName("Tgl1"); // NOI18N
-        Tgl1.setPreferredSize(new java.awt.Dimension(125, 23));
+        Tgl1.setPreferredSize(new java.awt.Dimension(85, 23));
         Tgl1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 Tgl1KeyPressed(evt);
@@ -471,15 +472,24 @@ public class DlgRekapObatPasien extends javax.swing.JDialog {
         label18.setPreferredSize(new java.awt.Dimension(20, 23));
         panelisi1.add(label18);
 
-        Tgl2.setDisplayFormat("dd-MM-yyyy HH:mm:ss");
+        Tgl2.setDisplayFormat("dd-MM-yyyy");
         Tgl2.setName("Tgl2"); // NOI18N
-        Tgl2.setPreferredSize(new java.awt.Dimension(125, 23));
+        Tgl2.setPreferredSize(new java.awt.Dimension(85, 23));
         Tgl2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 Tgl2KeyPressed(evt);
             }
         });
         panelisi1.add(Tgl2);
+
+        Jam_Shift.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Shift Pagi", "Shift Siang", "Shift Malam", "-" }));
+        Jam_Shift.setName(""); // NOI18N
+        Jam_Shift.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                Jam_ShiftKeyPressed(evt);
+            }
+        });
+        panelisi1.add(Jam_Shift);
 
         label9.setText("Key Word :");
         label9.setName("label9"); // NOI18N
@@ -1040,6 +1050,10 @@ private void BtnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
         }
     }//GEN-LAST:event_TCariKeyPressed
 
+    private void Jam_ShiftKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Jam_ShiftKeyPressed
+        Valid.pindah(evt,Jam_Shift,TCari);
+    }//GEN-LAST:event_Jam_ShiftKeyPressed
+
     /**
      * @param args the command line arguments
      */
@@ -1068,6 +1082,7 @@ private void BtnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
     private widget.Button BtnSeek4;
     private widget.CekBox ChkInput;
     private widget.panelisi FormInput;
+    private widget.ComboBox Jam_Shift;
     private widget.TextBox Kd2;
     private javax.swing.JPanel PanelInput;
     private widget.TextBox TCari;
@@ -1104,16 +1119,21 @@ private void BtnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
     // End of variables declaration//GEN-END:variables
 
     private void prosesCari() {
-        dateTime1 = (String) Tgl1.getSelectedItem();
-        dateTimeParts = dateTime1.split(" ");
-        date1 = dateTimeParts[0];
-        time1 = dateTimeParts[1];
-        dateTime2 = (String) Tgl2.getSelectedItem();
-        dateTimeParts = dateTime2.split(" ");
-        date2 = dateTimeParts[0];
-        time2 = dateTimeParts[1];
-        String datetime1=Valid.SetTgl(date1)+" "+time1;
-        String datetime2= Valid.SetTgl(date2)+" "+time2;
+        String datetime1;
+        String datetime2;
+        if (Jam_Shift.getSelectedItem().toString().equals("Shift Pagi")) {
+            datetime1=Valid.SetTgl(Tgl1.getSelectedItem().toString())+" "+"06:30:00";
+            datetime2=Valid.SetTgl(Tgl2.getSelectedItem().toString())+" "+"13:29:59";
+        } else if (Jam_Shift.getSelectedItem().toString().equals("Shift Siang")){
+            datetime1=Valid.SetTgl(Tgl1.getSelectedItem().toString())+" "+"13:30:00";
+            datetime2=Valid.SetTgl(Tgl2.getSelectedItem().toString())+" "+"20:29:59";
+        } else if(Jam_Shift.getSelectedItem().toString().equals("Shift Malam")){
+            datetime1=Valid.SetTgl(Tgl1.getSelectedItem().toString())+" "+"20:30:00";
+            datetime2=Valid.SetTgl(Tgl2.getSelectedItem().toString())+" "+"06:29:59";
+        }else{
+            datetime1=Valid.SetTgl(Tgl1.getSelectedItem().toString())+" "+"00:00:00";
+            datetime2=Valid.SetTgl(Tgl2.getSelectedItem().toString())+" "+"23:59:59";
+        }
         try {
             this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
             Valid.tabelKosong(tabMode);
@@ -1121,30 +1141,25 @@ private void BtnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
                 psreg = koneksi.prepareStatement(
                     "SELECT reg_periksa.tgl_registrasi,reg_periksa.no_rawat,reg_periksa.no_rkm_medis,pasien.nm_pasien,reg_periksa.jam_reg \n"
                             + "FROM reg_periksa INNER JOIN pasien ON reg_periksa.no_rkm_medis=pasien.no_rkm_medis \n"
-                            + "WHERE reg_periksa.stts<>'Batal' AND CONCAT(reg_periksa.tgl_registrasi,' ',reg_periksa.tgl_registrasi) BETWEEN ? AND ? \n"
+                            + "WHERE reg_periksa.stts<>'Batal' AND reg_periksa.tgl_registrasi BETWEEN ? AND ? \n"
                             + "ORDER BY reg_periksa.tgl_registrasi");
         } else {
                 psreg = koneksi.prepareStatement(
                         "select reg_periksa.tgl_registrasi,reg_periksa.jam_reg,reg_periksa.no_rawat,reg_periksa.no_rkm_medis,pasien.nm_pasien "
                         + "from reg_periksa inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "
                         + "inner join penjab on reg_periksa.kd_pj=penjab.kd_pj where reg_periksa.stts<>'Batal' "
-                        + "and concat(reg_periksa.tgl_registrasi,' ',reg_periksa.tgl_registrasi) between ? and ? "
+                        + "and reg_periksa.tgl_registrasi between ? and ? "
                         + "and reg_periksa.status_lanjut like ? and concat(reg_periksa.kd_pj,penjab.png_jawab) like ? "
                         + "and (reg_periksa.no_rkm_medis like ? or pasien.nm_pasien LIKE ?) order by reg_periksa.tgl_registrasi");
             }
-            System.out.println("ini : "+date1);
-            System.out.println("time :"+time1);
-            System.out.println("iii : "+Valid.SetTgl(date1));
-            System.out.println("dffff: "+Tgl1.getSelectedItem().toString());
-            System.out.println("date Time1 : "+datetime1);
-            System.out.println("date Time2 : "+datetime2);
+            
             try {
                 if ((status.getSelectedIndex() == 0) && nmpenjab.getText().equals("") && TCari.getText().equals("")) {
-                    psreg.setString(1, datetime1);
-                    psreg.setString(2, datetime2);
+                    psreg.setString(1, Valid.SetTgl(Tgl1.getSelectedItem().toString()));
+                    psreg.setString(2, Valid.SetTgl(Tgl2.getSelectedItem().toString()));
                 } else {
-                    psreg.setString(1, datetime1);
-                    psreg.setString(2, datetime2);
+                    psreg.setString(1, Valid.SetTgl(Tgl1.getSelectedItem().toString()));
+                    psreg.setString(2, Valid.SetTgl(Tgl2.getSelectedItem().toString()));
                     psreg.setString(3, "%" + status.getSelectedItem().toString().replaceAll("Obat Rawat Jalan", "Ralan").replaceAll("Obat Rawat Inap", "Ranap").replaceAll("Semua Status", "") + "%");
                     psreg.setString(4, "%" + kdpenjab.getText() + nmpenjab.getText() + "%");
                     psreg.setString(5, "%" + TCari.getText().trim() + "%");
@@ -1162,10 +1177,10 @@ private void BtnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
                                 "select detail_pemberian_obat.kode_brng,databarang.nama_brng,sum(detail_pemberian_obat.jml) as jml,"
                                 + "(sum(detail_pemberian_obat.total)-sum(detail_pemberian_obat.embalase+detail_pemberian_obat.tuslah)) as biaya,"
                                 + "sum(detail_pemberian_obat.embalase) as embalase, sum(detail_pemberian_obat.tuslah) as tuslah,"
-                                + "sum(detail_pemberian_obat.total) as total "
+                                + "sum(detail_pemberian_obat.total) as total, detail_pemberian_obat.jam "
                                 + "from detail_pemberian_obat inner join reg_periksa on detail_pemberian_obat.no_rawat=reg_periksa.no_rawat "
                                 + "inner join databarang on detail_pemberian_obat.kode_brng=databarang.kode_brng "
-                                + "where detail_pemberian_obat.no_rawat=?  "
+                                + "where concat(detail_pemberian_obat.tgl_perawatan,' ',detail_pemberian_obat.jam) between ? and ? and detail_pemberian_obat.no_rawat=?  "
                                 + "group by detail_pemberian_obat.kode_brng order by databarang.nama_brng");
                     } else {
                         psobat = koneksi.prepareStatement(
@@ -1186,7 +1201,10 @@ private void BtnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
                     }
                     try {
                         if ((status.getSelectedIndex() == 0) && nmjns.getText().equals("") && nmkategori.getText().equals("") && nmgolongan.getText().equals("") && nmasal.getText().equals("")) {
-                            psobat.setString(1, rsreg.getString("no_rawat"));
+                            psobat.setString(1, datetime1);
+                            psobat.setString(2, datetime2);
+                            psobat.setString(3, rsreg.getString("no_rawat"));
+                            
                         } else {
                             psobat.setString(1, rsreg.getString("no_rawat"));
                             psobat.setString(2, "%" + status.getSelectedItem().toString().replaceAll("Obat Rawat Jalan", "Ralan").replaceAll("Obat Rawat Inap", "Ranap").replaceAll("Semua Status", "") + "%");
@@ -1206,7 +1224,7 @@ private void BtnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
                             while (rsobat.next()) {
                                 if (a == 1) {
                                     tabMode.addRow(new String[]{
-                                        i + "", rsreg.getString("tgl_registrasi")+" "+rsreg.getString("jam_reg"), rsreg.getString("no_rkm_medis"), rsreg.getString("nm_pasien"),
+                                        i + "", rsreg.getString("tgl_registrasi")+" "+rsobat.getString("jam"), rsreg.getString("no_rkm_medis"), rsreg.getString("nm_pasien"),
                                         rsobat.getString(3), rsobat.getString(1) + " " + rsobat.getString(2), Valid.SetAngka(rsobat.getDouble(4)),
                                         Valid.SetAngka(rsobat.getDouble(5)), Valid.SetAngka(rsobat.getDouble(6)), Valid.SetAngka(rsobat.getDouble(7))
                                     });
@@ -1265,16 +1283,6 @@ private void BtnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
     }
 
     private void prosesCari2() {
-        dateTime1 = (String) Tgl1.getSelectedItem();
-        dateTimeParts = dateTime1.split(" ");
-        date1 = dateTimeParts[0];
-        time1 = dateTimeParts[1];
-        dateTime2 = (String) Tgl2.getSelectedItem();
-        dateTimeParts = dateTime2.split(" ");
-        date2 = dateTimeParts[0];
-        time2 = dateTimeParts[1];
-        String datetime1=Valid.SetTgl(date1)+" "+time1;
-        String datetime2= Valid.SetTgl(date2)+" "+time2;
         try {
             this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
             Valid.tabelKosong(tabMode2);

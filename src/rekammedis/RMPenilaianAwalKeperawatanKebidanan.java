@@ -997,7 +997,7 @@ public final class RMPenilaianAwalKeperawatanKebidanan extends javax.swing.JDial
         panelBiasa2.setLayout(null);
 
         TanggalPersalinan.setForeground(new java.awt.Color(50, 70, 50));
-        TanggalPersalinan.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "04-03-2024" }));
+        TanggalPersalinan.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "12-03-2024" }));
         TanggalPersalinan.setDisplayFormat("dd-MM-yyyy");
         TanggalPersalinan.setName("TanggalPersalinan"); // NOI18N
         TanggalPersalinan.setOpaque(false);
@@ -1594,7 +1594,7 @@ public final class RMPenilaianAwalKeperawatanKebidanan extends javax.swing.JDial
         jLabel53.setBounds(10, 70, 180, 23);
 
         TglAsuhan.setForeground(new java.awt.Color(50, 70, 50));
-        TglAsuhan.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "04-03-2024 15:47:08" }));
+        TglAsuhan.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "12-03-2024 10:10:14" }));
         TglAsuhan.setDisplayFormat("dd-MM-yyyy HH:mm:ss");
         TglAsuhan.setName("TglAsuhan"); // NOI18N
         TglAsuhan.setOpaque(false);
@@ -1703,7 +1703,7 @@ public final class RMPenilaianAwalKeperawatanKebidanan extends javax.swing.JDial
             }
         });
         FormInput.add(TBJ);
-        TBJ.setBounds(180, 170, 40, 23);
+        TBJ.setBounds(180, 170, 60, 23);
 
         Presentasi.setFocusTraversalPolicyProvider(true);
         Presentasi.setName("Presentasi"); // NOI18N
@@ -1713,19 +1713,19 @@ public final class RMPenilaianAwalKeperawatanKebidanan extends javax.swing.JDial
             }
         });
         FormInput.add(Presentasi);
-        Presentasi.setBounds(290, 170, 70, 23);
+        Presentasi.setBounds(310, 170, 70, 23);
 
         jLabel38.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel38.setText("Presentasi :");
         jLabel38.setName("jLabel38"); // NOI18N
         FormInput.add(jLabel38);
-        jLabel38.setBounds(230, 170, 60, 23);
+        jLabel38.setBounds(250, 170, 60, 23);
 
         jLabel39.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel39.setText("VT :");
         jLabel39.setName("jLabel39"); // NOI18N
         FormInput.add(jLabel39);
-        jLabel39.setBounds(550, 200, 30, 23);
+        jLabel39.setBounds(630, 200, 30, 23);
 
         Penurunan.setFocusTraversalPolicyProvider(true);
         Penurunan.setName("Penurunan"); // NOI18N
@@ -2320,7 +2320,7 @@ public final class RMPenilaianAwalKeperawatanKebidanan extends javax.swing.JDial
         jLabel92.setBounds(0, 610, 170, 23);
 
         HPHT.setForeground(new java.awt.Color(50, 70, 50));
-        HPHT.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "04-03-2024" }));
+        HPHT.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "12-03-2024" }));
         HPHT.setDisplayFormat("dd-MM-yyyy");
         HPHT.setName("HPHT"); // NOI18N
         HPHT.setOpaque(false);
@@ -2359,7 +2359,7 @@ public final class RMPenilaianAwalKeperawatanKebidanan extends javax.swing.JDial
         jLabel96.setBounds(505, 610, 40, 23);
 
         TP.setForeground(new java.awt.Color(50, 70, 50));
-        TP.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "04-03-2024" }));
+        TP.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "12-03-2024" }));
         TP.setDisplayFormat("dd-MM-yyyy");
         TP.setName("TP"); // NOI18N
         TP.setOpaque(false);
@@ -3381,7 +3381,7 @@ public final class RMPenilaianAwalKeperawatanKebidanan extends javax.swing.JDial
         FormInput.add(jLabel166);
         jLabel166.setBounds(480, 1550, 150, 23);
 
-        NyeriHilang.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Istirahat", "Medengar Musik", "Minum Obat" }));
+        NyeriHilang.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Istirahat", "Medengar Musik", "Minum Obat", "Lain - Lain" }));
         NyeriHilang.setName("NyeriHilang"); // NOI18N
         NyeriHilang.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -3493,13 +3493,13 @@ public final class RMPenilaianAwalKeperawatanKebidanan extends javax.swing.JDial
             }
         });
         FormInput.add(Leopod1);
-        Leopod1.setBounds(430, 170, 100, 23);
+        Leopod1.setBounds(460, 170, 140, 23);
 
         jLabel42.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel42.setText("Leopod I :");
         jLabel42.setName("jLabel42"); // NOI18N
         FormInput.add(jLabel42);
-        jLabel42.setBounds(370, 170, 60, 23);
+        jLabel42.setBounds(400, 170, 60, 23);
 
         Leopod2.setFocusTraversalPolicyProvider(true);
         Leopod2.setName("Leopod2"); // NOI18N
@@ -3509,13 +3509,13 @@ public final class RMPenilaianAwalKeperawatanKebidanan extends javax.swing.JDial
             }
         });
         FormInput.add(Leopod2);
-        Leopod2.setBounds(430, 200, 100, 23);
+        Leopod2.setBounds(460, 200, 140, 23);
 
         jLabel171.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel171.setText("Leopod II :");
         jLabel171.setName("jLabel171"); // NOI18N
         FormInput.add(jLabel171);
-        jLabel171.setBounds(370, 200, 60, 23);
+        jLabel171.setBounds(400, 200, 60, 23);
 
         Leopod3.setFocusTraversalPolicyProvider(true);
         Leopod3.setName("Leopod3"); // NOI18N
@@ -3525,13 +3525,13 @@ public final class RMPenilaianAwalKeperawatanKebidanan extends javax.swing.JDial
             }
         });
         FormInput.add(Leopod3);
-        Leopod3.setBounds(430, 230, 100, 23);
+        Leopod3.setBounds(460, 230, 140, 23);
 
         jLabel172.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel172.setText("Leopod III :");
         jLabel172.setName("jLabel172"); // NOI18N
         FormInput.add(jLabel172);
-        jLabel172.setBounds(370, 230, 60, 23);
+        jLabel172.setBounds(400, 230, 60, 23);
 
         Leopod4.setFocusTraversalPolicyProvider(true);
         Leopod4.setName("Leopod4"); // NOI18N
@@ -3541,13 +3541,13 @@ public final class RMPenilaianAwalKeperawatanKebidanan extends javax.swing.JDial
             }
         });
         FormInput.add(Leopod4);
-        Leopod4.setBounds(610, 170, 110, 23);
+        Leopod4.setBounds(690, 170, 140, 23);
 
         jLabel173.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel173.setText("Leopod IV :");
         jLabel173.setName("jLabel173"); // NOI18N
         FormInput.add(jLabel173);
-        jLabel173.setBounds(550, 170, 60, 23);
+        jLabel173.setBounds(630, 170, 60, 23);
 
         scrollPane2.setName("scrollPane2"); // NOI18N
 
@@ -3567,7 +3567,7 @@ public final class RMPenilaianAwalKeperawatanKebidanan extends javax.swing.JDial
         scrollPane2.setViewportView(VT);
 
         FormInput.add(scrollPane2);
-        scrollPane2.setBounds(570, 200, 150, 50);
+        scrollPane2.setBounds(650, 200, 180, 50);
 
         scrollInput.setViewportView(FormInput);
 
@@ -3609,7 +3609,7 @@ public final class RMPenilaianAwalKeperawatanKebidanan extends javax.swing.JDial
         panelGlass9.add(jLabel19);
 
         DTPCari1.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "04-03-2024" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "12-03-2024" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -3623,7 +3623,7 @@ public final class RMPenilaianAwalKeperawatanKebidanan extends javax.swing.JDial
         panelGlass9.add(jLabel21);
 
         DTPCari2.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "04-03-2024" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "12-03-2024" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);

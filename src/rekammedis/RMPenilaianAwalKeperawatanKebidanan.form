@@ -69,7 +69,7 @@
                     </Property>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="1">
-                        <StringItem index="0" value="12-03-2024"/>
+                        <StringItem index="0" value="27-03-2024"/>
                       </StringArray>
                     </Property>
                     <Property name="displayFormat" type="java.lang.String" value="dd-MM-yyyy"/>
@@ -1136,7 +1136,7 @@
                             </Property>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                               <StringArray count="1">
-                                <StringItem index="0" value="12-03-2024 10:10:14"/>
+                                <StringItem index="0" value="27-03-2024 11:28:26"/>
                               </StringArray>
                             </Property>
                             <Property name="displayFormat" type="java.lang.String" value="dd-MM-yyyy HH:mm:ss"/>
@@ -1333,7 +1333,7 @@
                           </Events>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                              <AbsoluteConstraints x="180" y="170" width="40" height="23"/>
+                              <AbsoluteConstraints x="180" y="170" width="60" height="23"/>
                             </Constraint>
                           </Constraints>
                         </Component>
@@ -1347,7 +1347,7 @@
                           </Events>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                              <AbsoluteConstraints x="290" y="170" width="70" height="23"/>
+                              <AbsoluteConstraints x="310" y="170" width="70" height="23"/>
                             </Constraint>
                           </Constraints>
                         </Component>
@@ -1359,7 +1359,7 @@
                           </Properties>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                              <AbsoluteConstraints x="230" y="170" width="60" height="23"/>
+                              <AbsoluteConstraints x="250" y="170" width="60" height="23"/>
                             </Constraint>
                           </Constraints>
                         </Component>
@@ -1371,7 +1371,7 @@
                           </Properties>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                              <AbsoluteConstraints x="550" y="200" width="30" height="23"/>
+                              <AbsoluteConstraints x="630" y="200" width="30" height="23"/>
                             </Constraint>
                           </Constraints>
                         </Component>
@@ -2490,7 +2490,7 @@
                             </Property>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                               <StringArray count="1">
-                                <StringItem index="0" value="12-03-2024"/>
+                                <StringItem index="0" value="27-03-2024"/>
                               </StringArray>
                             </Property>
                             <Property name="displayFormat" type="java.lang.String" value="dd-MM-yyyy"/>
@@ -2561,7 +2561,7 @@
                             </Property>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                               <StringArray count="1">
-                                <StringItem index="0" value="12-03-2024"/>
+                                <StringItem index="0" value="27-03-2024"/>
                               </StringArray>
                             </Property>
                             <Property name="displayFormat" type="java.lang.String" value="dd-MM-yyyy"/>
@@ -4515,10 +4515,11 @@
                         <Component class="widget.ComboBox" name="NyeriHilang">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="3">
+                              <StringArray count="4">
                                 <StringItem index="0" value="Istirahat"/>
                                 <StringItem index="1" value="Medengar Musik"/>
                                 <StringItem index="2" value="Minum Obat"/>
+                                <StringItem index="3" value="Lain - Lain"/>
                               </StringArray>
                             </Property>
                             <Property name="name" type="java.lang.String" value="NyeriHilang" noResource="true"/>
@@ -4727,7 +4728,7 @@
                           </Events>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                              <AbsoluteConstraints x="430" y="170" width="100" height="23"/>
+                              <AbsoluteConstraints x="460" y="170" width="140" height="23"/>
                             </Constraint>
                           </Constraints>
                         </Component>
@@ -4739,7 +4740,7 @@
                           </Properties>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                              <AbsoluteConstraints x="370" y="170" width="60" height="23"/>
+                              <AbsoluteConstraints x="400" y="170" width="60" height="23"/>
                             </Constraint>
                           </Constraints>
                         </Component>
@@ -4753,7 +4754,7 @@
                           </Events>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                              <AbsoluteConstraints x="430" y="200" width="100" height="23"/>
+                              <AbsoluteConstraints x="460" y="200" width="140" height="23"/>
                             </Constraint>
                           </Constraints>
                         </Component>
@@ -4765,7 +4766,7 @@
                           </Properties>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                              <AbsoluteConstraints x="370" y="200" width="60" height="23"/>
+                              <AbsoluteConstraints x="400" y="200" width="60" height="23"/>
                             </Constraint>
                           </Constraints>
                         </Component>
@@ -4779,7 +4780,7 @@
                           </Events>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                              <AbsoluteConstraints x="430" y="230" width="100" height="23"/>
+                              <AbsoluteConstraints x="460" y="230" width="140" height="23"/>
                             </Constraint>
                           </Constraints>
                         </Component>
@@ -4791,7 +4792,7 @@
                           </Properties>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                              <AbsoluteConstraints x="370" y="230" width="60" height="23"/>
+                              <AbsoluteConstraints x="400" y="230" width="60" height="23"/>
                             </Constraint>
                           </Constraints>
                         </Component>
@@ -4805,7 +4806,7 @@
                           </Events>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                              <AbsoluteConstraints x="610" y="170" width="110" height="23"/>
+                              <AbsoluteConstraints x="690" y="170" width="140" height="23"/>
                             </Constraint>
                           </Constraints>
                         </Component>
@@ -4817,7 +4818,7 @@
                           </Properties>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                              <AbsoluteConstraints x="550" y="170" width="60" height="23"/>
+                              <AbsoluteConstraints x="630" y="170" width="60" height="23"/>
                             </Constraint>
                           </Constraints>
                         </Component>
@@ -4830,7 +4831,7 @@
                           </AuxValues>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                              <AbsoluteConstraints x="570" y="200" width="150" height="50"/>
+                              <AbsoluteConstraints x="650" y="200" width="180" height="50"/>
                             </Constraint>
                           </Constraints>
 
@@ -4951,7 +4952,7 @@
                         </Property>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                           <StringArray count="1">
-                            <StringItem index="0" value="12-03-2024"/>
+                            <StringItem index="0" value="27-03-2024"/>
                           </StringArray>
                         </Property>
                         <Property name="displayFormat" type="java.lang.String" value="dd-MM-yyyy"/>
@@ -4979,7 +4980,7 @@
                         </Property>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                           <StringArray count="1">
-                            <StringItem index="0" value="12-03-2024"/>
+                            <StringItem index="0" value="27-03-2024"/>
                           </StringArray>
                         </Property>
                         <Property name="displayFormat" type="java.lang.String" value="dd-MM-yyyy"/>

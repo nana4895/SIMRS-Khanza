@@ -1106,9 +1106,6 @@ public class frmUtama extends javax.swing.JFrame {
         FlayMenu.setVisible(false);
         DlgLogin.setVisible(true);
         edAdmin.requestFocus();
-//        btnToolLab.setEnabled(false);
-//        btnToolRad.setEnabled(false);
-//        BtnToolJualObat.setEnabled(false);
         TCari.setVisible(false);
         if(koneksiDB.CARICEPAT().equals("aktif")){
             TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
@@ -8217,9 +8214,6 @@ public class frmUtama extends javax.swing.JFrame {
                 BtnToolKamnap.setEnabled(false);
                 BtnToolKasir.setEnabled(false);
                 btnToolIGD.setEnabled(false);
-                btnToolLab.setEnabled(false);
-                btnToolRad.setEnabled(false);
-                BtnToolJualObat.setEnabled(false);
                 MnGantiPassword.setEnabled(false);
                 MnPengajuanCutiPegawai.setEnabled(false);        
                 akses.setpenjualan_obatfalse();
