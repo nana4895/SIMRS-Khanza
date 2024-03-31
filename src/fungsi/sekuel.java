@@ -924,7 +924,6 @@ public final class sekuel {
                     ps.setString(angka,a[angka-1]);
                 } 
                 ps.executeUpdate();       
-        System.out.println("column: "+ps);
                 bool=true;
              }catch(Exception e){
                 bool=false;

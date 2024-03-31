@@ -82,8 +82,8 @@ public final class RMPenilaianAwalKeperawatanIGD extends javax.swing.JDialog {
             "Pekerjaan", "Pembayaran", "Nilai-nilai Kebudayaan", "Ket. Nilai-nilai Kebudayaan", "Pendidikan Pasien", "Pendidikan PJ", "Ket. Pendidikan PJ",
             "Edukasi Diberikan Kepada", "Ket. Edukasi Diberikan Kepada", "Kemampuan Aktifitas Sehari-hari", "Aktifitas", "Alat bantu", "Ket. Alat bantu",
             "Tingkat Nyeri", "Provokes", "Ket. Provokes", "Kualitas", "Ket. Kualitas", "Lokasi", "Menyebar", "Skala Nyeri", "Durasi", "Nyeri Hilang", "Ket. Hilang Nyeri", "Lapor Ke Dokter",
-            "Jam Lapor", "Cara Berjalan A", "Cara Berjalan B", "Cara Berjalan C", "Hasil Penilaian Resiko Jatuh", "Lapor Dokter", "Ket. Lapor", "Rencana", 
-            "Tindakan","Nadi","Suhu","TB","BB","TD","RR","SPO","GCS","Tindak Lanjut","Ket.Tindak Lanjut","Masuk Ruang","Transportasi","Dipulangkan Pukul","Meninggal Pukul","Edukasi Pasien","Diagnosa Pasien",
+            "Jam Lapor", "Cara Berjalan A", "Cara Berjalan B", "Cara Berjalan C", "Hasil Penilaian Resiko Jatuh", "Lapor Dokter", "Ket. Lapor", "Rencana",
+            "Tindakan", "Nadi", "Suhu", "TB", "BB", "TD", "RR", "SPO", "GCS", "Tindak Lanjut", "Ket.Tindak Lanjut", "Masuk Ruang", "Transportasi", "Dipulangkan Pukul", "Meninggal Pukul", "Diagnosa Pasien",
             "NIP", "Nama Petugas"
         }) {
             @Override
@@ -261,60 +261,41 @@ public final class RMPenilaianAwalKeperawatanIGD extends javax.swing.JDialog {
                 column.setPreferredWidth(75);
             } else if (i == 80) {
                 column.setPreferredWidth(150);
-            }else if (i==81){
+            } else if (i == 81) {
                 column.setPreferredWidth(150);//Tindakan
-            }else if(i==82){
+            } else if (i == 82) {
                 column.setPreferredWidth(40);//nadi
-            }
-            else if (i==83){
+            } else if (i == 83) {
                 column.setPreferredWidth(40);
-            }
-            else if (i==84){
+            } else if (i == 84) {
                 column.setPreferredWidth(40);
-            }
-            else if (i==85){
+            } else if (i == 85) {
                 column.setPreferredWidth(40);
-            }
-            else if (i==86){
+            } else if (i == 86) {
                 column.setPreferredWidth(40);
-            }
-            else if (i==87){
+            } else if (i == 87) {
                 column.setPreferredWidth(40);
-            }
-            else if (i==88){
+            } else if (i == 88) {
                 column.setPreferredWidth(40);
-            }
-            else if (i==89){
+            } else if (i == 89) {
                 column.setPreferredWidth(40);
-            }
-            else if (i==90){
+            } else if (i == 90) {
                 column.setPreferredWidth(70);//Tindak Lanjut PX
-            }
-            else if(i==91){
+            } else if (i == 91) {
                 column.setPreferredWidth(90);
-            }
-            else if(i==92){
+            } else if (i == 92) {
                 column.setPreferredWidth(120);//masuk ruang
-            }
-            else if(i==93){
+            } else if (i == 93) {
                 column.setPreferredWidth(120);
-            }
-            else if(i==94){
+            } else if (i == 94) {
                 column.setPreferredWidth(80);//dipulangkan
-            }
-            else if(i==95){
-                column.setPreferredWidth(80);//meniggal pukul
-            }
-            else if(i==96){
+            } else if (i == 95) {
+                column.setPreferredWidth(80);//meninggal pukul
+            } else if (i == 96) {
                 column.setPreferredWidth(150);
-            }
-            else if(i==97){
-                column.setPreferredWidth(150);
-            }
-            else if(i==98){
+            } else if (i == 97) {
                 column.setPreferredWidth(150);//nip
-            }
-            else if(i==99){
+            } else if (i == 98) {
                 column.setPreferredWidth(150);
             }
         }
@@ -835,7 +816,6 @@ public final class RMPenilaianAwalKeperawatanIGD extends javax.swing.JDialog {
         jLabel28 = new widget.Label();
         Transportasi = new widget.ComboBox();
         jLabel42 = new widget.Label();
-        EdukasiPasien = new widget.TextBox();
         jLabel74 = new widget.Label();
         jLabel43 = new widget.Label();
         jLabel14 = new widget.Label();
@@ -844,7 +824,6 @@ public final class RMPenilaianAwalKeperawatanIGD extends javax.swing.JDialog {
         Meninggal = new widget.TextBox();
         jLabel45 = new widget.Label();
         MasukRuang = new widget.TextBox();
-        jLabel46 = new widget.Label();
         Diagnosa = new widget.TextBox();
         internalFrame3 = new widget.InternalFrame();
         Scroll = new widget.ScrollPane();
@@ -2583,7 +2562,7 @@ public final class RMPenilaianAwalKeperawatanIGD extends javax.swing.JDialog {
         jLabel22.setText("Diagnosa :");
         jLabel22.setName("jLabel22"); // NOI18N
         FormInput.add(jLabel22);
-        jLabel22.setBounds(20, 1430, 70, 23);
+        jLabel22.setBounds(20, 1400, 70, 23);
 
         TD.setFocusTraversalPolicyProvider(true);
         TD.setName("TD"); // NOI18N
@@ -2791,16 +2770,6 @@ public final class RMPenilaianAwalKeperawatanIGD extends javax.swing.JDialog {
         FormInput.add(jLabel42);
         jLabel42.setBounds(20, 1370, 80, 23);
 
-        EdukasiPasien.setFocusTraversalPolicyProvider(true);
-        EdukasiPasien.setName("EdukasiPasien"); // NOI18N
-        EdukasiPasien.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                EdukasiPasienKeyPressed(evt);
-            }
-        });
-        FormInput.add(EdukasiPasien);
-        EdukasiPasien.setBounds(100, 1400, 190, 24);
-
         jLabel74.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel74.setText("VIII. KONDISI PASIEN SAAT PINDAH / PULANG");
         jLabel74.setName("jLabel74"); // NOI18N
@@ -2860,12 +2829,6 @@ public final class RMPenilaianAwalKeperawatanIGD extends javax.swing.JDialog {
         FormInput.add(MasukRuang);
         MasukRuang.setBounds(530, 1340, 120, 23);
 
-        jLabel46.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel46.setText("Edukasi Pasien : ");
-        jLabel46.setName("jLabel46"); // NOI18N
-        FormInput.add(jLabel46);
-        jLabel46.setBounds(20, 1400, 80, 23);
-
         Diagnosa.setFocusTraversalPolicyProvider(true);
         Diagnosa.setName("Diagnosa"); // NOI18N
         Diagnosa.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -2874,7 +2837,7 @@ public final class RMPenilaianAwalKeperawatanIGD extends javax.swing.JDialog {
             }
         });
         FormInput.add(Diagnosa);
-        Diagnosa.setBounds(80, 1430, 210, 24);
+        Diagnosa.setBounds(80, 1400, 210, 24);
 
         scrollInput.setViewportView(FormInput);
 
@@ -3118,9 +3081,8 @@ public final class RMPenilaianAwalKeperawatanIGD extends javax.swing.JDialog {
                 Aktifitas.getSelectedItem().toString(), AlatBantu.getSelectedItem().toString(), KetAlatBantu.getText(), Nyeri.getSelectedItem().toString(), Provokes.getSelectedItem().toString(), KetProvokes.getText(), Quality.getSelectedItem().toString(),
                 KetQuality.getText(), Lokasi.getText(), Menyebar.getSelectedItem().toString(), SkalaNyeri.getSelectedItem().toString(), Durasi.getText(), NyeriHilang.getSelectedItem().toString(), KetNyeri.getText(), PadaDokter.getSelectedItem().toString(),
                 KetDokter.getText(), ATS.getSelectedItem().toString(), BJM.getSelectedItem().toString(), MSA.getSelectedItem().toString(), Hasil.getSelectedItem().toString(), Lapor.getSelectedItem().toString(), KetLapor.getText(), Rencana.getText(),
-                
-                Tindakan.getSelectedItem().toString(),Nadi.getText(), Suhu.getText(), TB.getText(), BB.getText(),TD.getText(),RR.getText(),SPO.getText(),GCS.getText(),
-                TindakLanjut.getSelectedItem().toString(),Ket_Tindak_Lanjut.getText(),MasukRuang.getText(),Transportasi.getSelectedItem().toString(),Dipulangkan.getText(),Meninggal.getText(),EdukasiPasien.getText(),Diagnosa.getText(),
+                Tindakan.getSelectedItem().toString(), Nadi.getText(), Suhu.getText(), TB.getText(), BB.getText(), TD.getText(), RR.getText(), SPO.getText(), GCS.getText(),
+                TindakLanjut.getSelectedItem().toString(), Ket_Tindak_Lanjut.getText(), MasukRuang.getText(), Transportasi.getSelectedItem().toString(), Dipulangkan.getText(), Meninggal.getText(), Diagnosa.getText(),
                 KdPetugas.getText()
             }) == true) {
                 for (i = 0; i < tbMasalahKeperawatan.getRowCount(); i++) {
@@ -3252,7 +3214,10 @@ public final class RMPenilaianAwalKeperawatanIGD extends javax.swing.JDialog {
                             + "penilaian_awal_keperawatan_igd.nyeri,penilaian_awal_keperawatan_igd.provokes,penilaian_awal_keperawatan_igd.ket_provokes,penilaian_awal_keperawatan_igd.quality,penilaian_awal_keperawatan_igd.ket_quality,penilaian_awal_keperawatan_igd.lokasi,penilaian_awal_keperawatan_igd.menyebar,"
                             + "penilaian_awal_keperawatan_igd.skala_nyeri,penilaian_awal_keperawatan_igd.durasi,penilaian_awal_keperawatan_igd.nyeri_hilang,penilaian_awal_keperawatan_igd.ket_nyeri,penilaian_awal_keperawatan_igd.pada_dokter,penilaian_awal_keperawatan_igd.ket_dokter,"
                             + "penilaian_awal_keperawatan_igd.berjalan_a,penilaian_awal_keperawatan_igd.berjalan_b,penilaian_awal_keperawatan_igd.berjalan_c,penilaian_awal_keperawatan_igd.hasil,penilaian_awal_keperawatan_igd.lapor,penilaian_awal_keperawatan_igd.ket_lapor,"
-                            + "penilaian_awal_keperawatan_igd.rencana,penilaian_awal_keperawatan_igd.nip,petugas.nama "
+                            + "penilaian_awal_keperawatan_igd.rencana,penilaian_awal_keperawatan_igd.tindakan,penilaian_awal_keperawatan_igd.nadi,penilaian_awal_keperawatan_igd.suhu,penilaian_awal_keperawatan_igd.tb,penilaian_awal_keperawatan_igd.bb,penilaian_awal_keperawatan_igd.td,penilaian_awal_keperawatan_igd.rr,"
+                            + "penilaian_awal_keperawatan_igd.spo,penilaian_awal_keperawatan_igd.gcs,penilaian_awal_keperawatan_igd.tindak_lanjut_px,penilaian_awal_keperawatan_igd.ket_tindak_lanjut,penilaian_awal_keperawatan_igd.ruangan,penilaian_awal_keperawatan_igd.transportasi,penilaian_awal_keperawatan_igd.dipulangkan,"
+                            + "penilaian_awal_keperawatan_igd.meninggal,penilaian_awal_keperawatan_igd.diagnosa,"
+                            + "penilaian_awal_keperawatan_igd.nip,petugas.nama "
                             + "from reg_periksa inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "
                             + "inner join penilaian_awal_keperawatan_igd on reg_periksa.no_rawat=penilaian_awal_keperawatan_igd.no_rawat "
                             + "inner join petugas on penilaian_awal_keperawatan_igd.nip=petugas.nip "
@@ -3273,8 +3238,10 @@ public final class RMPenilaianAwalKeperawatanIGD extends javax.swing.JDialog {
                             + "penilaian_awal_keperawatan_igd.nyeri,penilaian_awal_keperawatan_igd.provokes,penilaian_awal_keperawatan_igd.ket_provokes,penilaian_awal_keperawatan_igd.quality,penilaian_awal_keperawatan_igd.ket_quality,penilaian_awal_keperawatan_igd.lokasi,penilaian_awal_keperawatan_igd.menyebar,"
                             + "penilaian_awal_keperawatan_igd.skala_nyeri,penilaian_awal_keperawatan_igd.durasi,penilaian_awal_keperawatan_igd.nyeri_hilang,penilaian_awal_keperawatan_igd.ket_nyeri,penilaian_awal_keperawatan_igd.pada_dokter,penilaian_awal_keperawatan_igd.ket_dokter,"
                             + "penilaian_awal_keperawatan_igd.berjalan_a,penilaian_awal_keperawatan_igd.berjalan_b,penilaian_awal_keperawatan_igd.berjalan_c,penilaian_awal_keperawatan_igd.hasil,penilaian_awal_keperawatan_igd.lapor,penilaian_awal_keperawatan_igd.ket_lapor,"
-                            + "penilaian_awal_keperawatan_igd.rencana,penilaian_awal_keperawatan_igd.nip,petugas.nama "
-                            + "from reg_periksa inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "
+                            + "penilaian_awal_keperawatan_igd.rencana,penilaian_awal_keperawatan_igd.tindakan,penilaian_awal_keperawatan_igd.nadi,penilaian_awal_keperawatan_igd.suhu,penilaian_awal_keperawatan_igd.tb,penilaian_awal_keperawatan_igd.bb,penilaian_awal_keperawatan_igd.td,penilaian_awal_keperawatan_igd.rr,"
+                            + "penilaian_awal_keperawatan_igd.spo,penilaian_awal_keperawatan_igd.gcs,penilaian_awal_keperawatan_igd.tindak_lanjut_px,penilaian_awal_keperawatan_igd.ket_tindak_lanjut,penilaian_awal_keperawatan_igd.ruangan,penilaian_awal_keperawatan_igd.transportasi,penilaian_awal_keperawatan_igd.dipulangkan,"
+                            + "penilaian_awal_keperawatan_igd.meninggal,penilaian_awal_keperawatan_igd.diagnosa,"
+                            + "penilaian_awal_keperawatan_igd.nip,petugas.nama " + "from reg_periksa inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "
                             + "inner join penilaian_awal_keperawatan_igd on reg_periksa.no_rawat=penilaian_awal_keperawatan_igd.no_rawat "
                             + "inner join petugas on penilaian_awal_keperawatan_igd.nip=petugas.nip "
                             + "inner join bahasa_pasien on bahasa_pasien.id=pasien.bahasa_pasien "
@@ -3412,6 +3379,9 @@ public final class RMPenilaianAwalKeperawatanIGD extends javax.swing.JDialog {
                                 + "<tr class='isi2'>"
                                 + "<td width='32%' valign='top'>Gravida</td><td valign='top'>:&nbsp;</td><td width='67%' valign='top'>" + rs.getString("gravida") + "</td>"
                                 + "</tr>"
+                                + "<tr class='isi2'>"
+                                + "<td width='32%' valign='top'>Diagnosa</td><td valign='top'>:&nbsp;</td><td width='67%' valign='top'>" + rs.getString("diagnosa") + "</td>"
+                                + "</tr>"
                                 + "</table>"
                                 + "</td>"
                                 + "<td valign='top' cellpadding='0' cellspacing='0'>"
@@ -3447,6 +3417,13 @@ public final class RMPenilaianAwalKeperawatanIGD extends javax.swing.JDialog {
                                 + "<td width='34%' valign='top'>Eliminasi</td><td valign='top'>:&nbsp;</td><td width='65%' valign='top'>"
                                 + "BAB : -Frekuensi : " + rs.getString("bab") + " x / " + rs.getString("xbab") + " -Konsistensi : " + rs.getString("kbab") + " -Warna : " + rs.getString("wbab") + "<br>"
                                 + "BAK : -Frekuensi : " + rs.getString("bak") + " x / " + rs.getString("xbak") + " -Warna : " + rs.getString("wbak") + " -Lain-lain : " + rs.getString("lbak") + "<br>"
+                                + "</td>"
+                                + "<tr class='isi2'>"
+                                + "<td width='34%' valign='top'>Vital Sign :</td><td valign='top'>:&nbsp;</td><td width='65%' valign='top'>"
+                                + "Nadi : " + rs.getString("nadi") + " x/menit | Suhu &nbsp;:&nbsp;" + rs.getString("suhu") + "&nbsp;&deg;C<br>"
+                                + "TB : " + rs.getString("tb") + " Cm | BB &nbsp;:&nbsp;" + rs.getString("bb") + "&nbsp;Kg<br>"
+                                + "TD : " + rs.getString("td") + " mmHg | RR &nbsp;:&nbsp;" + rs.getString("rr") + "&nbsp;x/menit<br>"
+                                + "SPO : " + rs.getString("spo") + " % | GCS(E,V,M) &nbsp;:&nbsp;" + rs.getString("gcs") + "<br>"
                                 + "</td>"
                                 + "</tr>"
                                 + "</table>"
@@ -3559,7 +3536,34 @@ public final class RMPenilaianAwalKeperawatanIGD extends javax.swing.JDialog {
                                 + "</td>"
                                 + "<td valign='top' cellpadding='0' cellspacing='0'>"
                                 + "Masalah Keperawatan : " + masalahkeperawatanigd + "<br><br>"
-                                + "Rencana Keperawatan : " + rs.getString("rencana")
+                                + "Rencana Keperawatan : " + rs.getString("rencana") + "<br><br><br>"
+                                + "Kodisi Pasien saat Keluar/Masuk : <br>"
+                                + "<table width='100%' border='0' align='center'>"
+                                + "<tr class='isi2'>"
+                                + "<td width='47%' valign='top'>Tindak Lanjut</td><td valign='top'>:&nbsp;</td><td valign='top'>" + rs.getString("tindakan") + "</td>"
+                                + "</tr>"
+                                + "<tr class='isi2'>"
+                                + "<td width='47%' valign='top'>Instruksi</td><td valign='top'>:&nbsp;</td><td  valign='top'>" + rs.getString("tindak_lanjut_px") + "</td>"
+                                + "</tr>"
+                                + "<tr class='isi2'>"
+                                + "<td width='47%' valign='top'>Keterangan</td><td valign='top'>:&nbsp;</td><td valign='top'>" + rs.getString("ket_tindak_lanjut") + "</td>"
+                                + "</tr>"
+                                + "<tr class='isi2'>"
+                                + "<td width='47%' valign='top'>Masuk Ruang</td><td valign='top'>:&nbsp;</td><td valign='top'>" + rs.getString("ruangan") + "</td>"
+                                + "</tr>"
+                                + "<tr class='isi2'>"
+                                + "<td width='47%' valign='top'>Transportasi</td><td valign='top'>:&nbsp;</td><td valign='top'>" + rs.getString("transportasi") + "</td>"
+                                + "</tr>"
+                                + "<tr class='isi2'>"
+                                + "<td width='47%' valign='top'>Pulang Pukul</td><td valign='top'>:&nbsp;</td><td valign='top'>" + rs.getString("dipulangkan") + "</td>"
+                                + "</tr>"
+                                + "<tr class='isi2'>"
+                                + "<td width='47%' valign='top'>Meninggal Pukul</td><td valign='top'>:&nbsp;</td><td valign='top'>" + rs.getString("meninggal") + "</td>"
+                                + "</tr>"
+                                + "<tr class='isi2'>"
+                                + "<td width='47%' valign='top'>Diagnosa</td><td valign='top'>:&nbsp;</td><td valign='top'>" + rs.getString("diagnosa") + "</td>"
+                                + "</tr>"
+                                + "</table>"
                                 + "</td>"
                                 + "</tr>"
                         );
@@ -3885,7 +3889,7 @@ public final class RMPenilaianAwalKeperawatanIGD extends javax.swing.JDialog {
             param.put("logo", Sequel.cariGambar("select setting.logo from setting"));
             param.put("nyeri", Sequel.cariGambar("select gambar.nyeri from gambar"));
             finger = Sequel.cariIsi("select sha1(sidikjari.sidikjari) from sidikjari inner join pegawai on pegawai.id=sidikjari.id where pegawai.nik=?", tbObat.getValueAt(tbObat.getSelectedRow(), 79).toString());
-            param.put("finger", "Dikeluarkan di " + akses.getnamars() + ", Kabupaten/Kota " + akses.getkabupatenrs() + "\nDitandatangani secara elektronik oleh " + tbObat.getValueAt(tbObat.getSelectedRow(), 80).toString() + "\nID " + (finger.equals("") ? tbObat.getValueAt(tbObat.getSelectedRow(), 79).toString() : finger) + "\n" + Valid.SetTgl3(tbObat.getValueAt(tbObat.getSelectedRow(), 8).toString()));
+            param.put("finger", "Ditandatangani secara elektronik oleh\n" + tbObat.getValueAt(tbObat.getSelectedRow(), 96).toString() + " (ID: " + (finger.equals("") ? tbObat.getValueAt(tbObat.getSelectedRow(), 95).toString() : finger) + ")\nPada Tanggal " + Valid.SetTgl3(tbObat.getValueAt(tbObat.getSelectedRow(), 8).toString()));
             try {
                 masalahkeperawatanigd = "";
                 ps2 = koneksi.prepareStatement(
@@ -3950,7 +3954,10 @@ public final class RMPenilaianAwalKeperawatanIGD extends javax.swing.JDialog {
                     + "penilaian_awal_keperawatan_igd.nyeri,penilaian_awal_keperawatan_igd.provokes,penilaian_awal_keperawatan_igd.ket_provokes,penilaian_awal_keperawatan_igd.quality,penilaian_awal_keperawatan_igd.ket_quality,penilaian_awal_keperawatan_igd.lokasi,penilaian_awal_keperawatan_igd.menyebar,"
                     + "penilaian_awal_keperawatan_igd.skala_nyeri,penilaian_awal_keperawatan_igd.durasi,penilaian_awal_keperawatan_igd.nyeri_hilang,penilaian_awal_keperawatan_igd.ket_nyeri,penilaian_awal_keperawatan_igd.pada_dokter,penilaian_awal_keperawatan_igd.ket_dokter,"
                     + "penilaian_awal_keperawatan_igd.berjalan_a,penilaian_awal_keperawatan_igd.berjalan_b,penilaian_awal_keperawatan_igd.berjalan_c,penilaian_awal_keperawatan_igd.hasil,penilaian_awal_keperawatan_igd.lapor,penilaian_awal_keperawatan_igd.ket_lapor,"
-                    + "penilaian_awal_keperawatan_igd.rencana,penilaian_awal_keperawatan_igd.nip,petugas.nama "
+                    + "penilaian_awal_keperawatan_igd.rencana,penilaian_awal_keperawatan_igd.tindakan,penilaian_awal_keperawatan_igd.nadi,penilaian_awal_keperawatan_igd.suhu,penilaian_awal_keperawatan_igd.tb,penilaian_awal_keperawatan_igd.bb,penilaian_awal_keperawatan_igd.td,penilaian_awal_keperawatan_igd.rr,"
+                    + "penilaian_awal_keperawatan_igd.spo,penilaian_awal_keperawatan_igd.gcs,penilaian_awal_keperawatan_igd.tindak_lanjut_px,penilaian_awal_keperawatan_igd.ket_tindak_lanjut,penilaian_awal_keperawatan_igd.ruangan,penilaian_awal_keperawatan_igd.transportasi,penilaian_awal_keperawatan_igd.dipulangkan,"
+                    + "penilaian_awal_keperawatan_igd.meninggal,penilaian_awal_keperawatan_igd.diagnosa,"
+                    + "penilaian_awal_keperawatan_igd.nip,petugas.nama "
                     + "from reg_periksa inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "
                     + "inner join penilaian_awal_keperawatan_igd on reg_periksa.no_rawat=penilaian_awal_keperawatan_igd.no_rawat "
                     + "inner join petugas on penilaian_awal_keperawatan_igd.nip=petugas.nip "
@@ -4258,10 +4265,6 @@ public final class RMPenilaianAwalKeperawatanIGD extends javax.swing.JDialog {
         Valid.pindah(evt, Transportasi, Dipulangkan);
     }//GEN-LAST:event_TransportasiKeyPressed
 
-    private void EdukasiPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_EdukasiPasienKeyPressed
-        Valid.pindah(evt, EdukasiPasien, Diagnosa);
-    }//GEN-LAST:event_EdukasiPasienKeyPressed
-
     private void TindakanKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TindakanKeyPressed
         Valid.pindah(evt, Tindakan, TD);
     }//GEN-LAST:event_TindakanKeyPressed
@@ -4271,7 +4274,7 @@ public final class RMPenilaianAwalKeperawatanIGD extends javax.swing.JDialog {
     }//GEN-LAST:event_DipulangkanKeyPressed
 
     private void MeninggalKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_MeninggalKeyPressed
-        Valid.pindah(evt, Meninggal, EdukasiPasien);
+        Valid.pindah(evt, Meninggal, Diagnosa);
     }//GEN-LAST:event_MeninggalKeyPressed
 
     private void MasukRuangKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_MasukRuangKeyPressed
@@ -4357,7 +4360,6 @@ public final class RMPenilaianAwalKeperawatanIGD extends javax.swing.JDialog {
     private widget.TextBox Durasi;
     private widget.ComboBox Edema;
     private widget.ComboBox Edukasi;
-    private widget.TextBox EdukasiPasien;
     private widget.PanelBiasa FormInput;
     private widget.PanelBiasa FormMasalahRencana;
     private widget.PanelBiasa FormMenu;
@@ -4524,7 +4526,6 @@ public final class RMPenilaianAwalKeperawatanIGD extends javax.swing.JDialog {
     private widget.Label jLabel43;
     private widget.Label jLabel44;
     private widget.Label jLabel45;
-    private widget.Label jLabel46;
     private widget.Label jLabel50;
     private widget.Label jLabel51;
     private widget.Label jLabel52;
@@ -4615,9 +4616,9 @@ public final class RMPenilaianAwalKeperawatanIGD extends javax.swing.JDialog {
                         + "penilaian_awal_keperawatan_igd.skala_nyeri,penilaian_awal_keperawatan_igd.durasi,penilaian_awal_keperawatan_igd.nyeri_hilang,penilaian_awal_keperawatan_igd.ket_nyeri,penilaian_awal_keperawatan_igd.pada_dokter,penilaian_awal_keperawatan_igd.ket_dokter,"
                         + "penilaian_awal_keperawatan_igd.berjalan_a,penilaian_awal_keperawatan_igd.berjalan_b,penilaian_awal_keperawatan_igd.berjalan_c,penilaian_awal_keperawatan_igd.hasil,penilaian_awal_keperawatan_igd.lapor,penilaian_awal_keperawatan_igd.ket_lapor,"
                         + "penilaian_awal_keperawatan_igd.rencana,penilaian_awal_keperawatan_igd.tindakan,penilaian_awal_keperawatan_igd.nadi,penilaian_awal_keperawatan_igd.suhu,penilaian_awal_keperawatan_igd.tb,penilaian_awal_keperawatan_igd.bb,penilaian_awal_keperawatan_igd.td,penilaian_awal_keperawatan_igd.rr,"
-                                + "penilaian_awal_keperawatan_igd.spo,penilaian_awal_keperawatan_igd.gcs,penilaian_awal_keperawatan_igd.tindak_lanjut_px,penilaian_awal_keperawatan_igd.ket_tindak_lanjut,penilaian_awal_keperawatan_igd.ruangan,penilaian_awal_keperawatan_igd.transportasi,penilaian_awal_keperawatan_igd.dipulangkan,"
-                                + "penilaian_awal_keperawatan_igd.meninggal,penilaian_awal_keperawatan_igd.edukasi_pasien,penilaian_awal_keperawatan_igd.diagnosa,"
-                                + "penilaian_awal_keperawatan_igd.nip,petugas.nama "
+                        + "penilaian_awal_keperawatan_igd.spo,penilaian_awal_keperawatan_igd.gcs,penilaian_awal_keperawatan_igd.tindak_lanjut_px,penilaian_awal_keperawatan_igd.ket_tindak_lanjut,penilaian_awal_keperawatan_igd.ruangan,penilaian_awal_keperawatan_igd.transportasi,penilaian_awal_keperawatan_igd.dipulangkan,"
+                        + "penilaian_awal_keperawatan_igd.meninggal,penilaian_awal_keperawatan_igd.diagnosa,"
+                        + "penilaian_awal_keperawatan_igd.nip,petugas.nama "
                         + "from reg_periksa inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "
                         + "inner join penilaian_awal_keperawatan_igd on reg_periksa.no_rawat=penilaian_awal_keperawatan_igd.no_rawat "
                         + "inner join petugas on penilaian_awal_keperawatan_igd.nip=petugas.nip "
@@ -4639,9 +4640,9 @@ public final class RMPenilaianAwalKeperawatanIGD extends javax.swing.JDialog {
                         + "penilaian_awal_keperawatan_igd.skala_nyeri,penilaian_awal_keperawatan_igd.durasi,penilaian_awal_keperawatan_igd.nyeri_hilang,penilaian_awal_keperawatan_igd.ket_nyeri,penilaian_awal_keperawatan_igd.pada_dokter,penilaian_awal_keperawatan_igd.ket_dokter,"
                         + "penilaian_awal_keperawatan_igd.berjalan_a,penilaian_awal_keperawatan_igd.berjalan_b,penilaian_awal_keperawatan_igd.berjalan_c,penilaian_awal_keperawatan_igd.hasil,penilaian_awal_keperawatan_igd.lapor,penilaian_awal_keperawatan_igd.ket_lapor,"
                         + "penilaian_awal_keperawatan_igd.rencana,penilaian_awal_keperawatan_igd.tindakan,penilaian_awal_keperawatan_igd.nadi,penilaian_awal_keperawatan_igd.suhu,penilaian_awal_keperawatan_igd.tb,penilaian_awal_keperawatan_igd.bb,penilaian_awal_keperawatan_igd.td,penilaian_awal_keperawatan_igd.rr,"
-                                + "penilaian_awal_keperawatan_igd.spo,penilaian_awal_keperawatan_igd.gcs,penilaian_awal_keperawatan_igd.tindak_lanjut_px,penilaian_awal_keperawatan_igd.ket_tindak_lanjut,penilaian_awal_keperawatan_igd.ruangan,penilaian_awal_keperawatan_igd.transportasi,penilaian_awal_keperawatan_igd.dipulangkan,"
-                                + "penilaian_awal_keperawatan_igd.meninggal,penilaian_awal_keperawatan_igd.edukasi_pasien,penilaian_awal_keperawatan_igd.diagnosa,"
-                                + "penilaian_awal_keperawatan_igd.nip,petugas.nama "
+                        + "penilaian_awal_keperawatan_igd.spo,penilaian_awal_keperawatan_igd.gcs,penilaian_awal_keperawatan_igd.tindak_lanjut_px,penilaian_awal_keperawatan_igd.ket_tindak_lanjut,penilaian_awal_keperawatan_igd.ruangan,penilaian_awal_keperawatan_igd.transportasi,penilaian_awal_keperawatan_igd.dipulangkan,"
+                        + "penilaian_awal_keperawatan_igd.meninggal,penilaian_awal_keperawatan_igd.diagnosa,"
+                        + "penilaian_awal_keperawatan_igd.nip,petugas.nama "
                         + "from reg_periksa inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "
                         + "inner join penilaian_awal_keperawatan_igd on reg_periksa.no_rawat=penilaian_awal_keperawatan_igd.no_rawat "
                         + "inner join petugas on penilaian_awal_keperawatan_igd.nip=petugas.nip "
@@ -4678,11 +4679,10 @@ public final class RMPenilaianAwalKeperawatanIGD extends javax.swing.JDialog {
                         rs.getString("sebutkan"), rs.getString("hubungan"), rs.getString("stts_nikah"), rs.getString("tinggal_dengan"), rs.getString("ket_tinggal"), rs.getString("pekerjaan"), rs.getString("png_jawab"), rs.getString("budaya"), rs.getString("ket_budaya"), rs.getString("pnd"), rs.getString("pendidikan_pj"), rs.getString("ket_pendidikan_pj"), rs.getString("edukasi"),
                         rs.getString("ket_edukasi"), rs.getString("kemampuan"), rs.getString("aktifitas"), rs.getString("alat_bantu"), rs.getString("ket_bantu"), rs.getString("nyeri"), rs.getString("provokes"), rs.getString("ket_provokes"), rs.getString("quality"), rs.getString("ket_quality"),
                         rs.getString("lokasi"), rs.getString("menyebar"), rs.getString("skala_nyeri"), rs.getString("durasi"), rs.getString("nyeri_hilang"), rs.getString("ket_nyeri"), rs.getString("pada_dokter"), rs.getString("ket_dokter"),
-                        rs.getString("berjalan_a"), rs.getString("berjalan_b"), rs.getString("berjalan_c"), rs.getString("hasil"), rs.getString("lapor"), rs.getString("ket_lapor"), rs.getString("rencana"), 
-                        
-                        rs.getString("tindakan"),rs.getString("nadi"),rs.getString("suhu"),rs.getString("tb"),rs.getString("bb"),rs.getString("td"),rs.getString("rr"),rs.getString("spo"),rs.getString("gcs"),
-                        rs.getString("tindak_lanjut_px"),rs.getString("ket_tindak_lanjut"),rs.getString("ruangan"),rs.getString("transportasi"),rs.getString("dipulangkan"),rs.getString("meninggal"),rs.getString("edukasi_pasien"),
-                        rs.getString("diagnosa"),rs.getString("nip"), rs.getString("nama")
+                        rs.getString("berjalan_a"), rs.getString("berjalan_b"), rs.getString("berjalan_c"), rs.getString("hasil"), rs.getString("lapor"), rs.getString("ket_lapor"), rs.getString("rencana"),
+                        rs.getString("tindakan"), rs.getString("nadi"), rs.getString("suhu"), rs.getString("tb"), rs.getString("bb"), rs.getString("td"), rs.getString("rr"), rs.getString("spo"), rs.getString("gcs"),
+                        rs.getString("tindak_lanjut_px"), rs.getString("ket_tindak_lanjut"), rs.getString("ruangan"), rs.getString("transportasi"), rs.getString("dipulangkan"), rs.getString("meninggal"),
+                        rs.getString("diagnosa"), rs.getString("nip"), rs.getString("nama")
                     });
                 }
             } catch (Exception e) {
@@ -4785,7 +4785,6 @@ public final class RMPenilaianAwalKeperawatanIGD extends javax.swing.JDialog {
         Transportasi.setSelectedIndex(0);
         Dipulangkan.setText("");
         Meninggal.setText("");
-        EdukasiPasien.setText("");
         Diagnosa.setText("");
         for (i = 0; i < tabModeMasalah.getRowCount(); i++) {
             tabModeMasalah.setValueAt(false, i, 0);
@@ -4890,9 +4889,8 @@ public final class RMPenilaianAwalKeperawatanIGD extends javax.swing.JDialog {
             Transportasi.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(), 91).toString());
             Dipulangkan.setText(tbObat.getValueAt(tbObat.getSelectedRow(), 92).toString());
             Meninggal.setText(tbObat.getValueAt(tbObat.getSelectedRow(), 93).toString());
-            EdukasiPasien.setText(tbObat.getValueAt(tbObat.getSelectedRow(), 94).toString());
-            Diagnosa.setText(tbObat.getValueAt(tbObat.getSelectedRow(), 95).toString());
-            
+            Diagnosa.setText(tbObat.getValueAt(tbObat.getSelectedRow(), 94).toString());
+
             try {
                 Valid.tabelKosong(tabModeMasalah);
 
@@ -5270,14 +5268,14 @@ public final class RMPenilaianAwalKeperawatanIGD extends javax.swing.JDialog {
     }
 
     private void ganti() {
-        
+
         if (Sequel.mengedittf("penilaian_awal_keperawatan_igd", "no_rawat=?", "no_rawat=?,tanggal=?,keluhan_utama=?,rpd=?,rpo=?,status_kehamilan=?,gravida=?,"
                 + "para=?,abortus=?,hpht=?,tekanan=?,pupil=?,neurosensorik=?,integumen=?,turgor=?,edema=?,mukosa=?,perdarahan=?,jumlah_perdarahan=?,warna_perdarahan=?,"
                 + "intoksikasi=?,bab=?,xbab=?,kbab=?,wbab=?,bak=?,xbak=?,wbak=?,lbak=?,psikologis=?,jiwa=?,perilaku=?,dilaporkan=?,sebutkan=?,hubungan=?,tinggal_dengan=?,"
                 + "ket_tinggal=?,budaya=?,ket_budaya=?,pendidikan_pj=?,ket_pendidikan_pj=?,edukasi=?,ket_edukasi=?,kemampuan=?,aktifitas=?,alat_bantu=?,ket_bantu=?,nyeri=?,"
                 + "provokes=?,ket_provokes=?,quality=?,ket_quality=?,lokasi=?,menyebar=?,skala_nyeri=?,durasi=?,nyeri_hilang=?,ket_nyeri=?,pada_dokter=?,ket_dokter=?,"
-                + "berjalan_a=?,berjalan_b=?,berjalan_c=?,hasil=?,lapor=?,ket_lapor=?,rencana=?,nip=?,informasi=?,"                
-                + "tindakan=?,nadi=?,suhu=?,tb=?,bb=?,td=?,rr=?,spo=?,gcs=?,tindak_lanjut_px=?,ket_tindak_lanjut=?,ruangan=?,transportasi=?,dipulangkan=?,meninggal=?,edukasi_pasien=?,diagnosa=?", 87, new String[]{
+                + "berjalan_a=?,berjalan_b=?,berjalan_c=?,hasil=?,lapor=?,ket_lapor=?,rencana=?,nip=?,informasi=?,"
+                + "tindakan=?,nadi=?,suhu=?,tb=?,bb=?,td=?,rr=?,spo=?,gcs=?,tindak_lanjut_px=?,ket_tindak_lanjut=?,ruangan=?,transportasi=?,dipulangkan=?,meninggal=?,diagnosa=?", 86, new String[]{
                     TNoRw.getText(), Valid.SetTgl(TglAsuhan.getSelectedItem() + "") + " " + TglAsuhan.getSelectedItem().toString().substring(11, 19), KeluhanUtama.getText(), RPD.getText(), RPO.getText(), StatusKehamilan.getSelectedItem().toString(),
                     Gravida.getText(), Para.getText(), Abortus.getText(), HPHT.getText(), Tekanan.getSelectedItem().toString(), Pupil.getSelectedItem().toString(), Neurosensorik.getSelectedItem().toString(), Integumen.getSelectedItem().toString(),
                     Turgor.getSelectedItem().toString(), Edema.getSelectedItem().toString(), Mukosa.getSelectedItem().toString(), Perdarahan.getSelectedItem().toString(), JumlahPerdarahan.getText(),
@@ -5287,11 +5285,10 @@ public final class RMPenilaianAwalKeperawatanIGD extends javax.swing.JDialog {
                     Aktifitas.getSelectedItem().toString(), AlatBantu.getSelectedItem().toString(), KetAlatBantu.getText(), Nyeri.getSelectedItem().toString(), Provokes.getSelectedItem().toString(), KetProvokes.getText(), Quality.getSelectedItem().toString(),
                     KetQuality.getText(), Lokasi.getText(), Menyebar.getSelectedItem().toString(), SkalaNyeri.getSelectedItem().toString(), Durasi.getText(), NyeriHilang.getSelectedItem().toString(), KetNyeri.getText(), PadaDokter.getSelectedItem().toString(),
                     KetDokter.getText(), ATS.getSelectedItem().toString(), BJM.getSelectedItem().toString(), MSA.getSelectedItem().toString(), Hasil.getSelectedItem().toString(), Lapor.getSelectedItem().toString(), KetLapor.getText(), Rencana.getText(),
-                    KdPetugas.getText(), Informasi.getSelectedItem().toString(),                     
-                    Tindakan.getSelectedItem().toString(),Nadi.getText(),Suhu.getText(),TB.getText(),BB.getText(),TD.getText(),RR.getText(),SPO.getText(),GCS.getText(),
-                    TindakLanjut.getSelectedItem().toString(),Ket_Tindak_Lanjut.getText(),MasukRuang.getText(),Transportasi.getSelectedItem().toString(),Dipulangkan.getText(),Meninggal.getText(),EdukasiPasien.getText(),Diagnosa.getText(),
-                    tbObat.getValueAt(tbObat.getSelectedRow(), 0).toString(),
-                }) == true) {
+                    KdPetugas.getText(), Informasi.getSelectedItem().toString(),
+                    Tindakan.getSelectedItem().toString(), Nadi.getText(), Suhu.getText(), TB.getText(), BB.getText(), TD.getText(), RR.getText(), SPO.getText(), GCS.getText(),
+                    TindakLanjut.getSelectedItem().toString(), Ket_Tindak_Lanjut.getText(), MasukRuang.getText(), Transportasi.getSelectedItem().toString(), Dipulangkan.getText(), Meninggal.getText(), Diagnosa.getText(),
+                    tbObat.getValueAt(tbObat.getSelectedRow(), 0).toString(),}) == true) {
             Sequel.meghapus("penilaian_awal_keperawatan_igd_masalah", "no_rawat", tbObat.getValueAt(tbObat.getSelectedRow(), 0).toString());
             for (i = 0; i < tbMasalahKeperawatan.getRowCount(); i++) {
                 if (tbMasalahKeperawatan.getValueAt(i, 0).toString().equals("true")) {
@@ -5309,8 +5306,8 @@ public final class RMPenilaianAwalKeperawatanIGD extends javax.swing.JDialog {
             DetailRencana.setText(Rencana.getText());
             emptTeks();
             TabRawat.setSelectedIndex(1);
-        }else{
-        JOptionPane.showMessageDialog(null, "Gagal ..!!");
+        } else {
+            JOptionPane.showMessageDialog(null, "Gagal ..!!");
         }
     }
 
