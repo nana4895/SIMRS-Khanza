@@ -5983,7 +5983,9 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                         "penilaian_awal_keperawatan_igd.nyeri,penilaian_awal_keperawatan_igd.provokes,penilaian_awal_keperawatan_igd.ket_provokes,penilaian_awal_keperawatan_igd.quality,penilaian_awal_keperawatan_igd.ket_quality,penilaian_awal_keperawatan_igd.lokasi,penilaian_awal_keperawatan_igd.menyebar,"+
                         "penilaian_awal_keperawatan_igd.skala_nyeri,penilaian_awal_keperawatan_igd.durasi,penilaian_awal_keperawatan_igd.nyeri_hilang,penilaian_awal_keperawatan_igd.ket_nyeri,penilaian_awal_keperawatan_igd.pada_dokter,penilaian_awal_keperawatan_igd.ket_dokter,"+
                         "penilaian_awal_keperawatan_igd.berjalan_a,penilaian_awal_keperawatan_igd.berjalan_b,penilaian_awal_keperawatan_igd.berjalan_c,penilaian_awal_keperawatan_igd.hasil,penilaian_awal_keperawatan_igd.lapor,penilaian_awal_keperawatan_igd.ket_lapor,"+
-                        "penilaian_awal_keperawatan_igd.rencana,penilaian_awal_keperawatan_igd.nip,petugas.nama "+
+                        "penilaian_awal_keperawatan_igd.rencana,penilaian_awal_keperawatan_igd.tindakan,penilaian_awal_keperawatan_igd.nadi,penilaian_awal_keperawatan_igd.suhu,penilaian_awal_keperawatan_igd.tb,penilaian_awal_keperawatan_igd.bb,penilaian_awal_keperawatan_igd.td,penilaian_awal_keperawatan_igd.rr,"
+                        + "penilaian_awal_keperawatan_igd.spo,penilaian_awal_keperawatan_igd.gcs,penilaian_awal_keperawatan_igd.tindak_lanjut_px,penilaian_awal_keperawatan_igd.ket_tindak_lanjut,penilaian_awal_keperawatan_igd.ruangan,penilaian_awal_keperawatan_igd.transportasi,penilaian_awal_keperawatan_igd.dipulangkan,"
+                        + "penilaian_awal_keperawatan_igd.meninggal,penilaian_awal_keperawatan_igd.diagnosa,penilaian_awal_keperawatan_igd.nip,petugas.nama "+
                         "from penilaian_awal_keperawatan_igd inner join petugas on penilaian_awal_keperawatan_igd.nip=petugas.nip where "+
                         "penilaian_awal_keperawatan_igd.no_rawat='"+norawat+"'").executeQuery();
                     if(rs2.next()){
@@ -6060,6 +6062,21 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                               "<td width='33%' border='0' style='margin-left: 10px'>BAK : Frekuensi : "+rs2.getString("bak")+" X/ "+rs2.getString("xbak")+"</td>"+
                                               "<td width='33%' border='0'>, Warna : "+rs2.getString("wbak")+"</td>"+
                                               "<td width='33%' border='0'>, Lain-lain : "+rs2.getString("lbak")+"</td>"+
+                                          "</tr>"+
+                                          "<tr>"+
+                                              "<td width='100%' border='0' colspan='3'>Vital Sign :</td>"+
+                                          "</tr>"+
+                                          "<tr>"+
+                                              "<td width='33%' border='0' style='margin-left: 10px'>Nadi : "+rs2.getString("nadi")+"&nbsp;x/menit </td>"+
+                                              "<td width='20%' border='0'>, Suhu : "+rs2.getString("suhu")+"&nbsp;&deg;C</td>"+
+                                              "<td width='33%' border='0'>, TB : "+rs2.getString("tb")+"&nbsp;Cm</td>"+
+                                              "<td width='33%' border='0'>, BB : "+rs2.getString("bb")+"&nbsp;Kg</td>"+
+                                          "</tr>"+
+                                          "<tr>"+
+                                              "<td width='33%' border='0' style='margin-left: 10px'>TD : "+rs2.getString("td")+"&nbsp;mmHg</td>"+
+                                              "<td width='20%' border='0'>, RR : "+rs2.getString("rr")+"&nbsp;%</td>"+
+                                              "<td width='33%' border='0'>, SPO : "+rs2.getString("spo")+"&nbsp;x/menit</td>"+
+                                              "<td width='33%' border='0'>, GCS : "+rs2.getString("gcs")+"</td>"+
                                           "</tr>"+
                                        "</table>"+
                                     "</td>"+
@@ -6208,11 +6225,30 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                 }
                             }
                             htmlContent.append(rs2.getString("rencana")+
-                                            "</td>"+
-                                          "</tr>"+
+                                            "</td>"+                                                    
                                        "</table>"+
                                     "</td>"+
+                                 "</tr>"+                                                    
                                  "</tr>"
+                                 + "<tr valign='top'>"
+                                    + "<td>VII. TINDAK LANJUT "
+                                        + "<table width='100%' border='0' align='center' cellpadding='3px' cellspacing='0px' class='tbl_form'>"
+                                            + "<tr>"+
+                                                "<td width='33%' border='0' style='margin-left: 10px'>Tindak Lanjut : "+rs2.getString("tindakan")+"</td>"+
+                                                "<td width='20%' border='0'> Masuk Ruang : "+rs2.getString("ruangan")+"</td>"+
+                                                "<td width='33%' border='0'> Instruksi : "+rs2.getString("tindak_lanjut_px")+", Keterangan : "+rs2.getString("ket_tindak_lanjut")+"</td>"
+                                            + "</tr>"
+                                            + "<tr>"+
+                                                "<td width='33%' border='0' style='margin-left: 10px'>Pasien Pulang : "+rs2.getString("dipulangkan")+" wib</td>"+
+                                                "<td width='20%' border='0'> Pasien Meninggal : "+rs2.getString("meninggal")+" wib</td>"+
+                                                "<td width='33%' border='0'> Transportasi : "+rs2.getString("transportasi")+"</td>"
+                                            + "</tr>"
+                                            + "<tr>"+
+                                                "<td width='33%' border='0' style='margin-left: 10px'>Diagnosa Pasien : "+rs2.getString("diagnosa")+"</td>"
+                                            + "</tr>"
+                                        + "</table>"
+                                    + "</td>"
+                                 + "</tr>"
                             );  
                         }
                         htmlContent.append(
@@ -10017,7 +10053,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
             if(chkCatatanObservasiIGD.isSelected()==true){
                 try {
                     rs2=koneksi.prepareStatement(
-                            "select catatan_observasi_igd.tgl_perawatan,catatan_observasi_igd.jam_rawat,catatan_observasi_igd.gcs,"+
+                            "select catatan_observasi_igd.tgl_perawatan,catatan_observasi_igd.jam_rawat,catatan_observasi_igd.gcs,catatan_observasi_igd.hasil_triase,"+
                             "catatan_observasi_igd.td,catatan_observasi_igd.hr,catatan_observasi_igd.rr,catatan_observasi_igd.suhu,catatan_observasi_igd.spo2,catatan_observasi_igd.tindakan,"+
                             "catatan_observasi_igd.nip,petugas.nama from catatan_observasi_igd inner join petugas on catatan_observasi_igd.nip=petugas.nip "+
                             "where catatan_observasi_igd.no_rawat='"+norawat+"' order by catatan_observasi_igd.tgl_perawatan,catatan_observasi_igd.jam_rawat").executeQuery();
@@ -10032,17 +10068,19 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                  "<tr align='center'>"+
                                     "<td valign='middle' width='4%' bgcolor='#FFFAF8' rowspan='2'>No.</td>"+
                                     "<td valign='middle' width='15%' bgcolor='#FFFAF8' rowspan='2'>Tanggal</td>"+
-                                    "<td valign='top' width='58%' bgcolor='#FFFAF8' colspan='6'>Monitoring</td>"+
+                                    "<td valign='top' width='58%' bgcolor='#FFFAF8' colspan='7'>Monitoring</td>"+
                                     "<td valign='middle' width='23%' bgcolor='#FFFAF8' rowspan='2'>Perawat/Paramedis</td>"+
+                                    "<td valign='middle' width='23%' bgcolor='#FFFAF8' rowspan='2'>Petugas</td>"+
                                  "</tr>"+
                                  "<tr align='center'>"+
                                     "<td valign='top' width='11%' bgcolor='#FFFAF8'>GCS(E,V,M)</td>"+
                                     "<td valign='top' width='10%' bgcolor='#FFFAF8'>TD</td>"+
-                                    "<td valign='top' width='9%' bgcolor='#FFFAF8'>HR (/menit)</td>"+
+                                    "<td valign='top' width='5%' bgcolor='#FFFAF8'>HR (/menit)</td>"+
                                     "<td valign='top' width='9%' bgcolor='#FFFAF8'>RR (/menit)</td>"+
                                     "<td valign='top' width='9%' bgcolor='#FFFAF8'>Suhu(C)</td>"+
                                     "<td valign='top' width='9%' bgcolor='#FFFAF8'>SpO2(%)</td>"+
-                                    "<td valign='top' width='9%' bgcolor='#FFFAF8'>Tindakan</td>"+
+                                    "<td valign='top' width='9%' bgcolor='#FFFAF8'>Hasil Triase</td>"+
+//                                    "<td valign='top' width='9%' bgcolor='#FFFAF8'>Tindakan</td>"+
                                  "</tr>"
                         );
                         rs2.beforeFirst();
@@ -10058,6 +10096,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                     "<td valign='top' align='center'>"+rs2.getString("rr")+"</td>"+
                                     "<td valign='top' align='center'>"+rs2.getString("suhu")+"</td>"+
                                     "<td valign='top' align='center'>"+rs2.getString("spo2")+"</td>"+
+                                    "<td valign='top' align='center'>"+rs2.getString("hasil_triase")+"</td>"+
                                     "<td valign='top'>"+rs2.getString("tindakan")+"</td>"+
                                     "<td valign='top'>"+rs2.getString("nip")+" "+rs2.getString("nama")+"</td>"+
                                  "</tr>");                                        
@@ -10923,7 +10962,8 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                             "penilaian_medis_ranap.kepala,penilaian_medis_ranap.mata,penilaian_medis_ranap.gigi,penilaian_medis_ranap.tht,penilaian_medis_ranap.thoraks,"+
                             "penilaian_medis_ranap.jantung,penilaian_medis_ranap.paru,penilaian_medis_ranap.abdomen,penilaian_medis_ranap.ekstremitas,penilaian_medis_ranap.genital,"+
                             "penilaian_medis_ranap.kulit,penilaian_medis_ranap.ket_fisik,penilaian_medis_ranap.ket_lokalis,penilaian_medis_ranap.lab,penilaian_medis_ranap.rad,"+
-                            "penilaian_medis_ranap.penunjang,penilaian_medis_ranap.diagnosis,penilaian_medis_ranap.tata,penilaian_medis_ranap.edukasi,dokter.nm_dokter "+
+                            "penilaian_medis_ranap.penunjang,penilaian_medis_ranap.diagnosis,penilaian_medis_ranap.tata,"+
+                            "penilaian_medis_ranap.edukasi,penilaian_medis_ranap.anamnesa_sosial,penilaian_medis_ranap.diet,penilaian_medis_ranap.monitoring,dokter.nm_dokter "+
                             "from penilaian_medis_ranap inner join dokter on penilaian_medis_ranap.kd_dokter=dokter.kd_dokter "+
                             "where penilaian_medis_ranap.no_rawat='"+norawat+"'").executeQuery();
                     if(rs2.next()){
@@ -10958,7 +10998,8 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                               "<td colspan='2'>Keluhan Utama : "+rs2.getString("keluhan_utama").replaceAll("(\r\n|\r|\n|\n\r)","<br>")+"</td>"+
                                           "</tr>"+
                                           "<tr>"+
-                                              "<td colspan='2'>Riwayat Penyakit Sekarang : "+rs2.getString("rps").replaceAll("(\r\n|\r|\n|\n\r)","<br>")+"</td>"+
+                                              "<td width='50%'>Riwayat Penyakit Sekarang : "+rs2.getString("rps").replaceAll("(\r\n|\r|\n|\n\r)","<br>")+"</td>"+
+                                              "<td width='50%'>Anamnesa Sosial : "+rs2.getString("anamnesa_sosial")+"</td>"+
                                           "</tr>"+
                                           "<tr>"+
                                               "<td width='50%'>Riwayat Penyakit Dahulu : "+rs2.getString("rpd").replaceAll("(\r\n|\r|\n|\n\r)","<br>")+"</td>"+
@@ -11063,7 +11104,27 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                  "</tr>"+
                                  "<tr>"+
                                     "<td valign='top'>"+
-                                       "VII. EDUKASI"+  
+                                       "VII. DIET"+  
+                                       "<table width='100%' border='0' align='center' cellpadding='3px' cellspacing='0px' class='tbl_form'>"+
+                                          "<tr>"+
+                                               "<td width='100%' border='0'>"+rs2.getString("diet").replaceAll("(\r\n|\r|\n|\n\r)","<br>")+"</td>"+
+                                          "</tr>"+
+                                       "</table>"+
+                                    "</td>"+
+                                 "</tr>"+
+                                 "<tr>"+
+                                    "<td valign='top'>"+
+                                       "VIII. MMONITORING"+  
+                                       "<table width='100%' border='0' align='center' cellpadding='3px' cellspacing='0px' class='tbl_form'>"+
+                                          "<tr>"+
+                                               "<td width='100%' border='0'>"+rs2.getString("monitoring").replaceAll("(\r\n|\r|\n|\n\r)","<br>")+"</td>"+
+                                          "</tr>"+
+                                       "</table>"+
+                                    "</td>"+
+                                 "</tr>"+
+                                 "<tr>"+
+                                    "<td valign='top'>"+
+                                       "IX. EDUKASI"+  
                                        "<table width='100%' border='0' align='center' cellpadding='3px' cellspacing='0px' class='tbl_form'>"+
                                           "<tr>"+
                                                "<td width='100%' border='0'>"+rs2.getString("edukasi").replaceAll("(\r\n|\r|\n|\n\r)","<br>")+"</td>"+

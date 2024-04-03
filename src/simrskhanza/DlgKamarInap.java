@@ -2397,7 +2397,7 @@ public class DlgKamarInap extends javax.swing.JDialog {
         MnCatatanObservasiRanapPostPartum.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         MnCatatanObservasiRanapPostPartum.setForeground(new java.awt.Color(50, 50, 50));
         MnCatatanObservasiRanapPostPartum.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
-        MnCatatanObservasiRanapPostPartum.setText("Observasi Rawat Inap Post Partum");
+        MnCatatanObservasiRanapPostPartum.setText("Observasi Rawat Inap Post SC");
         MnCatatanObservasiRanapPostPartum.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         MnCatatanObservasiRanapPostPartum.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         MnCatatanObservasiRanapPostPartum.setName("MnCatatanObservasiRanapPostPartum"); // NOI18N

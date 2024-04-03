@@ -126,7 +126,7 @@ public final class RMDataCatatanObservasiRanapPostPartum extends javax.swing.JDi
         TFU.setDocument(new batasInput((byte)15).getKata(TFU));
         Kontraksi.setDocument(new batasInput((byte)15).getKata(Kontraksi));
         Perdarahan.setDocument(new batasInput((byte)15).getKata(Perdarahan));
-        Keterangan.setDocument(new batasInput((byte)30).getKata(Keterangan));
+//        Keterangan.setDocument(new batasInput((byte)255).getKata(Keterangan));
         TCari.setDocument(new batasInput((int)100).getKata(TCari));
         
         if(koneksiDB.CARICEPAT().equals("aktif")){
@@ -258,7 +258,8 @@ public final class RMDataCatatanObservasiRanapPostPartum extends javax.swing.JDi
         Perdarahan = new widget.TextBox();
         jLabel30 = new widget.Label();
         jLabel31 = new widget.Label();
-        Keterangan = new widget.TextBox();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        Keterangan = new javax.swing.JTextArea();
         ChkInput = new widget.CekBox();
 
         jPopupMenu1.setName("jPopupMenu1"); // NOI18N
@@ -287,7 +288,7 @@ public final class RMDataCatatanObservasiRanapPostPartum extends javax.swing.JDi
         setUndecorated(true);
         setResizable(false);
 
-        internalFrame1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(240, 245, 235)), "::[ Catatan Observasi Rawat Inap Post Partum/Post SC ]::", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(50, 50, 50))); // NOI18N
+        internalFrame1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(240, 245, 235)), "::[ Catatan Observasi Rawat Inap Post SC ]::", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(50, 50, 50))); // NOI18N
         internalFrame1.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
         internalFrame1.setName("internalFrame1"); // NOI18N
         internalFrame1.setLayout(new java.awt.BorderLayout(1, 1));
@@ -453,7 +454,7 @@ public final class RMDataCatatanObservasiRanapPostPartum extends javax.swing.JDi
         panelGlass9.add(jLabel19);
 
         DTPCari1.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "03-07-2023" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "02-04-2024" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -467,7 +468,7 @@ public final class RMDataCatatanObservasiRanapPostPartum extends javax.swing.JDi
         panelGlass9.add(jLabel21);
 
         DTPCari2.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "03-07-2023" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "02-04-2024" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -533,7 +534,7 @@ public final class RMDataCatatanObservasiRanapPostPartum extends javax.swing.JDi
 
         FormInput.setBackground(new java.awt.Color(250, 255, 245));
         FormInput.setName("FormInput"); // NOI18N
-        FormInput.setPreferredSize(new java.awt.Dimension(100, 225));
+        FormInput.setPreferredSize(new java.awt.Dimension(150, 225));
         FormInput.setLayout(null);
 
         jLabel4.setText("No.Rawat :");
@@ -563,7 +564,7 @@ public final class RMDataCatatanObservasiRanapPostPartum extends javax.swing.JDi
         TPasien.setBounds(336, 10, 285, 23);
 
         Tanggal.setForeground(new java.awt.Color(50, 70, 50));
-        Tanggal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "03-07-2023" }));
+        Tanggal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "02-04-2024" }));
         Tanggal.setDisplayFormat("dd-MM-yyyy");
         Tanggal.setName("Tanggal"); // NOI18N
         Tanggal.setOpaque(false);
@@ -812,8 +813,9 @@ public final class RMDataCatatanObservasiRanapPostPartum extends javax.swing.JDi
             }
         });
         FormInput.add(TFU);
-        TFU.setBounds(84, 100, 100, 23);
+        TFU.setBounds(84, 100, 90, 23);
 
+        jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel24.setText("Kontraksi :");
         jLabel24.setName("jLabel24"); // NOI18N
         FormInput.add(jLabel24);
@@ -827,7 +829,7 @@ public final class RMDataCatatanObservasiRanapPostPartum extends javax.swing.JDi
             }
         });
         FormInput.add(Kontraksi);
-        Kontraksi.setBounds(261, 100, 100, 23);
+        Kontraksi.setBounds(240, 100, 80, 23);
 
         Perdarahan.setFocusTraversalPolicyProvider(true);
         Perdarahan.setName("Perdarahan"); // NOI18N
@@ -837,27 +839,39 @@ public final class RMDataCatatanObservasiRanapPostPartum extends javax.swing.JDi
             }
         });
         FormInput.add(Perdarahan);
-        Perdarahan.setBounds(450, 100, 100, 23);
+        Perdarahan.setBounds(400, 100, 80, 23);
 
         jLabel30.setText("Perdarahan :");
         jLabel30.setName("jLabel30"); // NOI18N
         FormInput.add(jLabel30);
-        jLabel30.setBounds(376, 100, 70, 23);
+        jLabel30.setBounds(320, 100, 70, 23);
 
         jLabel31.setText("Keterangan :");
         jLabel31.setName("jLabel31"); // NOI18N
         FormInput.add(jLabel31);
-        jLabel31.setBounds(555, 100, 80, 23);
+        jLabel31.setBounds(500, 100, 80, 23);
 
-        Keterangan.setFocusTraversalPolicyProvider(true);
+        jScrollPane2.setBackground(new java.awt.Color(255, 255, 255));
+        jScrollPane2.setForeground(new java.awt.Color(50, 50, 50));
+        jScrollPane2.setName("jScrollPane2"); // NOI18N
+
+        Keterangan.setBackground(new java.awt.Color(255, 255, 255));
+        Keterangan.setColumns(20);
+        Keterangan.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        Keterangan.setForeground(new java.awt.Color(50, 50, 50));
+        Keterangan.setLineWrap(true);
+        Keterangan.setRows(5);
+        Keterangan.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         Keterangan.setName("Keterangan"); // NOI18N
         Keterangan.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 KeteranganKeyPressed(evt);
             }
         });
-        FormInput.add(Keterangan);
-        Keterangan.setBounds(639, 100, 150, 23);
+        jScrollPane2.setViewportView(Keterangan);
+
+        FormInput.add(jScrollPane2);
+        jScrollPane2.setBounds(590, 100, 200, 50);
 
         PanelInput.add(FormInput, java.awt.BorderLayout.CENTER);
 
@@ -1227,7 +1241,8 @@ public final class RMDataCatatanObservasiRanapPostPartum extends javax.swing.JDi
     }//GEN-LAST:event_PerdarahanKeyPressed
 
     private void KeteranganKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_KeteranganKeyPressed
-        Valid.pindah(evt,Perdarahan,BtnSimpan);
+        // TODO add your handling code here:
+        Valid.pindah2(evt, Keterangan, BtnSimpan);
     }//GEN-LAST:event_KeteranganKeyPressed
 
     /**
@@ -1265,7 +1280,7 @@ public final class RMDataCatatanObservasiRanapPostPartum extends javax.swing.JDi
     private widget.TextBox HR;
     private widget.TextBox JK;
     private widget.ComboBox Jam;
-    private widget.TextBox Keterangan;
+    private javax.swing.JTextArea Keterangan;
     private widget.TextBox Kontraksi;
     private widget.Label LCount;
     private widget.ComboBox Menit;
@@ -1314,6 +1329,7 @@ public final class RMDataCatatanObservasiRanapPostPartum extends javax.swing.JDi
     private widget.Label jLabel8;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPopupMenu jPopupMenu1;
+    private javax.swing.JScrollPane jScrollPane2;
     private widget.panelisi panelGlass8;
     private widget.panelisi panelGlass9;
     private widget.Table tbObat;
@@ -1468,7 +1484,7 @@ public final class RMDataCatatanObservasiRanapPostPartum extends javax.swing.JDi
     private void isForm(){
         if(ChkInput.isSelected()==true){
             ChkInput.setVisible(false);
-            PanelInput.setPreferredSize(new Dimension(WIDTH,154));
+            PanelInput.setPreferredSize(new Dimension(WIDTH,180));
             FormInput.setVisible(true);      
             ChkInput.setVisible(true);
         }else if(ChkInput.isSelected()==false){           

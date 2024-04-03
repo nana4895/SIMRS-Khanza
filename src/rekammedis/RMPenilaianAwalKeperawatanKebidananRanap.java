@@ -1109,6 +1109,7 @@ public final class RMPenilaianAwalKeperawatanKebidananRanap extends javax.swing.
         jLabel212 = new widget.Label();
         jLabel213 = new widget.Label();
         jLabel214 = new widget.Label();
+        jLabel215 = new widget.Label();
         internalFrame3 = new widget.InternalFrame();
         Scroll = new widget.ScrollPane();
         tbObat = new widget.Table();
@@ -4304,10 +4305,11 @@ public final class RMPenilaianAwalKeperawatanKebidananRanap extends javax.swing.
         SkalaGizi1.setBounds(424, 1900, 320, 23);
 
         jLabel204.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel204.setText("2. Apakah asupan makan berkurang karena tidak nafsu makan ?");
+        jLabel204.setText("Skor 0 : Rendah, Skor 1-2 : Sedang, Skor >2 Tinggi");
+        jLabel204.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel204.setName("jLabel204"); // NOI18N
         FormInput.add(jLabel204);
-        jLabel204.setBounds(44, 1930, 380, 23);
+        jLabel204.setBounds(40, 1960, 310, 23);
 
         SkalaGizi2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Tidak", "Ya" }));
         SkalaGizi2.setName("SkalaGizi2"); // NOI18N
@@ -4473,6 +4475,12 @@ public final class RMPenilaianAwalKeperawatanKebidananRanap extends javax.swing.
         jLabel214.setName("jLabel214"); // NOI18N
         FormInput.add(jLabel214);
         jLabel214.setBounds(0, 670, 190, 23);
+
+        jLabel215.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel215.setText("2. Apakah asupan makan berkurang karena tidak nafsu makan ?");
+        jLabel215.setName("jLabel215"); // NOI18N
+        FormInput.add(jLabel215);
+        jLabel215.setBounds(44, 1930, 380, 23);
 
         scrollInput.setViewportView(FormInput);
 
@@ -7123,6 +7131,7 @@ public final class RMPenilaianAwalKeperawatanKebidananRanap extends javax.swing.
     private widget.Label jLabel212;
     private widget.Label jLabel213;
     private widget.Label jLabel214;
+    private widget.Label jLabel215;
     private widget.Label jLabel22;
     private widget.Label jLabel23;
     private widget.Label jLabel24;

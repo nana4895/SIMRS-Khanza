@@ -58,7 +58,7 @@ public final class RMDataCatatanObservasiIGD extends javax.swing.JDialog {
 
         tabMode=new DefaultTableModel(null,new Object[]{
             "No.Rawat","No.R.M.","Nama Pasien","Umur","JK","Tgl.Lahir","Tgl.Obser","Jam Obser","GCS (E,V,M)",
-            "TD(mmHg)","HR(x/menit)","RR(x/menit)","Suhu(°C)","SpO2(%)","Tindakan","Nama Petugas"
+            "TD(mmHg)","HR(x/menit)","RR(x/menit)","Suhu(°C)","SpO2(%)","Tindakan","Hasil Triase","Nama Petugas"
         }){
               @Override public boolean isCellEditable(int rowIndex, int colIndex){return false;}
         };
@@ -101,6 +101,8 @@ public final class RMDataCatatanObservasiIGD extends javax.swing.JDialog {
             }else if(i==14){
                 column.setPreferredWidth(200);//tindakan
             }else if(i==15){
+                column.setPreferredWidth(60);
+            }else if(i==16){
                 column.setPreferredWidth(160);//nama petugas
             }
         }
@@ -242,6 +244,8 @@ public final class RMDataCatatanObservasiIGD extends javax.swing.JDialog {
         jScrollPane2 = new javax.swing.JScrollPane();
         TindakanPerawat = new javax.swing.JTextArea();
         jLabel30 = new widget.Label();
+        jLabel31 = new widget.Label();
+        Hasil_Triase = new widget.ComboBox();
         ChkInput = new widget.CekBox();
 
         jPopupMenu1.setName("jPopupMenu1"); // NOI18N
@@ -436,7 +440,7 @@ public final class RMDataCatatanObservasiIGD extends javax.swing.JDialog {
         panelGlass9.add(jLabel19);
 
         DTPCari1.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "22-02-2024" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "01-04-2024" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -450,7 +454,7 @@ public final class RMDataCatatanObservasiIGD extends javax.swing.JDialog {
         panelGlass9.add(jLabel21);
 
         DTPCari2.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "22-02-2024" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "01-04-2024" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -546,7 +550,7 @@ public final class RMDataCatatanObservasiIGD extends javax.swing.JDialog {
         TPasien.setBounds(336, 10, 285, 23);
 
         Tanggal.setForeground(new java.awt.Color(50, 70, 50));
-        Tanggal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "22-02-2024" }));
+        Tanggal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "01-04-2024" }));
         Tanggal.setDisplayFormat("dd-MM-yyyy");
         Tanggal.setName("Tanggal"); // NOI18N
         Tanggal.setOpaque(false);
@@ -677,11 +681,11 @@ public final class RMDataCatatanObservasiIGD extends javax.swing.JDialog {
         FormInput.add(GCS);
         GCS.setBounds(90, 70, 50, 23);
 
-        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel17.setText("x/menit");
         jLabel17.setName("jLabel17"); // NOI18N
         FormInput.add(jLabel17);
-        jLabel17.setBounds(130, 110, 50, 23);
+        jLabel17.setBounds(120, 110, 40, 23);
 
         HR.setFocusTraversalPolicyProvider(true);
         HR.setName("HR"); // NOI18N
@@ -701,7 +705,7 @@ public final class RMDataCatatanObservasiIGD extends javax.swing.JDialog {
         jLabel22.setText("Suhu :");
         jLabel22.setName("jLabel22"); // NOI18N
         FormInput.add(jLabel22);
-        jLabel22.setBounds(310, 110, 40, 23);
+        jLabel22.setBounds(360, 70, 40, 23);
 
         Suhu.setFocusTraversalPolicyProvider(true);
         Suhu.setName("Suhu"); // NOI18N
@@ -711,12 +715,13 @@ public final class RMDataCatatanObservasiIGD extends javax.swing.JDialog {
             }
         });
         FormInput.add(Suhu);
-        Suhu.setBounds(360, 110, 40, 23);
+        Suhu.setBounds(400, 70, 40, 23);
 
+        jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel23.setText("TD :");
         jLabel23.setName("jLabel23"); // NOI18N
         FormInput.add(jLabel23);
-        jLabel23.setBounds(140, 70, 40, 23);
+        jLabel23.setBounds(140, 70, 30, 23);
 
         TD.setFocusTraversalPolicyProvider(true);
         TD.setName("TD"); // NOI18N
@@ -726,50 +731,45 @@ public final class RMDataCatatanObservasiIGD extends javax.swing.JDialog {
             }
         });
         FormInput.add(TD);
-        TD.setBounds(180, 70, 70, 23);
+        TD.setBounds(170, 70, 50, 23);
 
-        jLabel26.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel26.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel26.setText("°C");
         jLabel26.setName("jLabel26"); // NOI18N
         FormInput.add(jLabel26);
-        jLabel26.setBounds(400, 110, 30, 23);
+        jLabel26.setBounds(440, 70, 20, 23);
 
-        jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel27.setText("mmHg");
         jLabel27.setName("jLabel27"); // NOI18N
         FormInput.add(jLabel27);
-        jLabel27.setBounds(260, 70, 40, 23);
+        jLabel27.setBounds(220, 70, 40, 23);
 
         jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel25.setText("x/menit");
+        jLabel25.setText("Hasil Triase :");
         jLabel25.setName("jLabel25"); // NOI18N
         FormInput.add(jLabel25);
-        jLabel25.setBounds(260, 110, 50, 23);
+        jLabel25.setBounds(290, 110, 70, 23);
 
         RR.setFocusTraversalPolicyProvider(true);
         RR.setName("RR"); // NOI18N
-        RR.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RRActionPerformed(evt);
-            }
-        });
         RR.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 RRKeyPressed(evt);
             }
         });
         FormInput.add(RR);
-        RR.setBounds(210, 110, 40, 23);
+        RR.setBounds(200, 110, 40, 23);
 
         jLabel28.setText("RR :");
         jLabel28.setName("jLabel28"); // NOI18N
         FormInput.add(jLabel28);
-        jLabel28.setBounds(170, 110, 40, 23);
+        jLabel28.setBounds(170, 110, 30, 23);
 
         jLabel29.setText("Tindakan : ");
         jLabel29.setName("jLabel29"); // NOI18N
         FormInput.add(jLabel29);
-        jLabel29.setBounds(440, 70, 60, 23);
+        jLabel29.setBounds(470, 70, 60, 23);
 
         SPO.setFocusTraversalPolicyProvider(true);
         SPO.setName("SPO"); // NOI18N
@@ -779,13 +779,13 @@ public final class RMDataCatatanObservasiIGD extends javax.swing.JDialog {
             }
         });
         FormInput.add(SPO);
-        SPO.setBounds(340, 70, 40, 23);
+        SPO.setBounds(300, 70, 40, 23);
 
-        jLabel35.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel35.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel35.setText("%");
         jLabel35.setName("jLabel35"); // NOI18N
         FormInput.add(jLabel35);
-        jLabel35.setBounds(390, 70, 30, 23);
+        jLabel35.setBounds(340, 70, 20, 23);
 
         jScrollPane2.setBackground(new java.awt.Color(255, 255, 255));
         jScrollPane2.setForeground(new java.awt.Color(50, 50, 50));
@@ -806,12 +806,28 @@ public final class RMDataCatatanObservasiIGD extends javax.swing.JDialog {
         jScrollPane2.setViewportView(TindakanPerawat);
 
         FormInput.add(jScrollPane2);
-        jScrollPane2.setBounds(510, 70, 250, 74);
+        jScrollPane2.setBounds(540, 70, 250, 74);
 
         jLabel30.setText("SpO2 :");
         jLabel30.setName("jLabel30"); // NOI18N
         FormInput.add(jLabel30);
-        jLabel30.setBounds(300, 70, 40, 23);
+        jLabel30.setBounds(260, 70, 40, 23);
+
+        jLabel31.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel31.setText("x/menit");
+        jLabel31.setName("jLabel31"); // NOI18N
+        FormInput.add(jLabel31);
+        jLabel31.setBounds(240, 110, 40, 23);
+
+        Hasil_Triase.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Merah", "Kuning", "Hijau", "Hitam" }));
+        Hasil_Triase.setName("Hasil_Triase"); // NOI18N
+        Hasil_Triase.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                Hasil_TriaseKeyPressed(evt);
+            }
+        });
+        FormInput.add(Hasil_Triase);
+        Hasil_Triase.setBounds(360, 110, 89, 20);
 
         PanelInput.add(FormInput, java.awt.BorderLayout.CENTER);
 
@@ -861,7 +877,7 @@ public final class RMDataCatatanObservasiIGD extends javax.swing.JDialog {
         }else if(NIP.getText().trim().equals("")||NamaPetugas.getText().trim().equals("")){
             Valid.textKosong(NIP,"Petugas");
         }else{
-            if(Sequel.menyimpantf("catatan_observasi_igd","?,?,?,?,?,?,?,?,?,?,?","Data",11,new String[]{
+            if(Sequel.menyimpantf("catatan_observasi_igd","?,?,?,?,?,?,?,?,?,?,?,?","Data",12,new String[]{
                 TNoRw.getText(),
                 Valid.SetTgl(Tanggal.getSelectedItem()+""),
                 Jam.getSelectedItem()+":"+Menit.getSelectedItem()+":"+Detik.getSelectedItem(),
@@ -872,6 +888,7 @@ public final class RMDataCatatanObservasiIGD extends javax.swing.JDialog {
                 Suhu.getText(),
                 SPO.getText(),
                 TindakanPerawat.getText(),
+                Hasil_Triase.getSelectedItem().toString(),
                 NIP.getText()
             })==true){
                 tabMode.addRow(new String[]{
@@ -884,11 +901,10 @@ public final class RMDataCatatanObservasiIGD extends javax.swing.JDialog {
                     Valid.SetTgl(Tanggal.getSelectedItem()+""),
                     Jam.getSelectedItem()+":"+Menit.getSelectedItem()+":"+Detik.getSelectedItem(),
                     GCS.getText(),TD.getText(),HR.getText(),RR.getText(),Suhu.getText(),SPO.getText(),
-                    TindakanPerawat.getText(),
+                    TindakanPerawat.getText(),Hasil_Triase.getSelectedItem().toString(),
                     NamaPetugas.getText()
                 });
                 LCount.setText(""+tabMode.getRowCount());
-//                System.out.println("get Data : "+ TindakanPerawat.getText());
                 emptTeks();
             }   
         }
@@ -997,8 +1013,8 @@ public final class RMDataCatatanObservasiIGD extends javax.swing.JDialog {
             if(TCari.getText().trim().equals("")){
                 Valid.MyReportqry("rptDataCatatanObservasiIGD.jasper","report","::[ Data Catatan Observasi IGD ]::",
                     "select reg_periksa.no_rawat,pasien.no_rkm_medis,pasien.nm_pasien,reg_periksa.umurdaftar,reg_periksa.sttsumur,"+
-                    "pasien.jk,pasien.tgl_lahir,catatan_observasi_igd.tgl_perawatan,catatan_observasi_igd.jam_rawat,catatan_observasi_igd.gcs,"+
-                    "catatan_observasi_igd.td,catatan_observasi_igd.hr,catatan_observasi_igd.rr,catatan_observasi_igd.suhu,catatan_observasi_igd.spo2,"+
+                    "pasien.jk,pasien.tgl_lahir,catatan_observasi_igd.tgl_perawatan,catatan_observasi_igd.jam_rawat,catatan_observasi_igd.gcs,catatan_observasi_igd.tindakan,"+
+                    "catatan_observasi_igd.td,catatan_observasi_igd.hr,catatan_observasi_igd.rr,catatan_observasi_igd.suhu,catatan_observasi_igd.spo2,catatan_observasi_igd.hasil_triase,"+
                     "catatan_observasi_igd.nip,petugas.nama from catatan_observasi_igd inner join reg_periksa on catatan_observasi_igd.no_rawat=reg_periksa.no_rawat "+
                     "inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
                     "inner join petugas on catatan_observasi_igd.nip=petugas.nip where "+
@@ -1006,8 +1022,8 @@ public final class RMDataCatatanObservasiIGD extends javax.swing.JDialog {
             }else{
                 Valid.MyReportqry("rptDataCatatanObservasiIGD.jasper","report","::[ Data Catatan Observasi IGD ]::",
                     "select reg_periksa.no_rawat,pasien.no_rkm_medis,pasien.nm_pasien,reg_periksa.umurdaftar,reg_periksa.sttsumur,"+
-                    "pasien.jk,pasien.tgl_lahir,catatan_observasi_igd.tgl_perawatan,catatan_observasi_igd.jam_rawat,catatan_observasi_igd.gcs,"+
-                    "catatan_observasi_igd.td,catatan_observasi_igd.hr,catatan_observasi_igd.rr,catatan_observasi_igd.suhu,catatan_observasi_igd.spo2,"+
+                    "pasien.jk,pasien.tgl_lahir,catatan_observasi_igd.tgl_perawatan,catatan_observasi_igd.jam_rawat,catatan_observasi_igd.gcs,catatan_observasi_igd.tindakan,"+
+                    "catatan_observasi_igd.td,catatan_observasi_igd.hr,catatan_observasi_igd.rr,catatan_observasi_igd.suhu,catatan_observasi_igd.spo2,catatan_observasi_igd.hasil_triase,"+
                     "catatan_observasi_igd.nip,petugas.nama from catatan_observasi_igd inner join reg_periksa on catatan_observasi_igd.no_rawat=reg_periksa.no_rawat "+
                     "inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
                     "inner join petugas on catatan_observasi_igd.nip=petugas.nip where "+
@@ -1144,7 +1160,7 @@ public final class RMDataCatatanObservasiIGD extends javax.swing.JDialog {
             param.put("logo",Sequel.cariGambar("select setting.logo from setting")); 
             Valid.MyReportqry("rptFormulirCatatanObservasiIGD.jasper","report","::[ Formulir Catatan Observasi IGD ]::",
                     "select reg_periksa.no_rawat,pasien.no_rkm_medis,pasien.nm_pasien,reg_periksa.umurdaftar,reg_periksa.sttsumur,reg_periksa.tgl_registrasi,reg_periksa.jam_reg,"+
-                    "pasien.jk,pasien.tgl_lahir,catatan_observasi_igd.tgl_perawatan,catatan_observasi_igd.jam_rawat,catatan_observasi_igd.gcs,dokter.nm_dokter,"+
+                    "pasien.jk,pasien.tgl_lahir,catatan_observasi_igd.tgl_perawatan,catatan_observasi_igd.jam_rawat,catatan_observasi_igd.gcs,dokter.nm_dokter,catatan_observasi_igd.hasil_triase,"+
                     "catatan_observasi_igd.td,catatan_observasi_igd.hr,catatan_observasi_igd.rr,catatan_observasi_igd.suhu,catatan_observasi_igd.spo2,catatan_observasi_igd.tindakan,"+
                     "petugas.nama from catatan_observasi_igd inner join reg_periksa on catatan_observasi_igd.no_rawat=reg_periksa.no_rawat "+
                     "inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis inner join dokter on dokter.kd_dokter=reg_periksa.kd_dokter "+
@@ -1162,7 +1178,7 @@ public final class RMDataCatatanObservasiIGD extends javax.swing.JDialog {
     }//GEN-LAST:event_HRKeyPressed
 
     private void SuhuKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SuhuKeyPressed
-        Valid.pindah(evt,RR,TindakanPerawat);
+        Valid.pindah(evt,Suhu,HR);
     }//GEN-LAST:event_SuhuKeyPressed
 
     private void TDKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TDKeyPressed
@@ -1170,21 +1186,21 @@ public final class RMDataCatatanObservasiIGD extends javax.swing.JDialog {
     }//GEN-LAST:event_TDKeyPressed
 
     private void RRKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_RRKeyPressed
-        Valid.pindah(evt,HR,Suhu);
+        Valid.pindah(evt,HR,Hasil_Triase);
     }//GEN-LAST:event_RRKeyPressed
 
     private void SPOKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SPOKeyPressed
-        Valid.pindah(evt,Suhu,HR);
+        Valid.pindah(evt,SPO,Suhu);
     }//GEN-LAST:event_SPOKeyPressed
-
-    private void RRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RRActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_RRActionPerformed
 
     private void TindakanPerawatKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TindakanPerawatKeyPressed
         // TODO add your handling code here:
         Valid.pindah2(evt, TindakanPerawat, BtnSimpan);
     }//GEN-LAST:event_TindakanPerawatKeyPressed
+
+    private void Hasil_TriaseKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Hasil_TriaseKeyPressed
+        Valid.pindah(evt,Hasil_Triase,TindakanPerawat);
+    }//GEN-LAST:event_Hasil_TriaseKeyPressed
 
     /**
     * @param args the command line arguments
@@ -1219,6 +1235,7 @@ public final class RMDataCatatanObservasiIGD extends javax.swing.JDialog {
     private widget.PanelBiasa FormInput;
     private widget.TextBox GCS;
     private widget.TextBox HR;
+    private widget.ComboBox Hasil_Triase;
     private widget.TextBox JK;
     private widget.ComboBox Jam;
     private widget.Label LCount;
@@ -1257,6 +1274,7 @@ public final class RMDataCatatanObservasiIGD extends javax.swing.JDialog {
     private widget.Label jLabel28;
     private widget.Label jLabel29;
     private widget.Label jLabel30;
+    private widget.Label jLabel31;
     private widget.Label jLabel35;
     private widget.Label jLabel4;
     private widget.Label jLabel6;
@@ -1276,7 +1294,7 @@ public final class RMDataCatatanObservasiIGD extends javax.swing.JDialog {
             if(TCari.getText().toString().trim().equals("")){
                 ps=koneksi.prepareStatement(
                     "select reg_periksa.no_rawat,pasien.no_rkm_medis,pasien.nm_pasien,reg_periksa.umurdaftar,reg_periksa.sttsumur,"+
-                    "pasien.jk,pasien.tgl_lahir,catatan_observasi_igd.tgl_perawatan,catatan_observasi_igd.jam_rawat,catatan_observasi_igd.gcs,"+
+                    "pasien.jk,pasien.tgl_lahir,catatan_observasi_igd.tgl_perawatan,catatan_observasi_igd.jam_rawat,catatan_observasi_igd.gcs,catatan_observasi_igd.hasil_triase,"+
                     "catatan_observasi_igd.td,catatan_observasi_igd.hr,catatan_observasi_igd.rr,catatan_observasi_igd.suhu,catatan_observasi_igd.spo2,catatan_observasi_igd.tindakan,"+
                     "catatan_observasi_igd.nip,petugas.nama from catatan_observasi_igd inner join reg_periksa on catatan_observasi_igd.no_rawat=reg_periksa.no_rawat "+
                     "inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
@@ -1285,7 +1303,7 @@ public final class RMDataCatatanObservasiIGD extends javax.swing.JDialog {
             }else{
                 ps=koneksi.prepareStatement(
                     "select reg_periksa.no_rawat,pasien.no_rkm_medis,pasien.nm_pasien,reg_periksa.umurdaftar,reg_periksa.sttsumur,"+
-                    "pasien.jk,pasien.tgl_lahir,catatan_observasi_igd.tgl_perawatan,catatan_observasi_igd.jam_rawat,catatan_observasi_igd.gcs,"+
+                    "pasien.jk,pasien.tgl_lahir,catatan_observasi_igd.tgl_perawatan,catatan_observasi_igd.jam_rawat,catatan_observasi_igd.gcs,catatan_observasi_igd.hasil_triase,"+
                     "catatan_observasi_igd.td,catatan_observasi_igd.hr,catatan_observasi_igd.rr,catatan_observasi_igd.suhu,catatan_observasi_igd.spo2,catatan_observasi_igd.tindakan,"+
                     "catatan_observasi_igd.nip,petugas.nama from catatan_observasi_igd inner join reg_periksa on catatan_observasi_igd.no_rawat=reg_periksa.no_rawat "+
                     "inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
@@ -1315,7 +1333,7 @@ public final class RMDataCatatanObservasiIGD extends javax.swing.JDialog {
                         rs.getString("umurdaftar")+" "+rs.getString("sttsumur"),rs.getString("jk"),rs.getString("tgl_lahir"),
                         rs.getString("tgl_perawatan"),rs.getString("jam_rawat"),rs.getString("gcs"),rs.getString("td"),
                         rs.getString("hr"),rs.getString("rr"),rs.getString("suhu"),rs.getString("spo2"),rs.getString("tindakan"),
-                        rs.getString("nama")
+                        rs.getString("hasil_triase"),rs.getString("nama")
                     });
                 }
             } catch (Exception e) {
@@ -1342,6 +1360,7 @@ public final class RMDataCatatanObservasiIGD extends javax.swing.JDialog {
         Suhu.setText("");
         SPO.setText("");
         TindakanPerawat.setText("");
+        Hasil_Triase.setSelectedIndex(0);
         Tanggal.setDate(new Date());
         GCS.requestFocus();
     } 
@@ -1364,6 +1383,7 @@ public final class RMDataCatatanObservasiIGD extends javax.swing.JDialog {
             Suhu.setText(tbObat.getValueAt(tbObat.getSelectedRow(),12).toString());
             SPO.setText(tbObat.getValueAt(tbObat.getSelectedRow(),13).toString());
             TindakanPerawat.setText(tbObat.getValueAt(tbObat.getSelectedRow(),14).toString());
+            Hasil_Triase.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),15).toString());
             Valid.SetTgl(Tanggal,tbObat.getValueAt(tbObat.getSelectedRow(),6).toString());  
         }
     }
@@ -1493,9 +1513,9 @@ public final class RMDataCatatanObservasiIGD extends javax.swing.JDialog {
     }
 
     private void ganti() {
-        if(Sequel.mengedittf("catatan_observasi_igd","tgl_perawatan=? and jam_rawat=? and no_rawat=?","no_rawat=?,tgl_perawatan=?,jam_rawat=?,gcs=?,td=?,hr=?,rr=?,suhu=?,spo2=?,tindakan=?,nip=?",14,new String[]{
+        if(Sequel.mengedittf("catatan_observasi_igd","tgl_perawatan=? and jam_rawat=? and no_rawat=?","no_rawat=?,tgl_perawatan=?,jam_rawat=?,gcs=?,td=?,hr=?,rr=?,suhu=?,spo2=?,tindakan=?,hasil_triase=?,nip=?",15,new String[]{
             TNoRw.getText(),Valid.SetTgl(Tanggal.getSelectedItem()+""),Jam.getSelectedItem()+":"+Menit.getSelectedItem()+":"+Detik.getSelectedItem(),
-            GCS.getText(),TD.getText(),HR.getText(),RR.getText(),Suhu.getText(),SPO.getText(),TindakanPerawat.getText(),NIP.getText(),tbObat.getValueAt(tbObat.getSelectedRow(),6).toString(),
+            GCS.getText(),TD.getText(),HR.getText(),RR.getText(),Suhu.getText(),SPO.getText(),TindakanPerawat.getText(),Hasil_Triase.getSelectedItem().toString(),NIP.getText(),tbObat.getValueAt(tbObat.getSelectedRow(),6).toString(),
             tbObat.getValueAt(tbObat.getSelectedRow(),7).toString(),tbObat.getValueAt(tbObat.getSelectedRow(),0).toString()
         })==true){
             tbObat.setValueAt(TNoRw.getText(),tbObat.getSelectedRow(),0);
@@ -1513,7 +1533,8 @@ public final class RMDataCatatanObservasiIGD extends javax.swing.JDialog {
             tbObat.setValueAt(Suhu.getText(),tbObat.getSelectedRow(),12);
             tbObat.setValueAt(SPO.getText(),tbObat.getSelectedRow(),13);
             tbObat.setValueAt(TindakanPerawat.getText(),tbObat.getSelectedRow(),14);
-            tbObat.setValueAt(NamaPetugas.getText(),tbObat.getSelectedRow(),15);
+            tbObat.setValueAt(Hasil_Triase.getSelectedItem(),tbObat.getSelectedRow(),15);
+            tbObat.setValueAt(NamaPetugas.getText(),tbObat.getSelectedRow(),16);
             emptTeks();
         }
     }

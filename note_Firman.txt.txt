@@ -1,4 +1,14 @@
 - tabel 
-	- antrian poli
-	- Observasi IGD
-	- Awal Kebidanan
+    - antrian poli
+    - Catatan Observasi IGD
+    - Awal Kebidanan
+    - awal keperawatan IGD
+    - catatan observasi postpartum/sc
+
+- UI and Logic
+    - Rekap Obat per Pasien
+    - DLGBridgingBPJS
+    - DLGRawatJalan
+    - catatan observasi igd
+    - catatan pospartum ->post SC
+    - penambahan fitur cetak report pada daftar resep dokter(Ralan)
