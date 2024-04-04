@@ -6589,7 +6589,30 @@ private void tbDokterKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_
         BtnPrint.setEnabled(akses.getperiksa_lab());
         MnCetakSuratCovid.setEnabled(akses.getsurat_keterangan_covid());
         ppBerkasDigital.setEnabled(akses.getberkas_digital_perawatan());  
-        ppRiwayat.setEnabled(akses.getresume_pasien());   
+        ppRiwayat.setEnabled(akses.getresume_pasien());
+        
+        MnCetakHasilLab.setVisible(false);
+        MnCetakHasilLab1.setVisible(false);
+        MnCetakHasilLab2.setVisible(false);
+        MnCetakHasilLab3.setVisible(false);
+        MnCetakHasilLab4.setVisible(false);
+        MnCetakHasilLab5.setVisible(false);
+        MnCetakHasilLab6.setVisible(false);
+        MnCetakHasilLab7.setVisible(false);
+        MnCetakHasilLab9.setVisible(false);
+        MnCetakHasilLab10.setVisible(false);
+        MnCetakHasilLab11.setVisible(false);
+        MnCetakHasilLab12.setVisible(false);
+        MnCetakHasilLab13.setVisible(false);
+        MnCetakHasilLab14.setVisible(false);
+        MnCetakHasilLab15.setVisible(false);
+        MnCetakHasilLab16.setVisible(false);
+        MnCetakHasilLab17.setVisible(false);
+        MnCetakHasilLab18.setVisible(false);
+        MnCetakHasilLab20.setVisible(false);
+        MnCetakHasilLab21.setVisible(false);
+        MnCetakHasilLab22.setVisible(false);
+        MnCetakHasilLab23.setVisible(false);
     }
     
     public void setPasien(String pasien){

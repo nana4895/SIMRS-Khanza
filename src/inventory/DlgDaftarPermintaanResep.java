@@ -3170,35 +3170,25 @@ private void KdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TKdKey
                 }
             }
             psracikan=koneksi.prepareStatement(
-                "select obat_racikan.no_racik,obat_racikan.nama_racik,obat_racikan.tgl_perawatan,obat_racikan.jam," +
-                "obat_racikan.no_rawat,obat_racikan.aturan_pakai,obat_racikan.jml_dr,metode_racik.nm_racik " +
-                "from resep_obat inner join reg_periksa inner join " +
-                "obat_racikan inner join metode_racik on resep_obat.no_rawat=reg_periksa.no_rawat " +
-                "and obat_racikan.kd_racik=metode_racik.kd_racik " +
-                "and resep_obat.no_rawat=obat_racikan.no_rawat and " +
-                "resep_obat.tgl_perawatan=obat_racikan.tgl_perawatan and " +
-                "resep_obat.jam=obat_racikan.jam and resep_obat.no_rawat=obat_racikan.no_rawat "+
-                "where resep_obat.no_resep=?");
+                "select resep_dokter_racikan.no_racik,resep_dokter_racikan.nama_racik," +
+                "resep_dokter_racikan.kd_racik,metode_racik.nm_racik as metode, " +
+                "resep_dokter_racikan.jml_dr,resep_dokter_racikan.aturan_pakai, " +
+                "resep_dokter_racikan.keterangan from resep_dokter_racikan inner join metode_racik  " +
+                "on resep_dokter_racikan.kd_racik=metode_racik.kd_racik where " +
+                "resep_dokter_racikan.no_resep=? ");
             try{
                 psracikan.setString(1,tbResepRalan.getValueAt(tbResepRalan.getSelectedRow(),0).toString());
                 rsracikan=psracikan.executeQuery();
                 while(rsracikan.next()){
                     rincianobat="";
                     ps2=koneksi.prepareStatement(
-                        "select databarang.nama_brng,detail_pemberian_obat.jml from "+
-                        "detail_pemberian_obat inner join databarang inner join detail_obat_racikan "+
-                        "on detail_pemberian_obat.kode_brng=databarang.kode_brng and "+
-                        "detail_pemberian_obat.kode_brng=detail_obat_racikan.kode_brng and "+
-                        "detail_pemberian_obat.tgl_perawatan=detail_obat_racikan.tgl_perawatan and "+
-                        "detail_pemberian_obat.jam=detail_obat_racikan.jam and "+
-                        "detail_pemberian_obat.no_rawat=detail_obat_racikan.no_rawat "+
-                        "where detail_pemberian_obat.tgl_perawatan=? and detail_pemberian_obat.jam=? and "+
-                        "detail_pemberian_obat.no_rawat=? and detail_obat_racikan.no_racik=? order by databarang.kode_brng");
+                        "select databarang.kode_brng,databarang.nama_brng,resep_dokter_racikan_detail.jml, "+
+                        "databarang.kode_sat from resep_dokter_racikan_detail inner join databarang on resep_dokter_racikan_detail.kode_brng=databarang.kode_brng "+
+                        "where resep_dokter_racikan_detail.no_resep=? "+
+                        "and resep_dokter_racikan_detail.no_racik=? order by databarang.kode_brng;");
                     try {
-                        ps2.setString(1,rsracikan.getString("tgl_perawatan"));
-                        ps2.setString(2,rsracikan.getString("jam"));
-                        ps2.setString(3,rsracikan.getString("no_rawat"));
-                        ps2.setString(4,rsracikan.getString("no_racik"));
+                        ps2.setString(1,tbResepRalan.getValueAt(tbResepRalan.getSelectedRow(),0).toString());
+                        ps2.setString(2,rsracikan.getString("no_racik"));
                         rs2=ps2.executeQuery();
                         while(rs2.next()){
                             rincianobat=rs2.getString("nama_brng")+" "+rs2.getString("jml")+","+rincianobat;
@@ -3215,7 +3205,7 @@ private void KdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TKdKey
                     }
                     rincianobat = rincianobat.substring(0,rincianobat.length() - 1);
                     Sequel.menyimpan("temporary_resep","?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?",38,new String[]{
-                        ""+i,rsracikan.getString("nama_racik")+" ("+rincianobat+")",rsracikan.getString("aturan_pakai"),rsracikan.getString("jml_dr"),rsracikan.getString("nm_racik"),"","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",akses.getalamatip()
+                        ""+i,rsracikan.getString("nama_racik")+" ("+rincianobat+")",rsracikan.getString("aturan_pakai"),rsracikan.getString("jml_dr"),rsracikan.getString("metode"),"","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",akses.getalamatip()
                        });
                      i++;
                     }
@@ -3241,7 +3231,7 @@ private void KdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TKdKey
         param.put("kontakrs",akses.getkontakrs());
         param.put("penanggung",Sequel.cariIsi("select penjab.png_jawab from penjab where penjab.kd_pj=?",Sequel.cariIsi("select reg_periksa.kd_pj from reg_periksa where reg_periksa.no_rawat=?",tbResepRalan.getValueAt(tbResepRalan.getSelectedRow(),3).toString())));               
         param.put("propinsirs",akses.getpropinsirs());
-        param.put("tanggal",Valid.SetTgl(tbResepRalan.getValueAt(tbResepRalan.getSelectedRow(),1).toString()));
+        param.put("tanggal",tbResepRalan.getValueAt(tbResepRalan.getSelectedRow(),1).toString());
         param.put("norawat",tbResepRalan.getValueAt(tbResepRalan.getSelectedRow(),3).toString());
         param.put("pasien",tbResepRalan.getValueAt(tbResepRalan.getSelectedRow(),5).toString());
         param.put("norm",tbResepRalan.getValueAt(tbResepRalan.getSelectedRow(),4).toString());

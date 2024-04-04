@@ -18,7 +18,7 @@
 	<queryString>
 		<![CDATA[select reg_periksa.no_rawat,pasien.no_rkm_medis,pasien.nm_pasien,reg_periksa.umurdaftar,reg_periksa.sttsumur,reg_periksa.tgl_registrasi,reg_periksa.jam_reg,
 pasien.jk,pasien.tgl_lahir,catatan_observasi_igd.tgl_perawatan,catatan_observasi_igd.jam_rawat,catatan_observasi_igd.gcs,dokter.nm_dokter,
-catatan_observasi_igd.td,catatan_observasi_igd.hr,catatan_observasi_igd.rr,catatan_observasi_igd.suhu,catatan_observasi_igd.spo2,
+catatan_observasi_igd.td,catatan_observasi_igd.hr,catatan_observasi_igd.rr,catatan_observasi_igd.suhu,catatan_observasi_igd.spo2,catatan_observasi_igd.hasil_triase,
 petugas.nama from catatan_observasi_igd inner join reg_periksa on catatan_observasi_igd.no_rawat=reg_periksa.no_rawat 
 inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis inner join dokter on dokter.kd_dokter=reg_periksa.kd_dokter 
 inner join petugas on catatan_observasi_igd.nip=petugas.nip]]>
@@ -130,6 +130,11 @@ inner join petugas on catatan_observasi_igd.nip=petugas.nip]]>
 		<property name="com.jaspersoft.studio.field.name" value="tindakan"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="catatan_observasi_igd"/>
 	</field>
+	<field name="hasil_triase" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="hasil_triase"/>
+		<property name="com.jaspersoft.studio.field.label" value="hasil_triase"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="hasil_triase"/>
+	</field>
 	<field name="nama" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.name" value="nama"/>
 		<property name="com.jaspersoft.studio.field.label" value="nama"/>
@@ -139,7 +144,7 @@ inner join petugas on catatan_observasi_igd.nip=petugas.nip]]>
 		<band height="85" splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="108" splitType="Stretch">
+		<band height="149" splitType="Stretch">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<staticText>
 				<reportElement mode="Opaque" x="0" y="61" width="555" height="17" backcolor="#F0F0DC" uuid="5602588e-9425-43d7-ad36-c5e9f7e4a5b7"/>
@@ -418,7 +423,7 @@ inner join petugas on catatan_observasi_igd.nip=petugas.nip]]>
 		<band height="30" splitType="Stretch">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<staticText>
-				<reportElement mode="Opaque" x="287" y="17" width="42" height="12" forecolor="#000000" backcolor="#F0F0DC" uuid="7ce1c3b1-6973-4f45-a5a6-42066509a541"/>
+				<reportElement mode="Opaque" x="241" y="17" width="29" height="12" forecolor="#000000" backcolor="#F0F0DC" uuid="7ce1c3b1-6973-4f45-a5a6-42066509a541"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Tahoma" size="8" isBold="false"/>
 					<paragraph lineSpacing="Single"/>
@@ -426,7 +431,7 @@ inner join petugas on catatan_observasi_igd.nip=petugas.nip]]>
 				<text><![CDATA[SpO2]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="90" y="17" width="40" height="12" forecolor="#000000" backcolor="#F0F0DC" uuid="b1b9fcfd-0623-4bdb-b3de-ccd372f94b03"/>
+				<reportElement mode="Opaque" x="90" y="17" width="30" height="12" forecolor="#000000" backcolor="#F0F0DC" uuid="b1b9fcfd-0623-4bdb-b3de-ccd372f94b03"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Tahoma" size="8" isBold="false"/>
 					<paragraph lineSpacing="Single"/>
@@ -502,7 +507,7 @@ inner join petugas on catatan_observasi_igd.nip=petugas.nip]]>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement mode="Opaque" x="131" y="17" width="38" height="12" forecolor="#000000" backcolor="#F0F0DC" uuid="73aa4d35-49ad-46d1-91bf-effcf3d64d3a"/>
+				<reportElement mode="Opaque" x="121" y="17" width="29" height="12" forecolor="#000000" backcolor="#F0F0DC" uuid="73aa4d35-49ad-46d1-91bf-effcf3d64d3a"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Tahoma" size="8" isBold="false"/>
 					<paragraph lineSpacing="Single"/>
@@ -510,7 +515,7 @@ inner join petugas on catatan_observasi_igd.nip=petugas.nip]]>
 				<text><![CDATA[TD]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="170" y="17" width="40" height="12" forecolor="#000000" backcolor="#F0F0DC" uuid="6b368479-56e5-469f-9bb6-664036dc0d92"/>
+				<reportElement mode="Opaque" x="150" y="17" width="30" height="12" forecolor="#000000" backcolor="#F0F0DC" uuid="6b368479-56e5-469f-9bb6-664036dc0d92"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Tahoma" size="8" isBold="false"/>
 					<paragraph lineSpacing="Single"/>
@@ -518,7 +523,7 @@ inner join petugas on catatan_observasi_igd.nip=petugas.nip]]>
 				<text><![CDATA[HR]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="211" y="17" width="38" height="12" forecolor="#000000" backcolor="#F0F0DC" uuid="0a691b44-8e05-4173-bffd-4d0c61c1787a"/>
+				<reportElement mode="Opaque" x="181" y="17" width="29" height="12" forecolor="#000000" backcolor="#F0F0DC" uuid="0a691b44-8e05-4173-bffd-4d0c61c1787a"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Tahoma" size="8" isBold="false"/>
 					<paragraph lineSpacing="Single"/>
@@ -526,7 +531,7 @@ inner join petugas on catatan_observasi_igd.nip=petugas.nip]]>
 				<text><![CDATA[RR]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="250" y="17" width="38" height="12" forecolor="#000000" backcolor="#F0F0DC" uuid="51e058c3-020c-4479-8d8c-d8444d5b62d6"/>
+				<reportElement mode="Opaque" x="210" y="17" width="30" height="12" forecolor="#000000" backcolor="#F0F0DC" uuid="51e058c3-020c-4479-8d8c-d8444d5b62d6"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Tahoma" size="8" isBold="false"/>
 					<paragraph lineSpacing="Single"/>
@@ -534,7 +539,7 @@ inner join petugas on catatan_observasi_igd.nip=petugas.nip]]>
 				<text><![CDATA[Suhu]]></text>
 			</staticText>
 			<line>
-				<reportElement positionType="FixRelativeToBottom" x="130" y="17" width="1" height="12" uuid="5347be4e-53bf-41ef-bc41-936299d2cf4a">
+				<reportElement positionType="FixRelativeToBottom" x="120" y="17" width="1" height="12" uuid="5347be4e-53bf-41ef-bc41-936299d2cf4a">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
 				<graphicElement>
@@ -542,7 +547,7 @@ inner join petugas on catatan_observasi_igd.nip=petugas.nip]]>
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement positionType="FixRelativeToBottom" x="169" y="17" width="1" height="12" uuid="df3c63e0-e742-4483-828f-722db77553cd">
+				<reportElement positionType="FixRelativeToBottom" x="149" y="17" width="1" height="12" uuid="df3c63e0-e742-4483-828f-722db77553cd">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
 				<graphicElement>
@@ -550,7 +555,7 @@ inner join petugas on catatan_observasi_igd.nip=petugas.nip]]>
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement positionType="FixRelativeToBottom" x="210" y="17" width="1" height="12" uuid="62b6e97b-df79-4a06-bd6b-1ad859c81502">
+				<reportElement positionType="FixRelativeToBottom" x="180" y="17" width="1" height="12" uuid="62b6e97b-df79-4a06-bd6b-1ad859c81502">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
 				<graphicElement>
@@ -558,7 +563,7 @@ inner join petugas on catatan_observasi_igd.nip=petugas.nip]]>
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement positionType="FixRelativeToBottom" x="249" y="17" width="1" height="12" uuid="716d882d-4662-4d44-8291-1aa0d3480adf">
+				<reportElement positionType="FixRelativeToBottom" x="209" y="17" width="1" height="12" uuid="716d882d-4662-4d44-8291-1aa0d3480adf">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
 				<graphicElement>
@@ -566,7 +571,7 @@ inner join petugas on catatan_observasi_igd.nip=petugas.nip]]>
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement positionType="FixRelativeToBottom" x="288" y="17" width="1" height="12" uuid="18b14445-0ca4-4f81-85e1-bce716bd9e74">
+				<reportElement positionType="FixRelativeToBottom" x="240" y="17" width="1" height="12" uuid="18b14445-0ca4-4f81-85e1-bce716bd9e74">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
 				<graphicElement>
@@ -595,6 +600,17 @@ inner join petugas on catatan_observasi_igd.nip=petugas.nip]]>
 					<pen lineWidth="1.0"/>
 				</graphicElement>
 			</line>
+			<line>
+				<reportElement x="270" y="16" width="1" height="14" uuid="70f246ba-56ed-4f93-b267-001e5a35552a"/>
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="271" y="17" width="58" height="12" forecolor="#000000" backcolor="#F0F0DC" uuid="92b2fbf8-bba7-4201-8282-0264383b26ea"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Hasil Triase]]></text>
+			</staticText>
 		</band>
 	</columnHeader>
 	<detail>
@@ -611,7 +627,7 @@ inner join petugas on catatan_observasi_igd.nip=petugas.nip]]>
 				<textFieldExpression><![CDATA[$F{tgl_perawatan}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
-				<reportElement positionType="Float" x="90" y="1" width="40" height="10" uuid="8ccda384-6ed4-4843-8596-bf675bb62e18"/>
+				<reportElement positionType="Float" x="90" y="1" width="30" height="10" uuid="8ccda384-6ed4-4843-8596-bf675bb62e18"/>
 				<textElement textAlignment="Center">
 					<font fontName="Tahoma" size="8"/>
 					<paragraph lineSpacing="Single"/>
@@ -619,7 +635,7 @@ inner join petugas on catatan_observasi_igd.nip=petugas.nip]]>
 				<textFieldExpression><![CDATA[$F{gcs}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
-				<reportElement positionType="Float" x="211" y="1" width="38" height="10" uuid="795a99c8-7a8d-4db4-814a-4d0aa1c0dd9d"/>
+				<reportElement positionType="Float" x="181" y="1" width="29" height="10" uuid="795a99c8-7a8d-4db4-814a-4d0aa1c0dd9d"/>
 				<textElement textAlignment="Center">
 					<font fontName="Tahoma" size="8"/>
 					<paragraph lineSpacing="Single"/>
@@ -661,7 +677,7 @@ inner join petugas on catatan_observasi_igd.nip=petugas.nip]]>
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="210" y="-1" width="1" height="12" uuid="4d0ef31f-b50b-48b6-b611-28679cc15624">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="180" y="-1" width="1" height="12" uuid="4d0ef31f-b50b-48b6-b611-28679cc15624">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<graphicElement>
@@ -696,7 +712,7 @@ inner join petugas on catatan_observasi_igd.nip=petugas.nip]]>
 				<textFieldExpression><![CDATA[$F{jam_rawat}]]></textFieldExpression>
 			</textField>
 			<line>
-				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="130" y="-1" width="1" height="12" uuid="cd492e8b-ba82-4992-b65f-bc6e9fcb6920">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="120" y="-1" width="1" height="12" uuid="cd492e8b-ba82-4992-b65f-bc6e9fcb6920">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -705,7 +721,7 @@ inner join petugas on catatan_observasi_igd.nip=petugas.nip]]>
 				</graphicElement>
 			</line>
 			<textField isStretchWithOverflow="true">
-				<reportElement positionType="Float" x="131" y="1" width="38" height="10" uuid="85cf41a4-0e14-4a2d-9936-31009f58c570"/>
+				<reportElement positionType="Float" x="121" y="1" width="29" height="10" uuid="85cf41a4-0e14-4a2d-9936-31009f58c570"/>
 				<textElement textAlignment="Center">
 					<font fontName="Tahoma" size="8"/>
 					<paragraph lineSpacing="Single"/>
@@ -713,7 +729,7 @@ inner join petugas on catatan_observasi_igd.nip=petugas.nip]]>
 				<textFieldExpression><![CDATA[$F{td}]]></textFieldExpression>
 			</textField>
 			<line>
-				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="169" y="-1" width="1" height="12" uuid="09a62f81-05d8-4f3e-b4df-ca41cedd8eb7">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="149" y="-1" width="1" height="12" uuid="09a62f81-05d8-4f3e-b4df-ca41cedd8eb7">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -722,7 +738,7 @@ inner join petugas on catatan_observasi_igd.nip=petugas.nip]]>
 				</graphicElement>
 			</line>
 			<textField isStretchWithOverflow="true">
-				<reportElement positionType="Float" x="170" y="1" width="40" height="10" uuid="67de4489-1b5f-4810-9a0b-57de4687fca1"/>
+				<reportElement positionType="Float" x="150" y="1" width="30" height="10" uuid="67de4489-1b5f-4810-9a0b-57de4687fca1"/>
 				<textElement textAlignment="Center">
 					<font fontName="Tahoma" size="8"/>
 					<paragraph lineSpacing="Single"/>
@@ -730,7 +746,7 @@ inner join petugas on catatan_observasi_igd.nip=petugas.nip]]>
 				<textFieldExpression><![CDATA[$F{hr}]]></textFieldExpression>
 			</textField>
 			<line>
-				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="249" y="-1" width="1" height="12" uuid="c27269d6-ca00-4dac-a740-8ee7d21e3627">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="209" y="-1" width="1" height="12" uuid="c27269d6-ca00-4dac-a740-8ee7d21e3627">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -739,7 +755,7 @@ inner join petugas on catatan_observasi_igd.nip=petugas.nip]]>
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="288" y="-1" width="1" height="12" uuid="860aec38-313c-4056-a0c1-214e31bbc55e">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="240" y="-1" width="1" height="12" uuid="860aec38-313c-4056-a0c1-214e31bbc55e">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -748,7 +764,7 @@ inner join petugas on catatan_observasi_igd.nip=petugas.nip]]>
 				</graphicElement>
 			</line>
 			<textField isStretchWithOverflow="true">
-				<reportElement positionType="Float" x="250" y="1" width="38" height="10" uuid="0dbd269a-eefb-4ed1-ab39-a546142f7255"/>
+				<reportElement positionType="Float" x="210" y="1" width="30" height="10" uuid="0dbd269a-eefb-4ed1-ab39-a546142f7255"/>
 				<textElement textAlignment="Center">
 					<font fontName="Tahoma" size="8"/>
 					<paragraph lineSpacing="Single"/>
@@ -756,7 +772,7 @@ inner join petugas on catatan_observasi_igd.nip=petugas.nip]]>
 				<textFieldExpression><![CDATA[$F{suhu}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
-				<reportElement positionType="Float" x="288" y="1" width="41" height="10" uuid="5b0f5209-87ca-46a9-9b5b-085b662ce02c"/>
+				<reportElement positionType="Float" x="241" y="1" width="29" height="10" uuid="5b0f5209-87ca-46a9-9b5b-085b662ce02c"/>
 				<textElement textAlignment="Center">
 					<font fontName="Tahoma" size="8"/>
 					<paragraph lineSpacing="Single"/>
@@ -779,6 +795,23 @@ inner join petugas on catatan_observasi_igd.nip=petugas.nip]]>
 					<paragraph lineSpacing="Single"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{tindakan}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="270" y="0" width="1" height="12" uuid="29c43cec-b8f3-4a0e-8aab-b8a3b323055c">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="1.0"/>
+				</graphicElement>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="271" y="1" width="58" height="10" uuid="eb66b0b2-b536-4d21-a4bb-48a89500ab39"/>
+				<textElement textAlignment="Center">
+					<font fontName="Tahoma" size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hasil_triase}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
