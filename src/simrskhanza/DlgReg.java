@@ -15735,6 +15735,19 @@ private void MnLaporanRekapKunjunganBulananPoliActionPerformed(java.awt.event.Ac
         MnHasilPemeriksaanUSGGynecologi.setEnabled(akses.gethasil_usg_gynecologi());
         MnHasilPemeriksaanEKG.setEnabled(akses.gethasil_pemeriksaan_ekg());
         MnPenatalaksanaanTerapiOkupasi.setEnabled(akses.getpenatalaksanaan_terapi_okupasi());
+        
+        MnUrutPoliklinikAsc.setVisible(false);
+        MnUrutPoliklinikDesc.setVisible(false);
+        MnUrutStatusAsc.setVisible(false);
+        MnUrutStatusDesc.setVisible(false);
+        MnUrutRMAsc.setVisible(false);
+        MnUrutRMDesc.setVisible(false);
+        MnUrutRegAsc1.setVisible(false);
+        MnUrutRegDesc1.setVisible(false);
+        MnUrutDokterAsc.setVisible(false);
+        MnUrutDokterDesc.setVisible(false);
+        MnUrutPenjabAsc.setVisible(false);
+        MnUrutPenjabDesc.setVisible(false);
     }
     
     private void isNumber(){         

@@ -3361,7 +3361,7 @@ public class DlgPasien extends javax.swing.JDialog {
         FormInput.add(jLabel13);
         jLabel13.setBounds(4, 102, 95, 23);
 
-        DTPLahir.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "12-06-2023" }));
+        DTPLahir.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "24-04-2024" }));
         DTPLahir.setDisplayFormat("dd-MM-yyyy");
         DTPLahir.setName("DTPLahir"); // NOI18N
         DTPLahir.setOpaque(false);
@@ -3493,7 +3493,7 @@ public class DlgPasien extends javax.swing.JDialog {
         FormInput.add(TKtp);
         TKtp.setBounds(743, 132, 130, 23);
 
-        DTPDaftar.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "12-06-2023" }));
+        DTPDaftar.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "24-04-2024" }));
         DTPDaftar.setDisplayFormat("dd-MM-yyyy");
         DTPDaftar.setName("DTPDaftar"); // NOI18N
         DTPDaftar.setOpaque(false);
@@ -7062,6 +7062,7 @@ private void KabupatenMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
             CmbJk.setSelectedItem(cekViaBPJS.sex);
             TNoPeserta.setText(cekViaBPJS.noKartu);
             Pekerjaan.setText(cekViaBPJS.jenisPesertaketerangan);
+            TTlp.setText(cekViaBPJS.mrnoTelepon);
             Valid.SetTgl(DTPLahir,cekViaBPJS.tglLahir);
             DTPLahirItemStateChanged(null);
             this.setCursor(Cursor.getDefaultCursor());
@@ -7080,6 +7081,7 @@ private void KabupatenMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
             CmbJk.setSelectedItem(cekViaBPJSKartu.sex);
             TKtp.setText(cekViaBPJSKartu.nik);
             Pekerjaan.setText(cekViaBPJSKartu.jenisPesertaketerangan);
+            TTlp.setText(cekViaBPJSKartu.mrnoTelepon);
             Valid.SetTgl(DTPLahir,cekViaBPJSKartu.tglLahir);
             DTPLahirItemStateChanged(null);
             this.setCursor(Cursor.getDefaultCursor());
@@ -10026,6 +10028,9 @@ private void KabupatenMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
         ppCatatanPasien.setEnabled(akses.getcatatan_pasien());
         ppPasienCorona.setEnabled(akses.getpasien_corona());
         asalform=akses.getform();
+        
+        MnViaDukcapilNikAceh.setVisible(false);
+        MnViaDukcapilNikDKI.setVisible(false);
     }
 
     private void prosesCari2() {

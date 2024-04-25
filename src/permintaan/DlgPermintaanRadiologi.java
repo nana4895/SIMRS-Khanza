@@ -1222,7 +1222,7 @@ private void BtnCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
                     Penjab.setText(rs.getString("kd_pj"));
                     KodePerujuk.setText(rs.getString("kd_dokter"));
                     NmPerujuk.setText(rs.getString("nm_dokter"));
-                    TPasien.setText(rs.getString("nm_pasien"));
+                    TPasien.setText(rs.getString("nm_pasien")+" ("+rs.getString("umur")+")");
                     Jk.setText(rs.getString("jk"));
                     Umur.setText(rs.getString("umur"));
                     Alamat.setText(rs.getString("alamat"));

@@ -329,7 +329,7 @@
 	<detail>
 		<band height="25" splitType="Stretch">
 			<textField isStretchWithOverflow="true">
-				<reportElement positionType="Float" mode="Transparent" x="18" y="0" width="165" height="10" uuid="b94f7c44-3742-48d8-b751-bf008502fe96"/>
+				<reportElement positionType="Float" mode="Transparent" x="18" y="0" width="180" height="10" uuid="b94f7c44-3742-48d8-b751-bf008502fe96"/>
 				<textElement>
 					<font fontName="Tahoma" size="8"/>
 					<paragraph lineSpacing="Single"/>
@@ -375,7 +375,7 @@
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement x="16" y="21" width="230" height="1" uuid="bfdae890-9402-43f3-8038-995a00cad6e8"/>
+				<reportElement x="16" y="24" width="230" height="1" uuid="bfdae890-9402-43f3-8038-995a00cad6e8"/>
 			</line>
 		</band>
 	</detail>

@@ -243,9 +243,9 @@ public class DlgIKBBayi extends javax.swing.JDialog {
         tabModeAPGAR.addRow(new Object[]{"Warna","Biru Pucat","Tubuh Kemerahan, Tangan & Kaki Biru","Kemerahan","","",""});
 
         NoRm.setDocument(new batasInput((byte)15).getKata(NoRm));
-        NmBayi.setDocument(new batasInput((byte)40).getKata(NmBayi));
+        NmBayi.setDocument(new batasInput((byte)60).getKata(NmBayi));
         AlamatIbu.setDocument(new batasInput((int)200).getKata(AlamatIbu));
-        Nmibu.setDocument(new batasInput((byte)50).getKata(Nmibu));
+        Nmibu.setDocument(new batasInput((byte)60).getKata(Nmibu));
         UmurIbu.setDocument(new batasInput((byte)8).getKata(UmurIbu));
         NmAyah.setDocument(new batasInput((byte)50).getKata(NmAyah));
         UmurAyah.setDocument(new batasInput((byte)8).getKata(UmurAyah));

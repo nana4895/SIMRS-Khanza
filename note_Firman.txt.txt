@@ -4,6 +4,8 @@
     - Awal Kebidanan
     - awal keperawatan IGD
     - catatan observasi postpartum/sc
+    - penilaian_medis_igd
+    - Skrining_gizi_dewasa
 
 - UI and Logic
     - Rekap Obat per Pasien
@@ -12,3 +14,5 @@
     - catatan observasi igd
     - catatan pospartum ->post SC
     - penambahan fitur cetak report pada daftar resep dokter(Ralan)
+    - Awal Medis IGD
+    - Skrining Gizi Nutrisi Dewasa

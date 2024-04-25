@@ -8549,10 +8549,10 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
             if(chkAsuhanMedisIGD.isSelected()==true){
                 try {
                     rs2=koneksi.prepareStatement(
-                            "select penilaian_medis_igd.tanggal,penilaian_medis_igd.kd_dokter,penilaian_medis_igd.anamnesis,penilaian_medis_igd.hubungan,penilaian_medis_igd.keluhan_utama,penilaian_medis_igd.rps,"+
-                            "penilaian_medis_igd.rpk,penilaian_medis_igd.rpd,penilaian_medis_igd.rpo,penilaian_medis_igd.alergi,penilaian_medis_igd.keadaan,penilaian_medis_igd.gcs,penilaian_medis_igd.kesadaran,"+
+                            "select penilaian_medis_igd.tanggal,penilaian_medis_igd.kd_dokter,penilaian_medis_igd.anamnesis,penilaian_medis_igd.hubungan,penilaian_medis_igd.keluhan_utama,penilaian_medis_igd.rps,penilaian_medis_igd.anamnesa_sosial,"+
+                            "penilaian_medis_igd.rpk,penilaian_medis_igd.rpd,penilaian_medis_igd.rpo,penilaian_medis_igd.alergi,penilaian_medis_igd.keadaan,penilaian_medis_igd.gcs,penilaian_medis_igd.kesadaran,penilaian_medis_igd.diet,"+
                             "penilaian_medis_igd.td,penilaian_medis_igd.nadi,penilaian_medis_igd.rr,penilaian_medis_igd.suhu,penilaian_medis_igd.spo,penilaian_medis_igd.bb,penilaian_medis_igd.tb,penilaian_medis_igd.kepala,"+
-                            "penilaian_medis_igd.mata,penilaian_medis_igd.gigi,penilaian_medis_igd.leher,penilaian_medis_igd.thoraks,penilaian_medis_igd.abdomen,penilaian_medis_igd.ekstremitas,penilaian_medis_igd.genital,"+
+                            "penilaian_medis_igd.mata,penilaian_medis_igd.gigi,penilaian_medis_igd.leher,penilaian_medis_igd.thoraks,penilaian_medis_igd.abdomen,penilaian_medis_igd.ekstremitas,penilaian_medis_igd.genital,penilaian_medis_igd.monitoring,"+
                             "penilaian_medis_igd.ket_fisik,penilaian_medis_igd.ket_lokalis,penilaian_medis_igd.ekg,penilaian_medis_igd.rad,penilaian_medis_igd.lab,penilaian_medis_igd.diagnosis,penilaian_medis_igd.tata,dokter.nm_dokter "+
                             "from penilaian_medis_igd inner join dokter on penilaian_medis_igd.kd_dokter=dokter.kd_dokter "+
                             "where penilaian_medis_igd.no_rawat='"+norawat+"'").executeQuery();
@@ -8597,6 +8597,9 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                           "<tr>"+
                                               "<td width='50%'>Riwayat Penyakit Keluarga : "+rs2.getString("rpk").replaceAll("(\r\n|\r|\n|\n\r)","<br>")+"</td>"+
                                               "<td width='50%'>Riwayat Penggunaan Obat : "+rs2.getString("rpo").replaceAll("(\r\n|\r|\n|\n\r)","<br>")+"</td>"+
+                                          "</tr>"+
+                                          "<tr>"+
+                                              "<td colspan='2'>Anamnesa Sosial : "+rs2.getString("anamnesa_sosial").replaceAll("(\r\n|\r|\n|\n\r)","<br>")+"</td>"+
                                           "</tr>"+
                                        "</table>"+
                                     "</td>"+
@@ -8678,6 +8681,26 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                        "<table width='100%' border='0' align='center' cellpadding='3px' cellspacing='0px' class='tbl_form'>"+
                                           "<tr>"+
                                                "<td width='100%' border='0'>"+rs2.getString("tata").replaceAll("(\r\n|\r|\n|\n\r)","<br>")+"</td>"+
+                                          "</tr>"+
+                                       "</table>"+
+                                    "</td>"+
+                                 "</tr>"+
+                                 "<tr>"+
+                                    "<td valign='top'>"+
+                                       "VII. DIET"+  
+                                       "<table width='100%' border='0' align='center' cellpadding='3px' cellspacing='0px' class='tbl_form'>"+
+                                          "<tr>"+
+                                               "<td width='100%' border='0'>"+rs2.getString("diet").replaceAll("(\r\n|\r|\n|\n\r)","<br>")+"</td>"+
+                                          "</tr>"+
+                                       "</table>"+
+                                    "</td>"+
+                                 "</tr>"+
+                                 "<tr>"+
+                                    "<td valign='top'>"+
+                                       "VIII. MONITORING"+  
+                                       "<table width='100%' border='0' align='center' cellpadding='3px' cellspacing='0px' class='tbl_form'>"+
+                                          "<tr>"+
+                                               "<td width='100%' border='0'>"+rs2.getString("monitoring").replaceAll("(\r\n|\r|\n|\n\r)","<br>")+"</td>"+
                                           "</tr>"+
                                        "</table>"+
                                     "</td>"+
@@ -13610,7 +13633,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                     rs2=koneksi.prepareStatement(
                             "select skrining_nutrisi_dewasa.tanggal,skrining_nutrisi_dewasa.td,skrining_nutrisi_dewasa.hr,skrining_nutrisi_dewasa.rr,skrining_nutrisi_dewasa.suhu,"+
                             "skrining_nutrisi_dewasa.bb,skrining_nutrisi_dewasa.tbpb,skrining_nutrisi_dewasa.spo2,skrining_nutrisi_dewasa.alergi,"+
-                            "skrining_nutrisi_dewasa.sg1,skrining_nutrisi_dewasa.nilai1,skrining_nutrisi_dewasa.sg2,skrining_nutrisi_dewasa.nilai2,"+
+                            "skrining_nutrisi_dewasa.sg1,skrining_nutrisi_dewasa.nilai1,skrining_nutrisi_dewasa.sg2,skrining_nutrisi_dewasa.nilai2,skrining_nutrisi_dewasa.sg3,skrining_nutrisi_dewasa.nilai3,"+
                             "skrining_nutrisi_dewasa.total_hasil,skrining_nutrisi_dewasa.nip,petugas.nama from skrining_nutrisi_dewasa "+
                             "inner join petugas on skrining_nutrisi_dewasa.nip=petugas.nip where skrining_nutrisi_dewasa.no_rawat='"+norawat+"'").executeQuery();
                     if(rs2.next()){
@@ -13669,12 +13692,17 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                                               "<td valign='top' align='center'>"+rs2.getString("nilai2")+"</td>"+
                                           "</tr>"+
                                           "<tr>"+
+                                              "<td valign='top'>3. Pasien Dengan Diagnosis Khusus ?</td>"+
+                                              "<td valign='top' align='center'>"+rs2.getString("sg3")+"</td>"+
+                                              "<td valign='top' align='center'>"+rs2.getString("nilai3")+"</td>"+
+                                          "</tr>"+
+                                          "<tr>"+
                                               "<td valign='top' align='center' colspan='2'>Total Skor</td>"+
                                               "<td valign='top' align='center'>"+rs2.getString("total_hasil")+"</td>"+
                                           "</tr>"+
                                        "</table>"+
                                        "<br>"+
-                                       "<i>Bila Skor >= 2, Pasien Beresiko Malnutrisi, Konsul Ke Ahli Gizi</i>"+
+                                       "<i>Bila Skor  0 = Skor Rendah, Skor 1-2 = Skor Sedang, Skor > 2 maka Skor Tinggi </i>"+
                                     "</td>"+
                                  "</tr>"
                             ); 

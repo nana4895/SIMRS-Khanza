@@ -1935,7 +1935,7 @@ public class frmUtama extends javax.swing.JFrame {
 
         tanggal.setEditable(false);
         tanggal.setForeground(new java.awt.Color(50, 70, 50));
-        tanggal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "13/03/2024" }));
+        tanggal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "22/04/2024" }));
         tanggal.setDisplayFormat("dd/MM/yyyy");
         tanggal.setName("tanggal"); // NOI18N
         tanggal.setOpaque(false);
@@ -2909,7 +2909,7 @@ public class frmUtama extends javax.swing.JFrame {
         });
 
         btnKeuntunganObatRanap.setIcon(new javax.swing.ImageIcon(getClass().getResource("/48x48/coins.png"))); // NOI18N
-        btnKeuntunganObatRanap.setText("Keuntungan Beri Obat ");
+        btnKeuntunganObatRanap.setText("Keuntungan Beri Obat Tehutang");
         btnKeuntunganObatRanap.setIconTextGap(0);
         btnKeuntunganObatRanap.setName("btnKeuntunganObatRanap"); // NOI18N
         btnKeuntunganObatRanap.setPreferredSize(new java.awt.Dimension(200, 90));
@@ -4152,7 +4152,7 @@ public class frmUtama extends javax.swing.JFrame {
         });
 
         btnKeuntunganObat2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/48x48/coins.png"))); // NOI18N
-        btnKeuntunganObat2.setText("Keuntungan Beri Obat 2");
+        btnKeuntunganObat2.setText("Keuntungan Beri Obat Lunas");
         btnKeuntunganObat2.setIconTextGap(0);
         btnKeuntunganObat2.setName("btnKeuntunganObat2"); // NOI18N
         btnKeuntunganObat2.setPreferredSize(new java.awt.Dimension(200, 90));

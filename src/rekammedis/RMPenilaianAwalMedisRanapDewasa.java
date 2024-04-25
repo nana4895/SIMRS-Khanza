@@ -1360,7 +1360,7 @@ public final class RMPenilaianAwalMedisRanapDewasa extends javax.swing.JDialog {
         label11.setBounds(380, 40, 52, 23);
 
         TglAsuhan.setForeground(new java.awt.Color(50, 70, 50));
-        TglAsuhan.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "03-04-2024 11:51:10" }));
+        TglAsuhan.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "22-04-2024 09:03:46" }));
         TglAsuhan.setDisplayFormat("dd-MM-yyyy HH:mm:ss");
         TglAsuhan.setName("TglAsuhan"); // NOI18N
         TglAsuhan.setOpaque(false);
@@ -1510,6 +1510,7 @@ public final class RMPenilaianAwalMedisRanapDewasa extends javax.swing.JDialog {
         Diet.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         Diet.setForeground(new java.awt.Color(50, 50, 50));
         Diet.setRows(5);
+        Diet.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         Diet.setName("Diet"); // NOI18N
         Diet.setSelectedTextColor(new java.awt.Color(255, 0, 0));
         Diet.setSelectionColor(new java.awt.Color(255, 255, 255));
@@ -1521,7 +1522,7 @@ public final class RMPenilaianAwalMedisRanapDewasa extends javax.swing.JDialog {
         jScrollPane1.setViewportView(Diet);
 
         FormInput.add(jScrollPane1);
-        jScrollPane1.setBounds(50, 1390, 370, 76);
+        jScrollPane1.setBounds(50, 1390, 370, 74);
 
         jScrollPane2.setName("jScrollPane2"); // NOI18N
 
@@ -1532,6 +1533,7 @@ public final class RMPenilaianAwalMedisRanapDewasa extends javax.swing.JDialog {
         Monitoring.setLineWrap(true);
         Monitoring.setRows(5);
         Monitoring.setWrapStyleWord(true);
+        Monitoring.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         Monitoring.setName("Monitoring"); // NOI18N
         Monitoring.setSelectedTextColor(new java.awt.Color(255, 0, 0));
         Monitoring.setSelectionColor(new java.awt.Color(255, 255, 255));
@@ -1543,7 +1545,7 @@ public final class RMPenilaianAwalMedisRanapDewasa extends javax.swing.JDialog {
         jScrollPane2.setViewportView(Monitoring);
 
         FormInput.add(jScrollPane2);
-        jScrollPane2.setBounds(510, 1390, 350, 76);
+        jScrollPane2.setBounds(510, 1390, 350, 74);
 
         jScrollPane3.setName("jScrollPane3"); // NOI18N
 
@@ -1551,11 +1553,12 @@ public final class RMPenilaianAwalMedisRanapDewasa extends javax.swing.JDialog {
         Edukasi.setColumns(20);
         Edukasi.setForeground(new java.awt.Color(50, 50, 50));
         Edukasi.setRows(5);
+        Edukasi.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         Edukasi.setName("Edukasi"); // NOI18N
         jScrollPane3.setViewportView(Edukasi);
 
         FormInput.add(jScrollPane3);
-        jScrollPane3.setBounds(50, 1510, 810, 86);
+        jScrollPane3.setBounds(50, 1510, 810, 84);
 
         jLabel14.setText("Riwayat Penggunaan Obat :");
         jLabel14.setName("jLabel14"); // NOI18N
@@ -1626,7 +1629,7 @@ public final class RMPenilaianAwalMedisRanapDewasa extends javax.swing.JDialog {
         panelGlass9.add(jLabel19);
 
         DTPCari1.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "03-04-2024" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "22-04-2024" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -1640,7 +1643,7 @@ public final class RMPenilaianAwalMedisRanapDewasa extends javax.swing.JDialog {
         panelGlass9.add(jLabel21);
 
         DTPCari2.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "03-04-2024" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "22-04-2024" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);

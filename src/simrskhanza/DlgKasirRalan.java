@@ -824,8 +824,8 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         MnStatusBaru = new javax.swing.JMenuItem();
         MnStatusLama = new javax.swing.JMenuItem();
         MnUrut = new javax.swing.JMenu();
-//        MnUrutNoRawatDesc = new javax.swing.JMenuItem();
-//        MnUrutNoRawatAsc = new javax.swing.JMenuItem();
+        MnUrutNoRawatDesc = new javax.swing.JMenuItem();
+        MnUrutNoRawatAsc = new javax.swing.JMenuItem();
 //        MnUrutTanggalDesc = new javax.swing.JMenuItem();
 //        MnUrutTanggalAsc = new javax.swing.JMenuItem();
 //        MnUrutDokterDesc = new javax.swing.JMenuItem();
@@ -4247,37 +4247,37 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         MnUrut.setName("MnUrut"); // NOI18N
         MnUrut.setPreferredSize(new java.awt.Dimension(200, 26));
 
-//        MnUrutNoRawatDesc.setBackground(new java.awt.Color(255, 255, 254));
-//        MnUrutNoRawatDesc.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-//        MnUrutNoRawatDesc.setForeground(new java.awt.Color(50, 50, 50));
-//        MnUrutNoRawatDesc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
-//        MnUrutNoRawatDesc.setText("No.Rawat Descending");
-//        MnUrutNoRawatDesc.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-//        MnUrutNoRawatDesc.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-//        MnUrutNoRawatDesc.setName("MnUrutNoRawatDesc"); // NOI18N
-//        MnUrutNoRawatDesc.setPreferredSize(new java.awt.Dimension(190, 26));
-//        MnUrutNoRawatDesc.addActionListener(new java.awt.event.ActionListener() {
-//            public void actionPerformed(java.awt.event.ActionEvent evt) {
-//                MnUrutNoRawatDescActionPerformed(evt);
-//            }
-//        });
-//        MnUrut.add(MnUrutNoRawatDesc);
+        MnUrutNoRawatDesc.setBackground(new java.awt.Color(255, 255, 254));
+        MnUrutNoRawatDesc.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        MnUrutNoRawatDesc.setForeground(new java.awt.Color(50, 50, 50));
+        MnUrutNoRawatDesc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
+        MnUrutNoRawatDesc.setText("No.Rawat Descending");
+        MnUrutNoRawatDesc.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        MnUrutNoRawatDesc.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        MnUrutNoRawatDesc.setName("MnUrutNoRawatDesc"); // NOI18N
+        MnUrutNoRawatDesc.setPreferredSize(new java.awt.Dimension(190, 26));
+        MnUrutNoRawatDesc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MnUrutNoRawatDescActionPerformed(evt);
+            }
+        });
+        MnUrut.add(MnUrutNoRawatDesc);
 
-//        MnUrutNoRawatAsc.setBackground(new java.awt.Color(255, 255, 254));
-//        MnUrutNoRawatAsc.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-//        MnUrutNoRawatAsc.setForeground(new java.awt.Color(50, 50, 50));
-//        MnUrutNoRawatAsc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
-//        MnUrutNoRawatAsc.setText("No.Rawat Ascending");
-//        MnUrutNoRawatAsc.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-//        MnUrutNoRawatAsc.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-//        MnUrutNoRawatAsc.setName("MnUrutNoRawatAsc"); // NOI18N
-//        MnUrutNoRawatAsc.setPreferredSize(new java.awt.Dimension(190, 26));
-//        MnUrutNoRawatAsc.addActionListener(new java.awt.event.ActionListener() {
-//            public void actionPerformed(java.awt.event.ActionEvent evt) {
-//                MnUrutNoRawatAscActionPerformed(evt);
-//            }
-//        });
-//        MnUrut.add(MnUrutNoRawatAsc);
+        MnUrutNoRawatAsc.setBackground(new java.awt.Color(255, 255, 254));
+        MnUrutNoRawatAsc.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        MnUrutNoRawatAsc.setForeground(new java.awt.Color(50, 50, 50));
+        MnUrutNoRawatAsc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
+        MnUrutNoRawatAsc.setText("No.Rawat Ascending");
+        MnUrutNoRawatAsc.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        MnUrutNoRawatAsc.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        MnUrutNoRawatAsc.setName("MnUrutNoRawatAsc"); // NOI18N
+        MnUrutNoRawatAsc.setPreferredSize(new java.awt.Dimension(190, 26));
+        MnUrutNoRawatAsc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MnUrutNoRawatAscActionPerformed(evt);
+            }
+        });
+        MnUrut.add(MnUrutNoRawatAsc);
 
 //        MnUrutTanggalDesc.setBackground(new java.awt.Color(255, 255, 254));
 //        MnUrutTanggalDesc.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
@@ -14386,9 +14386,9 @@ private void MnDataPemberianObatActionPerformed(java.awt.event.ActionEvent evt) 
 //    private javax.swing.JMenuItem MnUrutDokterAsc2;
 //    private javax.swing.JMenuItem MnUrutDokterDesc;
 //    private javax.swing.JMenuItem MnUrutDokterDesc2;
-//    private javax.swing.JMenuItem MnUrutNoRawatAsc;
+    private javax.swing.JMenuItem MnUrutNoRawatAsc;
 //    private javax.swing.JMenuItem MnUrutNoRawatAsc2;
-//    private javax.swing.JMenuItem MnUrutNoRawatDesc;
+    private javax.swing.JMenuItem MnUrutNoRawatDesc;
 //    private javax.swing.JMenuItem MnUrutNoRawatDesc2;
 //    private javax.swing.JMenuItem MnUrutPenjabAsc;
 //    private javax.swing.JMenuItem MnUrutPenjabAsc2;

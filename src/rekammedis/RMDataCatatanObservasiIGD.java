@@ -58,7 +58,8 @@ public final class RMDataCatatanObservasiIGD extends javax.swing.JDialog {
 
         tabMode=new DefaultTableModel(null,new Object[]{
             "No.Rawat","No.R.M.","Nama Pasien","Umur","JK","Tgl.Lahir","Tgl.Obser","Jam Obser","GCS (E,V,M)",
-            "TD(mmHg)","HR(x/menit)","RR(x/menit)","Suhu(°C)","SpO2(%)","Tindakan","Hasil Triase","Nama Petugas"
+            "TD(mmHg)","HR(x/menit)","RR(x/menit)","Suhu(°C)","SpO2(%)","Tindakan","Hasil Triase","NIP",
+            "Nama Petugas"
         }){
               @Override public boolean isCellEditable(int rowIndex, int colIndex){return false;}
         };
@@ -103,6 +104,8 @@ public final class RMDataCatatanObservasiIGD extends javax.swing.JDialog {
             }else if(i==15){
                 column.setPreferredWidth(60);
             }else if(i==16){
+                column.setPreferredWidth(160);//NIP
+            }else if(i==17){
                 column.setPreferredWidth(160);//nama petugas
             }
         }
@@ -901,7 +904,7 @@ public final class RMDataCatatanObservasiIGD extends javax.swing.JDialog {
                     Valid.SetTgl(Tanggal.getSelectedItem()+""),
                     Jam.getSelectedItem()+":"+Menit.getSelectedItem()+":"+Detik.getSelectedItem(),
                     GCS.getText(),TD.getText(),HR.getText(),RR.getText(),Suhu.getText(),SPO.getText(),
-                    TindakanPerawat.getText(),Hasil_Triase.getSelectedItem().toString(),
+                    TindakanPerawat.getText(),Hasil_Triase.getSelectedItem().toString(),NIP.getText(),
                     NamaPetugas.getText()
                 });
                 LCount.setText(""+tabMode.getRowCount());
@@ -935,7 +938,7 @@ public final class RMDataCatatanObservasiIGD extends javax.swing.JDialog {
             if(akses.getkode().equals("Admin Utama")){
                 hapus();
             }else{
-                if(NIP.getText().equals(tbObat.getValueAt(tbObat.getSelectedRow(),14).toString())){
+                if(NIP.getText().equals(tbObat.getValueAt(tbObat.getSelectedRow(),16).toString())){
                     hapus();
                 }else{
                     JOptionPane.showMessageDialog(null,"Hanya bisa dihapus oleh petugas yang bersangkutan..!!");
@@ -964,7 +967,7 @@ public final class RMDataCatatanObservasiIGD extends javax.swing.JDialog {
                 if(akses.getkode().equals("Admin Utama")){
                     ganti();
                 }else{
-                    if(NIP.getText().equals(tbObat.getValueAt(tbObat.getSelectedRow(),14).toString())){
+                    if(NIP.getText().equals(tbObat.getValueAt(tbObat.getSelectedRow(),16).toString())){
                         ganti();
                     }else{
                         JOptionPane.showMessageDialog(null,"Hanya bisa diganti oleh petugas yang bersangkutan..!!");
@@ -1333,7 +1336,7 @@ public final class RMDataCatatanObservasiIGD extends javax.swing.JDialog {
                         rs.getString("umurdaftar")+" "+rs.getString("sttsumur"),rs.getString("jk"),rs.getString("tgl_lahir"),
                         rs.getString("tgl_perawatan"),rs.getString("jam_rawat"),rs.getString("gcs"),rs.getString("td"),
                         rs.getString("hr"),rs.getString("rr"),rs.getString("suhu"),rs.getString("spo2"),rs.getString("tindakan"),
-                        rs.getString("hasil_triase"),rs.getString("nama")
+                        rs.getString("hasil_triase"),rs.getString("nip"),rs.getString("nama")
                     });
                 }
             } catch (Exception e) {
@@ -1534,7 +1537,8 @@ public final class RMDataCatatanObservasiIGD extends javax.swing.JDialog {
             tbObat.setValueAt(SPO.getText(),tbObat.getSelectedRow(),13);
             tbObat.setValueAt(TindakanPerawat.getText(),tbObat.getSelectedRow(),14);
             tbObat.setValueAt(Hasil_Triase.getSelectedItem(),tbObat.getSelectedRow(),15);
-            tbObat.setValueAt(NamaPetugas.getText(),tbObat.getSelectedRow(),16);
+            tbObat.setValueAt(NIP.getText(),tbObat.getSelectedRow(),16);
+            tbObat.setValueAt(NamaPetugas.getText(),tbObat.getSelectedRow(),17);
             emptTeks();
         }
     }

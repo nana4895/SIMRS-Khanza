@@ -18,6 +18,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
@@ -2227,6 +2229,7 @@ private void KdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TKdKey
     }//GEN-LAST:event_tbPermintaanStokKeyPressed
 
     private void BtnPenyerahanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPenyerahanActionPerformed
+        LocalDateTime setNow=LocalDateTime.now();
         if(TabPilihRawat.getSelectedIndex()==0){
             if(TabRawatJalan.getSelectedIndex()==0){
                 if(akses.getberi_obat()==true){
@@ -2239,6 +2242,9 @@ private void KdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TKdKey
                         Sequel.queryu("delete from antriapotek3");
                         Sequel.queryu("insert into antriapotek3 values('"+NoResep+"','1','"+NoRawat+"')");
                         Sequel.queryu("delete from bukti_penyerahan_resep_obat where no_resep='"+NoResep+"'");
+                        Sequel.mengedit("resep_obat","no_resep=?" ,"tgl_penyerahan=?,jam_penyerahan=?",3, new String[]{
+                        DateTimeFormatter.ofPattern("yyyy-MM-dd").format(setNow),DateTimeFormatter.ofPattern("HH:mm:ss").format(setNow),NoResep});
+                        tampil();
                     }
                 }else{
                     JOptionPane.showMessageDialog(null,"Maaf, Anda tidak punya hak akses untuk mengvalidasi...!!!!");

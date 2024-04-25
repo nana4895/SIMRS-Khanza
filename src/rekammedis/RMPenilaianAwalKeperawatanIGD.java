@@ -1582,7 +1582,7 @@ public final class RMPenilaianAwalKeperawatanIGD extends javax.swing.JDialog {
         KetDokter.setBounds(774, 850, 80, 23);
 
         TglAsuhan.setForeground(new java.awt.Color(50, 70, 50));
-        TglAsuhan.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "27-03-2024 14:43:02" }));
+        TglAsuhan.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "17-04-2024 13:12:44" }));
         TglAsuhan.setDisplayFormat("dd-MM-yyyy HH:mm:ss");
         TglAsuhan.setName("TglAsuhan"); // NOI18N
         TglAsuhan.setOpaque(false);
@@ -2722,7 +2722,7 @@ public final class RMPenilaianAwalKeperawatanIGD extends javax.swing.JDialog {
         FormInput.add(Lapor1);
         Lapor1.setBounds(575, 980, 80, 23);
 
-        TindakLanjut.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "APS", "Dirujuk", "Operasi", "Kamar Bersalin", "Melarikan Diri" }));
+        TindakLanjut.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "APS", "Dirujuk", "Operasi", "Kamar Bersalin", "Rawat Inap", "Melarikan Diri" }));
         TindakLanjut.setName("TindakLanjut"); // NOI18N
         TindakLanjut.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -2754,7 +2754,7 @@ public final class RMPenilaianAwalKeperawatanIGD extends javax.swing.JDialog {
         FormInput.add(jLabel28);
         jLabel28.setBounds(20, 1340, 80, 23);
 
-        Transportasi.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Kendaraan Pribadi", "Ambulance", "Kendaraan Jenazah" }));
+        Transportasi.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Kendaraan Pribadi", "Ambulance", "Mobil Jenazah" }));
         Transportasi.setName("Transportasi"); // NOI18N
         Transportasi.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -2879,7 +2879,7 @@ public final class RMPenilaianAwalKeperawatanIGD extends javax.swing.JDialog {
         panelGlass9.add(jLabel19);
 
         DTPCari1.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "27-03-2024" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "17-04-2024" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -2893,7 +2893,7 @@ public final class RMPenilaianAwalKeperawatanIGD extends javax.swing.JDialog {
         panelGlass9.add(jLabel21);
 
         DTPCari2.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "27-03-2024" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "17-04-2024" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -3071,7 +3071,7 @@ public final class RMPenilaianAwalKeperawatanIGD extends javax.swing.JDialog {
         } else if (NmPetugas.getText().trim().equals("")) {
             Valid.textKosong(BtnDokter, "Petugas");
         } else {
-            if (Sequel.menyimpantf("penilaian_awal_keperawatan_igd", "?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?", "No.Rawat", 86, new String[]{
+            if (Sequel.menyimpantf("penilaian_awal_keperawatan_igd", "?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?", "No.Rawat", 85, new String[]{
                 TNoRw.getText(), Valid.SetTgl(TglAsuhan.getSelectedItem() + "") + " " + TglAsuhan.getSelectedItem().toString().substring(11, 19), Informasi.getSelectedItem().toString(), KeluhanUtama.getText(), RPD.getText(), RPO.getText(), StatusKehamilan.getSelectedItem().toString(),
                 Gravida.getText(), Para.getText(), Abortus.getText(), HPHT.getText(), Tekanan.getSelectedItem().toString(), Pupil.getSelectedItem().toString(), Neurosensorik.getSelectedItem().toString(), Integumen.getSelectedItem().toString(),
                 Turgor.getSelectedItem().toString(), Edema.getSelectedItem().toString(), Mukosa.getSelectedItem().toString(), Perdarahan.getSelectedItem().toString(), JumlahPerdarahan.getText(),
@@ -3162,7 +3162,7 @@ public final class RMPenilaianAwalKeperawatanIGD extends javax.swing.JDialog {
                 if (akses.getkode().equals("Admin Utama")) {
                     ganti();
                 } else {
-                    if (KdPetugas.getText().equals(tbObat.getValueAt(tbObat.getSelectedRow(), 79).toString())) {
+                    if (KdPetugas.getText().equals(tbObat.getValueAt(tbObat.getSelectedRow(), 95).toString())) {
                         ganti();
                     } else {
                         JOptionPane.showMessageDialog(null, "Hanya bisa diganti oleh petugas yang bersangkutan..!!");

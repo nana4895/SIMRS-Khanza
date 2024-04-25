@@ -186,7 +186,7 @@ public class frmUtama extends javax.swing.JFrame {
                 nol_menit = "";
                 nol_detik = "";
                 Date now = Calendar.getInstance().getTime();
-                // Mengambil nilaj JAM, MENIT, dan DETIK Sekarang
+                // Mengambil nilai JAM, MENIT, dan DETIK Sekarang
                 nilai_jam = now.getHours();
                 nilai_menit = now.getMinutes();
                 nilai_detik = now.getSeconds();
@@ -225,13 +225,14 @@ public class frmUtama extends javax.swing.JFrame {
                     condition();
                     clinicalimpression();
                     dietgizi();
-                    medicationrequest();
-                    medicationdispense();
-                    servicerequestradiologi();
-                    specimenradiologi();
-                    observationradiologi();
-                    diagnosticreportradiologi();
+//                    medicationrequest();
+//                    medicationdispense();
+//                    servicerequestradiologi();
+//                    specimenradiologi();
+//                    observationradiologi();
+//                    diagnosticreportradiologi();
                 }
+                System.out.println("time : "+jam+":"+menit+":"+detik);
             }
         };
         // Timer
@@ -2452,7 +2453,7 @@ public class frmUtama extends javax.swing.JFrame {
                                 json = "{" +
                                             "\"resourceType\": \"ClinicalImpression\"," +
                                             "\"status\": \"completed\"," +
-                                            "\"description\" : \""+rs.getString("keluhan")+", "+rs.getString("pemeriksaan").replaceAll("(\r\n|\r|\n|\n\r)","<br>").replaceAll("\t", " ")+"\"," +
+                                            "\"description\" : \""+rs.getString("keluhan").replaceAll("(\r\n|\r|\n|\n\r)","<br>").replaceAll("\t", " ")+", "+rs.getString("pemeriksaan").replaceAll("(\r\n|\r|\n|\n\r)","<br>").replaceAll("\t", " ")+"\"," +
                                             "\"subject\" : {"+
                                                 "\"reference\" : \"Patient/"+idpasien+"\""+
                                             "},"+
@@ -2556,7 +2557,7 @@ public class frmUtama extends javax.swing.JFrame {
                                 json = "{" +
                                             "\"resourceType\": \"ClinicalImpression\"," +
                                             "\"status\": \"completed\"," +
-                                            "\"description\" : \""+rs.getString("keluhan")+", "+rs.getString("pemeriksaan").replaceAll("(\r\n|\r|\n|\n\r)","<br>").replaceAll("\t", " ")+"\"," +
+                                            "\"description\" : \""+rs.getString("keluhan").replaceAll("(\r\n|\r|\n|\n\r)","<br>").replaceAll("\t", " ")+", "+rs.getString("pemeriksaan").replaceAll("(\r\n|\r|\n|\n\r)","<br>").replaceAll("\t", " ")+"\"," +
                                             "\"subject\" : {"+
                                                 "\"reference\" : \"Patient/"+idpasien+"\""+
                                             "},"+

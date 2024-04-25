@@ -17317,6 +17317,15 @@ public class DlgKamarInap extends javax.swing.JDialog {
         MnHasilPemeriksaanUSGGynecologi.setEnabled(akses.gethasil_usg_gynecologi());
         MnHasilPemeriksaanEKG.setEnabled(akses.gethasil_pemeriksaan_ekg());
         
+        MnUrutPenjabDesc.setVisible(false);
+        MnUrutPenjabAsc.setVisible(false);
+        MnUrutRMAsc.setVisible(false);
+        MnUrutRMDesc.setVisible(false);
+        MnUrutKamarAsc.setVisible(false);
+        MnUrutKamarDesc.setVisible(false);
+        MnUrutTanggalMasukAsc.setVisible(false);
+        MnUrutTanggalMasukDesc.setVisible(false);
+        
         if(akses.getkode().equals("Admin Utama")){
             MnHapusDataSalah.setEnabled(true);
         }else{

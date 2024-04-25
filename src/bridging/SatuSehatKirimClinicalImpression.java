@@ -594,6 +594,8 @@ public final class SatuSehatKirimClinicalImpression extends javax.swing.JDialog 
                 try {
                     iddokter=cekViaSatuSehat.tampilIDParktisi(tbObat.getValueAt(i,13).toString());
                     idpasien=cekViaSatuSehat.tampilIDPasien(tbObat.getValueAt(i,5).toString());
+                    System.out.println("S & O : "+tbObat.getValueAt(i,10).toString());
+                    System.out.println("A : "+tbObat.getValueAt(i,11).toString());
                     try{
                         headers = new HttpHeaders();
                         headers.setContentType(MediaType.APPLICATION_JSON);
