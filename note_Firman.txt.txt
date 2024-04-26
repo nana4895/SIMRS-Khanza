@@ -6,6 +6,7 @@
     - catatan observasi postpartum/sc
     - penilaian_medis_igd
     - Skrining_gizi_dewasa
+    - resume_medis_ranap
 
 - UI and Logic
     - Rekap Obat per Pasien
@@ -16,3 +17,5 @@
     - penambahan fitur cetak report pada daftar resep dokter(Ralan)
     - Awal Medis IGD
     - Skrining Gizi Nutrisi Dewasa
+    - riwayat perawatan soapi
+    - resume medis ranap
