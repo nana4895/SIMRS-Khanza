@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.0.0  -->
+<!-- Created with Jaspersoft Studio version 6.8.0.final using JasperReports Library version 6.8.0-2ed8dfabb690ff337a5797129f2cd92902b0c87b  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="536" leftMargin="39" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7435c0f7-de74-4940-ae33-c2370e46f8e7">
 	<property name="ireport.zoom" value="1.399522140629204"/>
 	<property name="ireport.x" value="0"/>
@@ -42,7 +42,7 @@
                     resume_pasien_ranap.kd_diagnosa_sekunder4,resume_pasien_ranap.prosedur_utama,resume_pasien_ranap.kd_prosedur_utama,resume_pasien_ranap.prosedur_sekunder,resume_pasien_ranap.kd_prosedur_sekunder,
                     resume_pasien_ranap.prosedur_sekunder2,resume_pasien_ranap.kd_prosedur_sekunder2,resume_pasien_ranap.prosedur_sekunder3,resume_pasien_ranap.kd_prosedur_sekunder3,resume_pasien_ranap.alergi,
                     resume_pasien_ranap.diet,resume_pasien_ranap.lab_belum,resume_pasien_ranap.edukasi,resume_pasien_ranap.cara_keluar,resume_pasien_ranap.ket_keluar,resume_pasien_ranap.keadaan,
-                    resume_pasien_ranap.ket_keadaan,resume_pasien_ranap.dilanjutkan,resume_pasien_ranap.ket_dilanjutkan,resume_pasien_ranap.kontrol,resume_pasien_ranap.obat_pulang,reg_periksa.kd_pj,penjab.png_jawab,
+                    resume_pasien_ranap.ket_keadaan,resume_pasien_ranap.dilanjutkan,resume_pasien_ranap.ket_dilanjutkan,resume_pasien_ranap.obat_pulang,reg_periksa.kd_pj,penjab.png_jawab,
                     reg_periksa.umurdaftar,reg_periksa.sttsumur,pasien.pekerjaan,pasien.jk,pasien.tgl_lahir,concat(pasien.alamat,', ',kelurahan.nm_kel,', ',kecamatan.nm_kec,', ',kabupaten.nm_kab) as alamat
                    
                     from resume_pasien_ranap inner join reg_periksa on resume_pasien_ranap.no_rawat=reg_periksa.no_rawat inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis 
@@ -297,12 +297,6 @@ where resume_pasien_ranap.no_rawat= $P{norawat}]]>
 		<property name="com.jaspersoft.studio.field.tree.path" value="resume_pasien_ranap"/>
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="kontrol" class="java.sql.Timestamp">
-		<property name="com.jaspersoft.studio.field.name" value="kontrol"/>
-		<property name="com.jaspersoft.studio.field.label" value="kontrol"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="resume_pasien_ranap"/>
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
 	<field name="obat_pulang" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.name" value="obat_pulang"/>
 		<property name="com.jaspersoft.studio.field.label" value="obat_pulang"/>
@@ -371,24 +365,24 @@ where resume_pasien_ranap.no_rawat= $P{norawat}]]>
 				<text><![CDATA[RESUME MEDIS PASIEN]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="48" y="3" width="486" height="17" uuid="6c31c284-e35b-4e6c-8447-af5f9207b9b4"/>
-				<textElement textAlignment="Center">
+				<reportElement x="68" y="3" width="351" height="17" uuid="6c31c284-e35b-4e6c-8447-af5f9207b9b4"/>
+				<textElement textAlignment="Left">
 					<font fontName="Tahoma" size="12"/>
 					<paragraph lineSpacing="Single"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{namars}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="48" y="17" width="486" height="14" uuid="ba45cdb1-6e88-4a05-8795-1ae63b3ef11b"/>
-				<textElement textAlignment="Center">
+				<reportElement x="68" y="17" width="351" height="14" uuid="ba45cdb1-6e88-4a05-8795-1ae63b3ef11b"/>
+				<textElement textAlignment="Left">
 					<font fontName="Tahoma" size="8"/>
 					<paragraph lineSpacing="Single"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{alamatrs}+", "+$P{kotars}+", "+$P{propinsirs}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="48" y="28" width="486" height="14" uuid="6bb20c38-1c6d-461e-993d-04653cb69342"/>
-				<textElement textAlignment="Center">
+				<reportElement x="68" y="28" width="351" height="14" uuid="6bb20c38-1c6d-461e-993d-04653cb69342"/>
+				<textElement textAlignment="Left">
 					<font fontName="Tahoma" size="8"/>
 					<paragraph lineSpacing="Single"/>
 				</textElement>
@@ -401,8 +395,8 @@ where resume_pasien_ranap.no_rawat= $P{norawat}]]>
 				</graphicElement>
 			</line>
 			<textField>
-				<reportElement x="48" y="42" width="486" height="14" uuid="14bd74cb-266d-4524-b5f1-6402afbb3b8f"/>
-				<textElement textAlignment="Center">
+				<reportElement x="68" y="42" width="351" height="14" uuid="14bd74cb-266d-4524-b5f1-6402afbb3b8f"/>
+				<textElement textAlignment="Left">
 					<font fontName="Tahoma" size="8"/>
 					<paragraph lineSpacing="Single"/>
 				</textElement>
@@ -1601,26 +1595,6 @@ where resume_pasien_ranap.no_rawat= $P{norawat}]]>
 				<textFieldExpression><![CDATA[$F{dilanjutkan}+($F{ket_dilanjutkan}.equals("")?"":", "+$F{ket_dilanjutkan})]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement positionType="Float" x="291" y="667" width="60" height="10" uuid="9bca8abd-5dc5-45af-adb4-f746d202699e">
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-				</reportElement>
-				<textElement textAlignment="Left">
-					<font fontName="Tahoma" size="8" isBold="false" isItalic="false"/>
-					<paragraph lineSpacing="Single"/>
-				</textElement>
-				<text><![CDATA[Tanggal Kontrol]]></text>
-			</staticText>
-			<textField isStretchWithOverflow="true" pattern="dd-MM-yyyy H:m:s">
-				<reportElement positionType="Float" mode="Transparent" x="358" y="667" width="173" height="10" backcolor="#CCCCCC" uuid="3a1443e5-a54f-470c-9417-690c8a7f8f41">
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-				</reportElement>
-				<textElement>
-					<font fontName="Tahoma" size="8" isItalic="false" isUnderline="false"/>
-					<paragraph lineSpacing="Single"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{kontrol}]]></textFieldExpression>
-			</textField>
-			<staticText>
 				<reportElement positionType="Float" x="6" y="161" width="84" height="10" uuid="68b438b2-4483-4429-a4ad-ff64d9cbde73">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -1698,16 +1672,6 @@ where resume_pasien_ranap.no_rawat= $P{norawat}]]>
 			</staticText>
 			<staticText>
 				<reportElement positionType="Float" x="352" y="655" width="5" height="10" uuid="4297345e-f5cc-4bcd-bd2b-715de5d64d63">
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-				</reportElement>
-				<textElement>
-					<font fontName="Tahoma" size="8" isBold="false"/>
-					<paragraph lineSpacing="Single"/>
-				</textElement>
-				<text><![CDATA[:]]></text>
-			</staticText>
-			<staticText>
-				<reportElement positionType="Float" x="352" y="667" width="5" height="10" uuid="3b38659a-3e6d-4c96-99cb-4facce26604f">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<textElement>

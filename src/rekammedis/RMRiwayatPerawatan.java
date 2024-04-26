@@ -245,6 +245,7 @@ public final class RMRiwayatPerawatan extends javax.swing.JDialog {
         panelGlass5 = new widget.panelisi();
         R1 = new widget.RadioButton();
         R2 = new widget.RadioButton();
+        R5 = new javax.swing.JComboBox<>();
         R3 = new widget.RadioButton();
         Tgl1 = new widget.Tanggal();
         label18 = new widget.Label();
@@ -469,6 +470,13 @@ public final class RMRiwayatPerawatan extends javax.swing.JDialog {
         R2.setName("R2"); // NOI18N
         R2.setPreferredSize(new java.awt.Dimension(104, 23));
         panelGlass5.add(R2);
+
+        R5.setBackground(new java.awt.Color(255, 255, 255));
+        R5.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        R5.setForeground(new java.awt.Color(0, 0, 0));
+        R5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ralan", "Ranap" }));
+        R5.setName("R5"); // NOI18N
+        panelGlass5.add(R5);
 
         R3.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.Color.pink));
         buttonGroup1.add(R3);
@@ -2432,6 +2440,7 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
     private widget.RadioButton R2;
     private widget.RadioButton R3;
     private widget.RadioButton R4;
+    private javax.swing.JComboBox<String> R5;
     private widget.ScrollPane Scroll;
     private widget.ScrollPane Scroll1;
     private widget.ScrollPane Scroll2;
@@ -4834,120 +4843,126 @@ private void BtnPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
                             "<td valign='top' align='center'>"+rs.getString("status_lanjut")+"</td>"+
                             "<td valign='top' align='center'>"+
                                 "<table width='100%' border='0' align='center' cellpadding='2px' cellspacing='0'>");
-                    try {
-                        rs2=koneksi.prepareStatement(
-                                "select pemeriksaan_ralan.tgl_perawatan,pemeriksaan_ralan.jam_rawat,pemeriksaan_ralan.suhu_tubuh,pemeriksaan_ralan.tensi,pemeriksaan_ralan.nadi,pemeriksaan_ralan.respirasi,"+
-                                "pemeriksaan_ralan.tinggi,pemeriksaan_ralan.berat,pemeriksaan_ralan.gcs,pemeriksaan_ralan.spo2,pemeriksaan_ralan.kesadaran,pemeriksaan_ralan.keluhan, "+
-                                "pemeriksaan_ralan.pemeriksaan,pemeriksaan_ralan.alergi,pemeriksaan_ralan.lingkar_perut,pemeriksaan_ralan.rtl,pemeriksaan_ralan.penilaian,"+
-                                "pemeriksaan_ralan.instruksi,pemeriksaan_ralan.evaluasi,pemeriksaan_ralan.nip,pegawai.nama,pegawai.jbtn from pemeriksaan_ralan inner join pegawai on pemeriksaan_ralan.nip=pegawai.nik where "+
-                                "pemeriksaan_ralan.no_rawat='"+rs.getString("no_rawat")+"' "+
-                                "order by pemeriksaan_ralan.tgl_perawatan,pemeriksaan_ralan.jam_rawat").executeQuery();
-                        if(rs2.next()){
-                            htmlContent.append(
-                                    "<tr class='isi'>"+
-                                        "<td valign='middle' bgcolor='#FFFFF8' align='center' width='7%'>Tanggal</td>"+
-                                        "<td valign='middle' bgcolor='#FFFFF8' align='center' width='13%'>Dokter/Paramedis</td>"+
-                                        "<td valign='middle' bgcolor='#FFFFF8' align='center' width='14%'>Subjek</td>"+
-                                        "<td valign='middle' bgcolor='#FFFFF8' align='center' width='13%'>Objek</td>"+
-                                        "<td valign='middle' bgcolor='#FFFFF8' align='center' width='13%'>Asesmen</td>"+
-                                        "<td valign='middle' bgcolor='#FFFFF8' align='center' width='14%'>Plan</td>"+
-                                        "<td valign='middle' bgcolor='#FFFFF8' align='center' width='14%'>Instruksi</td>"+
-                                        "<td valign='middle' bgcolor='#FFFFF8' align='center' width='14%'>Evaluasi</td>"+
-                                    "</tr>");
-                            rs2.beforeFirst();
-                            while(rs2.next()){
-                                 htmlContent.append(                             
-                                    "<tr class='isi'>"+
-                                        "<td align='center'>"+rs2.getString("tgl_perawatan")+"<br>"+rs2.getString("jam_rawat")+"</td>"+
-                                        "<td align='center'>"+rs2.getString("nip")+"<br>"+rs2.getString("nama")+"</td>"+
-                                        "<td align='left'>"+rs2.getString("keluhan").replaceAll("(\r\n|\r|\n|\n\r)","<br>")+"</td>"+
-                                        "<td align='left'>"+rs2.getString("pemeriksaan").replaceAll("(\r\n|\r|\n|\n\r)","<br>")+
-                                        (rs2.getString("alergi").equals("")?"":"<br>Alergi : "+rs2.getString("alergi"))+
-                                        (rs2.getString("suhu_tubuh").equals("")?"":"<br>Suhu(C) : "+rs2.getString("suhu_tubuh"))+
-                                        (rs2.getString("tensi").equals("")?"":"<br>Tensi : "+rs2.getString("tensi"))+
-                                        (rs2.getString("nadi").equals("")?"":"<br>Nadi(/menit) : "+rs2.getString("nadi"))+
-                                        (rs2.getString("respirasi").equals("")?"":"<br>Respirasi(/menit) : "+rs2.getString("respirasi"))+
-                                        (rs2.getString("tinggi").equals("")?"":"<br>Tinggi(Cm) : "+rs2.getString("tinggi"))+
-                                        (rs2.getString("berat").equals("")?"":"<br>Berat(Kg) : "+rs2.getString("berat"))+
-                                        (rs2.getString("lingkar_perut").equals("")?"":"<br>Lingkar Perut(Cm) : "+rs2.getString("lingkar_perut"))+
-                                        (rs2.getString("spo2").equals("")?"":"<br>SpO2(%) : "+rs2.getString("spo2"))+
-                                        (rs2.getString("gcs").equals("")?"":"<br>GCS(E,V,M) : "+rs2.getString("gcs"))+
-                                        (rs2.getString("kesadaran").equals("")?"":"<br>Kesadaran : "+rs2.getString("kesadaran"))+
-                                        "</td>"+
-                                        "<td align='left'>"+rs2.getString("penilaian").replaceAll("(\r\n|\r|\n|\n\r)","<br>")+"</td>"+
-                                        "<td align='left'>"+rs2.getString("rtl").replaceAll("(\r\n|\r|\n|\n\r)","<br>")+"</td>"+
-                                        "<td align='left'>"+rs2.getString("instruksi").replaceAll("(\r\n|\r|\n|\n\r)","<br>")+"</td>"+
-                                        "<td align='left'>"+rs2.getString("evaluasi").replaceAll("(\r\n|\r|\n|\n\r)","<br>")+"</td>"+
-                                    "</tr>"
-                                 );
-                            } 
-                        }       
-                    } catch (Exception e) {
-                        System.out.println("Notifikasi : "+e);
-                    } finally{
-                        if(rs2!=null){
-                            rs2.close();
+                    if(R5.getSelectedItem().toString().equals("Ralan")){
+                        try {
+                            rs2=koneksi.prepareStatement(
+                                    "select pemeriksaan_ralan.tgl_perawatan,pemeriksaan_ralan.jam_rawat,pemeriksaan_ralan.suhu_tubuh,pemeriksaan_ralan.tensi,pemeriksaan_ralan.nadi,pemeriksaan_ralan.respirasi,"+
+                                    "pemeriksaan_ralan.tinggi,pemeriksaan_ralan.berat,pemeriksaan_ralan.gcs,pemeriksaan_ralan.spo2,pemeriksaan_ralan.kesadaran,pemeriksaan_ralan.keluhan, "+
+                                    "pemeriksaan_ralan.pemeriksaan,pemeriksaan_ralan.alergi,pemeriksaan_ralan.lingkar_perut,pemeriksaan_ralan.rtl,pemeriksaan_ralan.penilaian,"+
+                                    "pemeriksaan_ralan.instruksi,pemeriksaan_ralan.evaluasi,pemeriksaan_ralan.nip,pegawai.nama,pegawai.jbtn from pemeriksaan_ralan inner join pegawai on pemeriksaan_ralan.nip=pegawai.nik where "+
+                                    "pemeriksaan_ralan.no_rawat='"+rs.getString("no_rawat")+"' "+
+                                    "order by concat(pemeriksaan_ralan.tgl_perawatan,' ' ,pemeriksaan_ralan.jam_rawat) desc").executeQuery();
+                            if(rs2.next()){
+                                htmlContent.append(
+                                        "<tr class='isi'></tr>"+
+                                        "<tr class='isi'>"+
+                                            "<td valign='middle' bgcolor='#FFFFF8' align='center' width='7%'>Tanggal</td>"+
+                                            "<td valign='middle' bgcolor='#FFFFF8' align='center' width='13%'>Dokter/Paramedis</td>"+
+                                            "<td valign='middle' bgcolor='#FFFFF8' align='center' width='14%'>Subjek</td>"+
+                                            "<td valign='middle' bgcolor='#FFFFF8' align='center' width='13%'>Objek</td>"+
+                                            "<td valign='middle' bgcolor='#FFFFF8' align='center' width='13%'>Asesmen</td>"+
+                                            "<td valign='middle' bgcolor='#FFFFF8' align='center' width='14%'>Plan</td>"+
+                                            "<td valign='middle' bgcolor='#FFFFF8' align='center' width='14%'>Instruksi</td>"+
+                                            "<td valign='middle' bgcolor='#FFFFF8' align='center' width='14%'>Evaluasi</td>"+
+                                        "</tr>");
+                                rs2.beforeFirst();
+                                while(rs2.next()){
+                                     htmlContent.append(                             
+                                        "<tr class='isi'>"+
+                                            "<td align='center'>"+rs2.getString("tgl_perawatan")+"<br>"+rs2.getString("jam_rawat")+"</td>"+
+                                            "<td align='center'>"+rs2.getString("nip")+"<br>"+rs2.getString("nama")+"</td>"+
+                                            "<td align='left'>"+rs2.getString("keluhan").replaceAll("(\r\n|\r|\n|\n\r)","<br>")+"</td>"+
+                                            "<td align='left'>"+rs2.getString("pemeriksaan").replaceAll("(\r\n|\r|\n|\n\r)","<br>")+
+                                                (rs2.getString("alergi").equals("")?"":"<br>Alergi : "+rs2.getString("alergi"))+
+                                                (rs2.getString("suhu_tubuh").equals("")?"":"<br>Suhu(C) : "+rs2.getString("suhu_tubuh"))+
+                                                (rs2.getString("tensi").equals("")?"":"<br>Tensi : "+rs2.getString("tensi"))+
+                                                (rs2.getString("nadi").equals("")?"":"<br>Nadi(/menit) : "+rs2.getString("nadi"))+
+                                                (rs2.getString("respirasi").equals("")?"":"<br>Respirasi(/menit) : "+rs2.getString("respirasi"))+
+                                                (rs2.getString("tinggi").equals("")?"":"<br>Tinggi(Cm) : "+rs2.getString("tinggi"))+
+                                                (rs2.getString("berat").equals("")?"":"<br>Berat(Kg) : "+rs2.getString("berat"))+
+                                                (rs2.getString("lingkar_perut").equals("")?"":"<br>Lingkar Perut(Cm) : "+rs2.getString("lingkar_perut"))+
+                                                (rs2.getString("spo2").equals("")?"":"<br>SpO2(%) : "+rs2.getString("spo2"))+
+                                                (rs2.getString("gcs").equals("")?"":"<br>GCS(E,V,M) : "+rs2.getString("gcs"))+
+                                                (rs2.getString("kesadaran").equals("")?"":"<br>Kesadaran : "+rs2.getString("kesadaran"))+
+                                            "</td>"+
+                                            "<td align='left'>"+rs2.getString("penilaian").replaceAll("(\r\n|\r|\n|\n\r)","<br>")+"</td>"+
+                                            "<td align='left'>"+rs2.getString("rtl").replaceAll("(\r\n|\r|\n|\n\r)","<br>")+"</td>"+
+                                            "<td align='left'>"+rs2.getString("instruksi").replaceAll("(\r\n|\r|\n|\n\r)","<br>")+"</td>"+
+                                            "<td align='left'>"+rs2.getString("evaluasi").replaceAll("(\r\n|\r|\n|\n\r)","<br>")+"</td>"+
+                                        "</tr>"
+                                     );
+                                } 
+                            }       
+                        } catch (Exception e) {
+                            System.out.println("Notifikasi : "+e);
+                        } finally{
+                            if(rs2!=null){
+                                rs2.close();
+                            }
+                        }
+                    }else{
+                        try {
+                            rs2=koneksi.prepareStatement(
+                                    "select pemeriksaan_ranap.no_rawat,reg_periksa.no_rkm_medis,pasien.nm_pasien,"+
+                                    "pemeriksaan_ranap.tgl_perawatan,pemeriksaan_ranap.jam_rawat,pemeriksaan_ranap.suhu_tubuh,pemeriksaan_ranap.tensi, " +
+                                    "pemeriksaan_ranap.nadi,pemeriksaan_ranap.respirasi,pemeriksaan_ranap.tinggi, " +
+                                    "pemeriksaan_ranap.berat,pemeriksaan_ranap.spo2,pemeriksaan_ranap.gcs,pemeriksaan_ranap.kesadaran,pemeriksaan_ranap.keluhan, " +
+                                    "pemeriksaan_ranap.pemeriksaan,pemeriksaan_ranap.alergi,pemeriksaan_ranap.penilaian,pemeriksaan_ranap.rtl,"+
+                                    "pemeriksaan_ranap.instruksi,pemeriksaan_ranap.evaluasi,pemeriksaan_ranap.nip,pegawai.nama,pegawai.jbtn "+
+                                    "from pasien inner join reg_periksa on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
+                                    "inner join pemeriksaan_ranap on pemeriksaan_ranap.no_rawat=reg_periksa.no_rawat "+
+                                    "inner join pegawai on pemeriksaan_ranap.nip=pegawai.nik where pemeriksaan_ranap.no_rawat='"+rs.getString("no_rawat")+"' "+
+                                    "order by concat(pemeriksaan_ranap.tgl_perawatan,' ',pemeriksaan_ranap.jam_rawat) desc").executeQuery();
+                            if(rs2.next()){
+                                htmlContent.append(
+                                        "<tr class='isi'>"+
+                                            "<td valign='middle' bgcolor='#FFFFF8' align='center' width='7%'>Tanggal</td>"+
+                                            "<td valign='middle' bgcolor='#FFFFF8' align='center' width='13%'>Dokter/Paramedis</td>"+
+                                            "<td valign='middle' bgcolor='#FFFFF8' align='center' width='14%'>Subjek</td>"+
+                                            "<td valign='middle' bgcolor='#FFFFF8' align='center' width='13%'>Objek</td>"+
+                                            "<td valign='middle' bgcolor='#FFFFF8' align='center' width='13%'>Asesmen</td>"+
+                                            "<td valign='middle' bgcolor='#FFFFF8' align='center' width='14%'>Plan</td>"+
+                                            "<td valign='middle' bgcolor='#FFFFF8' align='center' width='14%'>Instruksi</td>"+
+                                            "<td valign='middle' bgcolor='#FFFFF8' align='center' width='14%'>Evaluasi</td>"+
+                                        "</tr>");
+                                rs2.beforeFirst();
+                                while(rs2.next()){
+                                     htmlContent.append(                             
+                                        "<tr class='isi'>"+
+                                            "<td align='center'>"+rs2.getString("tgl_perawatan")+"<br>"+rs2.getString("jam_rawat")+"</td>"+
+                                            "<td align='center'>"+rs2.getString("nip")+"<br>"+rs2.getString("nama")+"</td>"+
+                                            "<td align='left'>"+rs2.getString("keluhan").replaceAll("(\r\n|\r|\n|\n\r)","<br>")+"</td>"+
+                                            "<td align='left'>"+rs2.getString("pemeriksaan").replaceAll("(\r\n|\r|\n|\n\r)","<br>")+
+                                                (rs2.getString("alergi").equals("")?"":"<br>Alergi : "+rs2.getString("alergi"))+
+                                                (rs2.getString("suhu_tubuh").equals("")?"":"<br>Suhu(C) : "+rs2.getString("suhu_tubuh"))+
+                                                (rs2.getString("tensi").equals("")?"":"<br>Tensi : "+rs2.getString("tensi"))+
+                                                (rs2.getString("nadi").equals("")?"":"<br>Nadi(/menit) : "+rs2.getString("nadi"))+
+                                                (rs2.getString("respirasi").equals("")?"":"<br>Respirasi(/menit) : "+rs2.getString("respirasi"))+
+                                                (rs2.getString("tinggi").equals("")?"":"<br>Tinggi(Cm) : "+rs2.getString("tinggi"))+
+                                                (rs2.getString("berat").equals("")?"":"<br>Berat(Kg) : "+rs2.getString("berat"))+
+                                                (rs2.getString("spo2").equals("")?"":"<br>SpO2(%) : "+rs2.getString("spo2"))+
+                                                (rs2.getString("gcs").equals("")?"":"<br>GCS(E,V,M) : "+rs2.getString("gcs"))+
+                                                (rs2.getString("kesadaran").equals("")?"":"<br>Kesadaran : "+rs2.getString("kesadaran"))+
+                                            "</td>"+
+                                            "<td align='left'>"+rs2.getString("penilaian").replaceAll("(\r\n|\r|\n|\n\r)","<br>")+"</td>"+
+                                            "<td align='left'>"+rs2.getString("rtl").replaceAll("(\r\n|\r|\n|\n\r)","<br>")+"</td>"+
+                                            "<td align='left'>"+rs2.getString("instruksi").replaceAll("(\r\n|\r|\n|\n\r)","<br>")+"</td>"+
+                                            "<td align='left'>"+rs2.getString("evaluasi").replaceAll("(\r\n|\r|\n|\n\r)","<br>")+"</td>"+
+                                        "</tr>"
+                                     ); 
+                                } 
+                            }       
+                        } catch (Exception e) {
+                            System.out.println("Notifikasi : "+e);
+                        } finally{
+                            if(rs2!=null){
+                                rs2.close();
+                            }
                         }
                     }
                     
-                    try {
-                        rs2=koneksi.prepareStatement(
-                                "select pemeriksaan_ranap.no_rawat,reg_periksa.no_rkm_medis,pasien.nm_pasien,"+
-                                "pemeriksaan_ranap.tgl_perawatan,pemeriksaan_ranap.jam_rawat,pemeriksaan_ranap.suhu_tubuh,pemeriksaan_ranap.tensi, " +
-                                "pemeriksaan_ranap.nadi,pemeriksaan_ranap.respirasi,pemeriksaan_ranap.tinggi, " +
-                                "pemeriksaan_ranap.berat,pemeriksaan_ranap.spo2,pemeriksaan_ranap.gcs,pemeriksaan_ranap.kesadaran,pemeriksaan_ranap.keluhan, " +
-                                "pemeriksaan_ranap.pemeriksaan,pemeriksaan_ranap.alergi,pemeriksaan_ranap.penilaian,pemeriksaan_ranap.rtl,"+
-                                "pemeriksaan_ranap.instruksi,pemeriksaan_ranap.evaluasi,pemeriksaan_ranap.nip,pegawai.nama,pegawai.jbtn "+
-                                "from pasien inner join reg_periksa on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
-                                "inner join pemeriksaan_ranap on pemeriksaan_ranap.no_rawat=reg_periksa.no_rawat "+
-                                "inner join pegawai on pemeriksaan_ranap.nip=pegawai.nik where pemeriksaan_ranap.no_rawat='"+rs.getString("no_rawat")+"' "+
-                                "order by pemeriksaan_ranap.tgl_perawatan,pemeriksaan_ranap.jam_rawat").executeQuery();
-                        if(rs2.next()){
-                            htmlContent.append(
-                                    "<tr class='isi'>"+
-                                        "<td valign='middle' bgcolor='#FFFFF8' align='center' width='7%'>Tanggal</td>"+
-                                        "<td valign='middle' bgcolor='#FFFFF8' align='center' width='13%'>Dokter/Paramedis</td>"+
-                                        "<td valign='middle' bgcolor='#FFFFF8' align='center' width='14%'>Subjek</td>"+
-                                        "<td valign='middle' bgcolor='#FFFFF8' align='center' width='13%'>Objek</td>"+
-                                        "<td valign='middle' bgcolor='#FFFFF8' align='center' width='13%'>Asesmen</td>"+
-                                        "<td valign='middle' bgcolor='#FFFFF8' align='center' width='14%'>Plan</td>"+
-                                        "<td valign='middle' bgcolor='#FFFFF8' align='center' width='14%'>Instruksi</td>"+
-                                        "<td valign='middle' bgcolor='#FFFFF8' align='center' width='14%'>Evaluasi</td>"+
-                                    "</tr>");
-                            rs2.beforeFirst();
-                            while(rs2.next()){
-                                 htmlContent.append(                             
-                                    "<tr class='isi'>"+
-                                        "<td align='center'>"+rs2.getString("tgl_perawatan")+"<br>"+rs2.getString("jam_rawat")+"</td>"+
-                                        "<td align='center'>"+rs2.getString("nip")+"<br>"+rs2.getString("nama")+"</td>"+
-                                        "<td align='left'>"+rs2.getString("keluhan").replaceAll("(\r\n|\r|\n|\n\r)","<br>")+"</td>"+
-                                        "<td align='left'>"+rs2.getString("pemeriksaan").replaceAll("(\r\n|\r|\n|\n\r)","<br>")+
-                                        (rs2.getString("alergi").equals("")?"":"<br>Alergi : "+rs2.getString("alergi"))+
-                                        (rs2.getString("suhu_tubuh").equals("")?"":"<br>Suhu(C) : "+rs2.getString("suhu_tubuh"))+
-                                        (rs2.getString("tensi").equals("")?"":"<br>Tensi : "+rs2.getString("tensi"))+
-                                        (rs2.getString("nadi").equals("")?"":"<br>Nadi(/menit) : "+rs2.getString("nadi"))+
-                                        (rs2.getString("respirasi").equals("")?"":"<br>Respirasi(/menit) : "+rs2.getString("respirasi"))+
-                                        (rs2.getString("tinggi").equals("")?"":"<br>Tinggi(Cm) : "+rs2.getString("tinggi"))+
-                                        (rs2.getString("berat").equals("")?"":"<br>Berat(Kg) : "+rs2.getString("berat"))+
-                                        (rs2.getString("spo2").equals("")?"":"<br>SpO2(%) : "+rs2.getString("spo2"))+
-                                        (rs2.getString("gcs").equals("")?"":"<br>GCS(E,V,M) : "+rs2.getString("gcs"))+
-                                        (rs2.getString("kesadaran").equals("")?"":"<br>Kesadaran : "+rs2.getString("kesadaran"))+
-                                        "</td>"+
-                                        "<td align='left'>"+rs2.getString("penilaian").replaceAll("(\r\n|\r|\n|\n\r)","<br>")+"</td>"+
-                                        "<td align='left'>"+rs2.getString("rtl").replaceAll("(\r\n|\r|\n|\n\r)","<br>")+"</td>"+
-                                        "<td align='left'>"+rs2.getString("instruksi").replaceAll("(\r\n|\r|\n|\n\r)","<br>")+"</td>"+
-                                        "<td align='left'>"+rs2.getString("evaluasi").replaceAll("(\r\n|\r|\n|\n\r)","<br>")+"</td>"+
-                                    "</tr>"
-                                 ); 
-                            } 
-                        }       
-                    } catch (Exception e) {
-                        System.out.println("Notifikasi : "+e);
-                    } finally{
-                        if(rs2!=null){
-                            rs2.close();
-                        }
-                    }
+                    
+                    
                     htmlContent.append(
                                 "</table>"+
                             "</td>"+
