@@ -4949,10 +4949,13 @@ public final class DlgRawatInap extends javax.swing.JDialog {
                         if(KdPeg.getText().trim().equals("")||TPegawai.getText().trim().equals("")){
                             Valid.textKosong(KdPeg,"Dokter/Paramedis masih kosong...!!");
                         }else{
+                            String petugas=Sequel.cariIsi("select * from petugas where nip=?",KdPeg.getText());
+                            String Suhu=TSuhu.getText(),Tensi=TSuhu.getText(),Nadi=TSuhu.getText(),RR=TSuhu.getText(),GCS=TGCS.getText(),
+                                    SPO2=SpO2.getText();
                             if(akses.getkode().equals("Admin Utama")){
                                 if(Sequel.menyimpantf("pemeriksaan_ranap","?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?","Data",20,new String[]{
                                         TNoRw.getText(),Valid.SetTgl(DTPTgl.getSelectedItem()+""),cmbJam.getSelectedItem()+":"+cmbMnt.getSelectedItem()+":"+cmbDtk.getSelectedItem(),                      
-                                        TSuhu.getText(),TTensi.getText(),TNadi.getText(),TRespirasi.getText(),TTinggi.getText(),TBerat.getText(),SpO2.getText(),TGCS.getText(),
+                                        TSuhu.getText(),TSuhu.getText(),TSuhu.getText(),TSuhu.getText(),TTinggi.getText(),TBerat.getText(),SpO2.getText(),TGCS.getText(),
                                         cmbKesadaran.getSelectedItem().toString(),TKeluhan.getText(),TPemeriksaan.getText(),TAlergi.getText(),
                                         TPenilaian.getText(),TindakLanjut.getText(),TInstruksi.getText(),TEvaluasi.getText(),KdPeg.getText()
                                     })==true){
@@ -4965,6 +4968,15 @@ public final class DlgRawatInap extends javax.swing.JDialog {
                                     LCount.setText(""+tabModePemeriksaan.getRowCount());
                                     BtnBatalActionPerformed(evt);
                                 }
+                                
+                                if(petugas==null||petugas.equals("")){
+                                    }else{
+//                                        JOptionPane.showMessageDialog(null,"Untuk Petugas, akan mengisi TTV otomatis pada Observasi Rawat Inap");
+                                        Sequel.menyimpantf("catatan_observasi_ranap","?,?,?,?,?,?,?,?,?,?" ,"Data", 10,new String []{
+                                            TNoRw.getText(),Valid.SetTgl(DTPTgl.getSelectedItem()+""),cmbJam.getSelectedItem()+":"+cmbMnt.getSelectedItem()+":"+cmbDtk.getSelectedItem(),
+                                            GCS,Tensi,Nadi,RR,Suhu,SPO2,KdPeg.getText()
+                                        });
+                                    }
                             }else{
                                 if(akses.getkode().equals(KdPeg.getText())){
                                     if(Sequel.menyimpantf("pemeriksaan_ranap","?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?","Data",20,new String[]{
@@ -4981,6 +4993,14 @@ public final class DlgRawatInap extends javax.swing.JDialog {
                                         });
                                         LCount.setText(""+tabModePemeriksaan.getRowCount());
                                         BtnBatalActionPerformed(evt);
+                                    }
+                                    if(petugas==null||petugas.equals("")){
+                                    }else{
+//                                        JOptionPane.showMessageDialog(null,"Untuk Petugas, akan mengisi TTV otomatis pada Observasi Rawat Inap");
+                                        Sequel.menyimpantf("catatan_observasi_ranap","?,?,?,?,?,?,?,?,?,?" ,"Data", 10,new String []{
+                                            TNoRw.getText(),Valid.SetTgl(DTPTgl.getSelectedItem()+""),cmbJam.getSelectedItem()+":"+cmbMnt.getSelectedItem()+":"+cmbDtk.getSelectedItem(),
+                                            GCS,Tensi,Nadi,RR,Suhu,SPO2,KdPeg.getText()
+                                        });
                                     }
                                 }else{
                                     JOptionPane.showMessageDialog(null,"Hanya bisa disimpan oleh dokter/petugas yang bersangkutan..!!");

@@ -42,8 +42,8 @@ public final class RMPenilaianAwalKeperawatanRanap extends javax.swing.JDialog {
     private Connection koneksi=koneksiDB.condb();
     private sekuel Sequel=new sekuel();
     private validasi Valid=new validasi();
-    private PreparedStatement ps;
-    private ResultSet rs;
+    private PreparedStatement ps,ps2;
+    private ResultSet rs,rs2;
     private int i=0,jml=0,index=0;
     private DlgCariPetugas petugas=new DlgCariPetugas(null,false);
     private DlgCariDokter dokter=new DlgCariDokter(null,false);
@@ -1539,7 +1539,7 @@ public final class RMPenilaianAwalKeperawatanRanap extends javax.swing.JDialog {
         Anamnesis.setBounds(74, 100, 130, 23);
 
         TglAsuhan.setForeground(new java.awt.Color(50, 70, 50));
-        TglAsuhan.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "31-10-2022 05:26:13" }));
+        TglAsuhan.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "30-04-2024 16:35:42" }));
         TglAsuhan.setDisplayFormat("dd-MM-yyyy HH:mm:ss");
         TglAsuhan.setName("TglAsuhan"); // NOI18N
         TglAsuhan.setOpaque(false);
@@ -2213,7 +2213,7 @@ public final class RMPenilaianAwalKeperawatanRanap extends javax.swing.JDialog {
             }
         });
         FormInput.add(SistemSarafKepala);
-        SistemSarafKepala.setBounds(113, 490, 103, 23);
+        SistemSarafKepala.setBounds(113, 490, 105, 23);
 
         KetSistemSarafKepala.setFocusTraversalPolicyProvider(true);
         KetSistemSarafKepala.setName("KetSistemSarafKepala"); // NOI18N
@@ -5061,7 +5061,7 @@ public final class RMPenilaianAwalKeperawatanRanap extends javax.swing.JDialog {
         panelGlass9.add(jLabel19);
 
         DTPCari1.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "31-10-2022" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "30-04-2024" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -5075,7 +5075,7 @@ public final class RMPenilaianAwalKeperawatanRanap extends javax.swing.JDialog {
         panelGlass9.add(jLabel21);
 
         DTPCari2.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "31-10-2022" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "30-04-2024" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -5131,7 +5131,7 @@ public final class RMPenilaianAwalKeperawatanRanap extends javax.swing.JDialog {
         PanelAccor.setPreferredSize(new java.awt.Dimension(470, 43));
         PanelAccor.setLayout(new java.awt.BorderLayout(1, 1));
 
-        ChkAccor.setBackground(new java.awt.Color(255,250,250));
+        ChkAccor.setBackground(new java.awt.Color(255, 250, 250));
         ChkAccor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/kiri.png"))); // NOI18N
         ChkAccor.setSelected(true);
         ChkAccor.setFocusable(false);
@@ -8988,9 +8988,13 @@ public final class RMPenilaianAwalKeperawatanRanap extends javax.swing.JDialog {
                     "bahasa_pasien.nama_bahasa,pasien.pnd,pasien.pekerjaan "+
                     "from pasien inner join bahasa_pasien on bahasa_pasien.id=pasien.bahasa_pasien "+
                     "where pasien.no_rkm_medis=?");
+            ps2 = koneksi.prepareStatement("select * from penilaian_awal_keperawatan_igd where no_rawat=?");
             try {
                 ps.setString(1,TNoRM.getText());
                 rs=ps.executeQuery();
+                ps2.setString(1,TNoRw.getText());
+                rs2=ps2.executeQuery();
+                rs2.next();
                 if(rs.next()){
                     TPasien.setText(rs.getString("nm_pasien"));
                     Jk.setText(rs.getString("jk"));
@@ -8999,7 +9003,35 @@ public final class RMPenilaianAwalKeperawatanRanap extends javax.swing.JDialog {
                     Bahasa.setText(rs.getString("nama_bahasa"));
                     PendidikanPasien.setText(rs.getString("pnd"));
                     PekerjaanPasien.setText(rs.getString("pekerjaan"));
+                
+                    RPS.setText(rs2.getString("keluhan_utama"));
+                    RPD.setText(rs2.getString("rpd"));
+                    RPO.setText(rs2.getString("rpo"));
+                    TD.setText(rs2.getString("td"));
+                    Nadi.setText(rs2.getString("nadi"));
+                    RR.setText(rs2.getString("rr"));
+                    Suhu.setText(rs2.getString("suhu"));
+                    SpO2.setText(rs2.getString("spo"));
+                    BB.setText(rs2.getString("bb"));
+                    TB.setText(rs2.getString("tb"));
+                    GCS.setText(rs2.getString("gcs"));
+                    Lokasi.setText(rs2.getString("lokasi"));
+                    Nyeri.setSelectedItem(rs2.getString("nyeri").toString());
+                    Provokes.setSelectedItem(rs2.getString("provokes").toString());
+                    KetProvokes.setText(rs2.getString("ket_provokes"));
+                    Quality.setSelectedItem(rs2.getString("quality").toString());
+                    KetQuality.setText(rs2.getString("ket_quality"));
+                    Menyebar.setSelectedItem(rs2.getString("menyebar").toString());
+                    SkalaNyeri.setSelectedItem(rs2.getString("skala_nyeri").toString());
+                    Durasi.setText(rs2.getString("durasi"));
+                    NyeriHilang.setSelectedItem(rs2.getString("nyeri_hilang").toString());
+                    KetNyeri.setText(rs2.getString("ket_nyeri"));
+                    PadaDokter.setSelectedItem(rs2.getString("pada_dokter").toString());
+                    KetPadaDokter.setText(rs2.getString("ket_dokter"));
+                    
                 }
+                
+                
             } catch (Exception e) {
                 System.out.println("Notif : "+e);
             } finally{
@@ -9008,6 +9040,12 @@ public final class RMPenilaianAwalKeperawatanRanap extends javax.swing.JDialog {
                 }
                 if(ps!=null){
                     ps.close();
+                }
+                if(rs2!=null){
+                    rs2.close();
+                }
+                if(ps2!=null){
+                    ps2.close();
                 }
             }
         } catch (Exception e) {
